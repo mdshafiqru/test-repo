@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:pro_health/ui/utilities/Constant.dart';
+
+class OnlineConsultancy extends StatefulWidget {
+  static String tag = 'OnlineConsultancy';
+  @override
+  OnlineConsultancyState createState() => new OnlineConsultancyState();
+}
+
+class OnlineConsultancyState extends State<OnlineConsultancy> {
+
+  final comingSoon = Center(
+    child: Column(
+      children: [
+        Container(
+          width: 180,
+          height: 250,
+          padding: EdgeInsets.only(top: 70),
+          child: Image.asset('assets/comingsoon.png', fit: BoxFit.fill,),
+        ),
+        Container(
+          height: 50,
+          padding: EdgeInsets.only(top: 15.0),
+          child: Text('Coming Soon..', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
+        ),
+      ],
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+      appBar: AppBar(
+        elevation: 5.0,
+        backgroundColor: kBaseColor,
+        centerTitle: true,
+        toolbarHeight: 50,
+        leading: IconButton(
+          color: kTitleColor,
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back),
+        ),
+        title: Text('Emergency Online Consultancy', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+      ),
+      backgroundColor: kBackgroundColor,
+      body: Center(
+        child: ListView(
+          children: [
+            SizedBox(height: 2),
+            Center(
+              child: Container(
+                width: 80.00,
+                height: 80.00,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/consultancypage.png'),
+                      fit: BoxFit.fitHeight,
+                    )),
+              ),
+            ),
+            Container(
+              width: 250.00,
+              height: 30,
+              child: Text('Online Consultancy',
+                style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(height: 5,),
+            const Divider(
+              color: Colors.black,
+              height: 0.0,
+              thickness: 0.5,
+              indent: 0.0,
+              endIndent: 0.0,
+            ),
+            comingSoon,
+          ],
+        ),
+      ),
+    );
+  }
+}
