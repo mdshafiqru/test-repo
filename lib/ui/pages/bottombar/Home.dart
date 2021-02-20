@@ -15,6 +15,7 @@ import 'package:pro_health/ui/pages/draweritem/PrivacyAndPolicy.dart';
 import 'package:pro_health/ui/pages/draweritem/Reviews.dart';
 import 'package:pro_health/ui/pages/draweritem/Settings.dart';
 import 'package:pro_health/ui/pages/draweritem/TermsConditions.dart';
+import 'package:pro_health/ui/pages/subpages/Withdraw.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -340,6 +341,23 @@ class Home extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.of(context).pushNamed('');
+                },
+              ),
+              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
+              ListTile(
+                dense: true,
+                title: Text("Withdraw", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
+                leading: CircleAvatar(
+                  backgroundColor: kShadowColor,
+                  radius: 13,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    radius: 12.0,
+                    child: Image.asset('assets/renewd.png'),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pushNamed(Withdraw.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

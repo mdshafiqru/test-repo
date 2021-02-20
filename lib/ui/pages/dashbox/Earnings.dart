@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
@@ -49,15 +50,14 @@ class EarningsState extends State<Earnings> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: MaterialButton(
-              onPressed: () {
-                Navigator.of(context, rootNavigator: true);
-              },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
               ),
               padding: EdgeInsets.only(left: 8, top: 5, right: 8, bottom: 5),
               color: kBaseColor,
               child: Text('Withdraw', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, color: kTitleColor)),
+              onPressed: () {
+              },
             ),
           )
       ),
