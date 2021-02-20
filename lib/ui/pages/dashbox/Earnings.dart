@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
@@ -51,6 +50,7 @@ class EarningsState extends State<Earnings> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: MaterialButton(
               onPressed: () {
+                Navigator.of(context, rootNavigator: true);
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
@@ -396,17 +396,11 @@ class EarningsState extends State<Earnings> {
       ),
     );
   }
-
-
   Widget buildTileChart(Widget child, {Function() onTap}) {
     return Material(
         color: kBackgroundColor,
-        /*elevation: 14.0,
-        borderRadius: BorderRadius.circular(12.0),
-        shadowColor: Color(0x802196F3),*/
         child: InkWell
           (
-          // Do onTap() if it isn't null, otherwise do print()
             onTap: onTap != null ? () => onTap() : () { print('Not set yet'); },
             child: child
         )

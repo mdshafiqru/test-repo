@@ -26,6 +26,7 @@ import 'package:pro_health/ui/pages/subpages/NewAccountPassword.dart';
 import 'package:pro_health/ui/pages/subpages/NewAccountVerify.dart';
 import 'package:pro_health/ui/pages/subpages/TermsAndConditions.dart';
 import 'package:pro_health/ui/pages/subpages/UpdatePassword.dart';
+import 'package:pro_health/ui/pages/subpages/Withdraw.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
 void main() => runApp(MyApp());
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
     Help.tag: (context) => Help(),
     Settings.tag: (context) => Settings(),
     Reviews.tag: (context) => Reviews(),
+    Withdraw.tag: (context) => Withdraw(),
 
   };
   @override

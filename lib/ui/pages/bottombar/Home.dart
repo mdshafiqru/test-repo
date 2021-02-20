@@ -534,6 +534,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-
-  PharmaUpdates() {}
 }

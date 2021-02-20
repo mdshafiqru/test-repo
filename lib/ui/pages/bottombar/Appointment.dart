@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_health/ui/pages/draweritem/AboutUs.dart';
 import 'package:pro_health/ui/pages/draweritem/ActivityStatus.dart';
@@ -334,31 +335,33 @@ class AppointmentState extends State<Appointment> {
     );
 
     final topCard = Card(
+      margin: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(60.0)),
+        borderRadius: BorderRadius.circular(20),
       ),
-      margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 30.0),
-      child: Container(
+      elevation: 15,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
         child: Column(
           children: [
             Container(
-              height: 70,
+              height: 80,
               color: kBaseColor,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 12.0, top: 10.0),
-                    child: Text('Appointment Request', style: TextStyle(fontSize: 17, color: kTitleColor),),
+                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kTitleColor),),
                     alignment: Alignment.centerLeft,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 10.0),
                     child: Row(
                       children: [
-                        Icon(Icons.access_time, color: kTitleColor),
+                        Icon(Icons.access_time, size: 20, color: kTitleColor),
                         SizedBox(width: 2.0,),
-                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 17, color: kTitleColor),)
+                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kTitleColor),)
                       ],
                     ),
                   ),
@@ -366,74 +369,84 @@ class AppointmentState extends State<Appointment> {
               ),
             ),
             Container(
-              height: 80,
+              height: 60,
               color: Colors.white,
               child: Row(
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 20, right: 10),
                     child: CircleAvatar(
-                      radius: 21,
+                      radius: 18,
                       backgroundColor: kBaseColor,
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 20.0,
+                        radius: 17.0,
                         child: Image.asset('assets/doctorimg.png'),
                       ),
                     ),
                   ),
                   Container(
-                    child: Text('MD Sohag Mia', style: TextStyle(fontSize: 20),),
+                    child: Text('MD Jahidul Hasan', style: TextStyle(fontSize: 16),),
                   )
                 ],
               ),
             ),
-            Container(
-              width: 195,
-              padding: EdgeInsets.symmetric(horizontal: 5.0),
-              child: MaterialButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
+            Padding(
+              padding: EdgeInsets.only(left: 10, right: 70),
+              child: Container(
+                height: 30,
+                width: 220,
+                decoration: BoxDecoration(
+                    color: kTitleColor,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(30)),
+                alignment: Alignment.center,
+                child: new Text(
+                  "Problem: ৩দিন যাবত জ্বর",
+                  style: TextStyle(fontFamily: 'Segoe', fontWeight: FontWeight.w600, letterSpacing: 0.5, fontSize: 16,),
                 ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('');
-                },
-                padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
-                color: kTitleColor,
-                child: Text('Problem: 3w`b hveZ R¡i3w`b hveZ R¡i', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: Colors.black)),
               ),
             ),
+            SizedBox(height: 5.0,),
             Container(
+              height: 60,
               child: Row(
                 children: [
                   Container(
-                    width: 195,
-                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    width: 185,
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
                     child: MaterialButton(
+                      elevation: 5,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed('');
                       },
-                      padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
+                      padding: EdgeInsets.only(top: 2.0, bottom: 3.0),
                       color: kButtonColor,
-                      child: Text('Accept', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+                      child: Text('Accept', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 16, color: kWhiteShadow)),
                     ),
                   ),
                   Container(
-                    width: 195,
-                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    width: 185,
+                    padding: EdgeInsets.only(left: 30.0, right: 10.0),
                     child: MaterialButton(
+                      elevation: 5,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
+                        side: BorderSide(
+                            color: kBaseColor,
+                            width: 0.8,
+                            style: BorderStyle.solid
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed('');
                       },
-                      padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
-                      color: Colors.red,
-                      child: Text('Decline', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+                      padding: EdgeInsets.only(top: 2.0, bottom: 3.0),
+                      color: kWhiteShadow,
+                      child: Text('Decline', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 16, color: kBaseColor)),
                     ),
                   ),
                 ],
@@ -441,6 +454,86 @@ class AppointmentState extends State<Appointment> {
             ),
           ],
         ),
+      ),
+    );
+    final nextAppointmentTitle = Container(
+      padding: EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 10.0),
+      child: Text('Next Appointments', style: TextStyle(fontSize: 20, color: kTextLightColor),),
+    );
+    final patientsCard = Container(
+      height: 60,
+      width: 395,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(20)),
+      alignment: Alignment.center,
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 15, right: 10),
+            child: CircleAvatar(
+              radius: 19,
+              backgroundColor: kBaseColor,
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 18.0,
+                child: Image.asset('assets/doctorimg.png'),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Text('MD Jahidul Hasan', style: TextStyle(fontSize: 16),),
+                ),
+                Container(
+                  child: Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 14),),
+                )
+              ],
+            ),
+          ),
+          SizedBox(width: 75,),
+          Container(
+              child: RawMaterialButton(
+                onPressed: () {},
+                child: Icon(
+                  Icons.more_vert,
+                  size: 24,
+                ),
+                padding: EdgeInsets.all(8),
+                shape: CircleBorder(),
+              )
+          ),
+        ],
+      ),
+    );
+    final awaitedPatients = Container(
+      padding: EdgeInsets.only(left: 20, right: 20),
+      child: Column(
+        children: [
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 10,),
+          patientsCard,
+          SizedBox(height: 30,),
+        ],
       ),
     );
 
@@ -509,7 +602,15 @@ class AppointmentState extends State<Appointment> {
                   flex: 1,
                   child: TabBarView(
                     children: [
-                      topCard,
+                      Container(
+                        child: ListView(
+                          children: [
+                            topCard,
+                            nextAppointmentTitle,
+                            awaitedPatients,
+                          ],
+                        ),
+                      ),
                       Container(
                         child: ListView(
                           children: [
