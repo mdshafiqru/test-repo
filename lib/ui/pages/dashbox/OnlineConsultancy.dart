@@ -20,7 +20,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
       child: Column(
         children: [
           Container(
-            height: 80,
+            height: 65,
             color: kBaseColor,
             child: Column(
               mainAxisSize: MainAxisSize.min,

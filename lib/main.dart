@@ -27,6 +27,7 @@ import 'package:pro_health/ui/pages/subpages/NewAccountVerify.dart';
 import 'package:pro_health/ui/pages/subpages/TermsAndConditions.dart';
 import 'package:pro_health/ui/pages/subpages/UpdatePassword.dart';
 import 'package:pro_health/ui/pages/subpages/Withdraw.dart';
+import 'package:pro_health/ui/pages/subpages/WithdrawDetails.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
 void main() => runApp(MyApp());
@@ -51,6 +52,8 @@ class MyApp extends StatelessWidget {
     DrugInfo.tag: (context) => DrugInfo(),
     OnlineConsultancy.tag: (context) => OnlineConsultancy(),
     Earnings.tag: (context) => Earnings(),
+    Withdraw.tag: (context) => Withdraw(),
+    WithdrawDetails.tag: (context) => WithdrawDetails(),
     ConsultationHistory.tag: (context) => ConsultationHistory(),
     ActivityStatus.tag: (context) => ActivityStatus(),
     TermsConditions.tag: (context) => TermsConditions(),
@@ -60,7 +63,6 @@ class MyApp extends StatelessWidget {
     Help.tag: (context) => Help(),
     Settings.tag: (context) => Settings(),
     Reviews.tag: (context) => Reviews(),
-    Withdraw.tag: (context) => Withdraw(),
 
   };
   @override

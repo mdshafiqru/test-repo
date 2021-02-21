@@ -108,7 +108,7 @@ class WithdrawState extends State<Withdraw> {
             DataCell(Text("2")),
             DataCell(Text("3244")),
             DataCell(Text("23-01-2021")),
-            DataCell(Text("Received")),
+            DataCell(Text("Pending")),
           ]),
           DataRow(cells: [
             DataCell(Text("3")),
@@ -120,7 +120,7 @@ class WithdrawState extends State<Withdraw> {
             DataCell(Text("4")),
             DataCell(Text("3244")),
             DataCell(Text("23-01-2021")),
-            DataCell(Text("Received")),
+            DataCell(Text("Pending")),
           ]),
           DataRow(cells: [
             DataCell(Text("5")),
@@ -132,7 +132,7 @@ class WithdrawState extends State<Withdraw> {
             DataCell(Text("6")),
             DataCell(Text("3244")),
             DataCell(Text("23-01-2021")),
-            DataCell(Text("Received")),
+            DataCell(Text("Pending")),
           ]),
           DataRow(cells: [
             DataCell(Text("7")),
@@ -144,7 +144,7 @@ class WithdrawState extends State<Withdraw> {
             DataCell(Text("8")),
             DataCell(Text("3244")),
             DataCell(Text("23-01-2021")),
-            DataCell(Text("Received")),
+            DataCell(Text("Pending")),
           ]),
         ],
       ),

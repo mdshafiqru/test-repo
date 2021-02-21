@@ -345,7 +345,7 @@ class AppointmentState extends State<Appointment> {
         child: Column(
           children: [
             Container(
-              height: 80,
+              height: 65,
               color: kBaseColor,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
