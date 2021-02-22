@@ -28,7 +28,7 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
       body: Center(
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 2),
+            SizedBox(height: 5),
             Center(
               child: Container(
                 width: 80.00,

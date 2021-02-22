@@ -64,7 +64,7 @@ class DrugInfoState extends State<DrugInfo> {
       body: Center(
         child: ListView(
           children: [
-            SizedBox(height: 2),
+            SizedBox(height: 5),
             drugInfoLogo,
             drugInfoTitle,
             SizedBox(height: 5,),

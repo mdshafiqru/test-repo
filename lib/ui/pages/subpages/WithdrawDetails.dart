@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
 class WithdrawDetails extends StatefulWidget {
@@ -19,7 +18,7 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
         height: 80.00,
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: ExactAssetImage('assets/withdraw.png'),
+              image: ExactAssetImage('assets/withdrawdetails.png'),
               fit: BoxFit.fitHeight,
             )),
       ),
@@ -42,7 +41,7 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
           dataRowHeight: 30,
           headingRowHeight: 40,
           showBottomBorder: true,
-          columnSpacing: 20.0,
+          columnSpacing: 18.0,
           columns: [
             DataColumn(
                 label: Text(
@@ -134,6 +133,66 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
             ]),
             DataRow(selected: true, cells: [
               DataCell(Text("12")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(cells: [
+              DataCell(Text("13")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(selected: true, cells: [
+              DataCell(Text("14")),
+              DataCell(Text("2000")),
+              DataCell(Text("21-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(cells: [
+              DataCell(Text("15")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(selected: true, cells: [
+              DataCell(Text("16")),
+              DataCell(Text("2000")),
+              DataCell(Text("21-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(cells: [
+              DataCell(Text("17")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(selected: true, cells: [
+              DataCell(Text("18")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(cells: [
+              DataCell(Text("19")),
+              DataCell(Text("2000")),
+              DataCell(Text("21-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(selected: true, cells: [
+              DataCell(Text("20")),
+              DataCell(Text("3244")),
+              DataCell(Text("23-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(cells: [
+              DataCell(Text("21")),
+              DataCell(Text("2000")),
+              DataCell(Text("21-01-2021")),
+              DataCell(Text("Received")),
+            ]),
+            DataRow(selected: true, cells: [
+              DataCell(Text("22")),
               DataCell(Text("3244")),
               DataCell(Text("23-01-2021")),
               DataCell(Text("Received")),

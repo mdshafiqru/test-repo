@@ -210,7 +210,7 @@ class EarningsState extends State<Earnings> {
                     ),
                   ),
                   Container(
-                    child: Text('BDT. 500',
+                    child: Text('BDT. 3500',
                       style: TextStyle(fontFamily: 'Segoe', fontSize: 16.0, color: kBaseColor, letterSpacing: 0.5, fontWeight: FontWeight.w600), textAlign: TextAlign.center,),
                   ),
                 ],
@@ -241,7 +241,7 @@ class EarningsState extends State<Earnings> {
                     ),
                   ),
                   Container(
-                    child: Text('BDT. 500',
+                    child: Text('BDT. 5000',
                       style: TextStyle(fontFamily: 'Segoe', fontSize: 16.0, color: kBaseColor, letterSpacing: 0.5, fontWeight: FontWeight.w600), textAlign: TextAlign.center,),
                   ),
                 ],
@@ -316,7 +316,7 @@ class EarningsState extends State<Earnings> {
                     ),
                   ),
                   Container(
-                    child: Text('BDT. 500',
+                    child: Text('BDT. 4500',
                       style: TextStyle(fontFamily: 'Segoe', fontSize: 16.0, color: kBaseColor, letterSpacing: 0.5, fontWeight: FontWeight.w600), textAlign: TextAlign.center,),
                   ),
                 ],
@@ -348,7 +348,7 @@ class EarningsState extends State<Earnings> {
                     ),
                   ),
                   Container(
-                    child: Text('BDT. 500',
+                    child: Text('BDT. 2500',
                       style: TextStyle(fontFamily: 'Segoe', fontSize: 16.0, color: kBaseColor, letterSpacing: 0.5, fontWeight: FontWeight.w600), textAlign: TextAlign.center,),
                   ),
                 ],
@@ -376,6 +376,7 @@ class EarningsState extends State<Earnings> {
       body: Container(
         child: ListView(
           children: [
+            SizedBox(height: 5,),
             earningsPageLogo,
             earningsPageSubTitle,
             SizedBox(height: 5,),
@@ -390,12 +391,12 @@ class EarningsState extends State<Earnings> {
             withdrawButton,
             earningChart,
             Container(
-              padding: EdgeInsets.only(bottom: 28),
+              padding: EdgeInsets.only(bottom: 25),
               color: Color(0xFFDDE0E1),
             ),
             todayMonthlyTotalEarnings,
             Container(
-              padding: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: 8),
               color: Color(0xFFDDE0E1),
             ),
             averageReceivedPendingEarnings,

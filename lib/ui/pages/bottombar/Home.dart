@@ -15,7 +15,6 @@ import 'package:pro_health/ui/pages/draweritem/PrivacyAndPolicy.dart';
 import 'package:pro_health/ui/pages/draweritem/Reviews.dart';
 import 'package:pro_health/ui/pages/draweritem/Settings.dart';
 import 'package:pro_health/ui/pages/draweritem/TermsConditions.dart';
-import 'package:pro_health/ui/pages/subpages/Withdraw.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -345,23 +344,6 @@ class Home extends StatelessWidget {
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
               ListTile(
-                dense: true,
-                title: Text("Withdraw", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/renewd.png'),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pushNamed(Withdraw.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
                 dense: false,
                 title: Text("Reviews", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
                 leading: CircleAvatar(
@@ -413,14 +395,16 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ListTile(
-                    title: CircleAvatar(
+                  Container(
+                    child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
                       child: Image.asset('assets/onlineconsultancy.png'),
                     ),
-                    subtitle: Text('ONLINE CONSULTANCY',
-                      style: TextStyle(fontFamily: 'Segoe', fontSize: 10.0, color: kBodyTextColor, letterSpacing: 0.3, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
+                  ),
+                  Container(
+                    child: Text('ONLINE CONSULTANCY',
+                      style: TextStyle(fontFamily: 'Segoe', fontSize: 12.0, color: kBodyTextColor, letterSpacing: 0.5, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
                   ),
                 ],
               ),
@@ -444,14 +428,16 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ListTile(
-                    title: CircleAvatar(
+                  Container(
+                    child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
                       child: Image.asset('assets/consultationhistory.png'),
                     ),
-                    subtitle: Text('CONSULTATION HISTORY',
-                      style: TextStyle(fontFamily: 'Segoe', fontSize: 10.0, color: kBodyTextColor, letterSpacing: 0.2, fontWeight: FontWeight.w700), textAlign: TextAlign.justify,),
+                  ),
+                  Container(
+                    child: Text('CONSULTATION HISTORY',
+                      style: TextStyle(fontFamily: 'Segoe', fontSize: 12.0, color: kBodyTextColor, letterSpacing: 0.5, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
                   ),
                 ],
               ),
@@ -480,13 +466,16 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ListTile(
-                    title: CircleAvatar(
+                  Container(
+                    child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
                       child: Image.asset('assets/druginfo.png'),
                     ),
-                    subtitle: Text('DRUG INFO', style: TextStyle(fontFamily: 'Segoe', fontSize: 10.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
+                  ),
+                  Container(
+                    child: Text('DRUG INFO',
+                      style: TextStyle(fontFamily: 'Segoe', fontSize: 12.0, color: kBodyTextColor, letterSpacing: 0.5, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
                   ),
                 ],
               ),
@@ -510,14 +499,16 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ListTile(
-                    title: CircleAvatar(
+                  Container(
+                    child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
                       child: Image.asset('assets/myearnings.png'),
                     ),
-                    subtitle: Text('MY EARNINGS',
-                      style: TextStyle(fontFamily: 'Segoe', fontSize: 10.0, color: kBodyTextColor, letterSpacing: 0.3, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
+                  ),
+                  Container(
+                    child: Text('MY EARNINGS',
+                      style: TextStyle(fontFamily: 'Segoe', fontSize: 12.0, color: kBodyTextColor, letterSpacing: 0.5, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
                   ),
                 ],
               ),
