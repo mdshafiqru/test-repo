@@ -30,14 +30,12 @@ class EarningsState extends State<Earnings> {
   Widget build(BuildContext context) {
 
     final earningsPageLogo = Center(
-      child: Container(
-        width: 80.00,
-        height: 80.00,
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: ExactAssetImage('assets/earningspage.png'),
-            fit: BoxFit.fitHeight,
-          ),
+      child: Hero(
+        tag: 'hero',
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          radius: 35.0,
+          child: Image.asset('assets/earningspage.png'),
         ),
       ),
     );
@@ -45,7 +43,7 @@ class EarningsState extends State<Earnings> {
       width: 250.00,
       height: 30,
       child: Text('Earnings',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w500), textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w700), textAlign: TextAlign.center,
       ),
     );
 
@@ -370,7 +368,7 @@ class EarningsState extends State<Earnings> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Earnings', style: TextStyle(fontFamily: 'Segoe', color: kTitleColor, letterSpacing: 0.5)),
+        title: Text('Earnings', style: TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor, letterSpacing: 0.5)),
       ),
       backgroundColor: kBackgroundColor,
       body: Container(
@@ -391,17 +389,17 @@ class EarningsState extends State<Earnings> {
             withdrawButton,
             earningChart,
             Container(
-              padding: EdgeInsets.only(bottom: 25),
+              padding: EdgeInsets.only(bottom: 30),
               color: Color(0xFFDDE0E1),
             ),
             todayMonthlyTotalEarnings,
             Container(
-              padding: EdgeInsets.only(bottom: 8),
+              padding: EdgeInsets.only(bottom: 10),
               color: Color(0xFFDDE0E1),
             ),
             averageReceivedPendingEarnings,
             Container(
-              padding: EdgeInsets.only(bottom: 14),
+              padding: EdgeInsets.only(bottom: 17),
               color: Color(0xFFDDE0E1),
             ),
           ],

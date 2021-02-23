@@ -13,6 +13,8 @@ import 'package:pro_health/ui/utilities/Constant.dart';
 import 'package:pro_health/ui/pages/Dashboard.dart';
 import 'package:pro_health/ui/pages/SignIn.dart';
 import 'DoctorProfile.dart';
+import 'message/data/ChatList.dart';
+import 'message/widget/ChatList.dart';
 
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -288,22 +290,22 @@ class AppointmentState extends State<Appointment> {
       ),
     );
 
-    final pharmaUpdateLogo = Container(
+    final appointmentLogo = Container(
       padding: EdgeInsets.only(top: 2),
       child: Hero(
         tag: 'hero',
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
-          radius: 40.0,
+          radius: 35.0,
           child: Image.asset('assets/appointments.png'),
         ),
       ),
     );
 
-    final pharmaUpdatesTitle = Container(
+    final appointmentTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
       child: Text('Appointment',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
 
@@ -316,23 +318,8 @@ class AppointmentState extends State<Appointment> {
         endIndent: 0.0,
       ),
     );
-    final comingSoon = Center(
-      child: Column(
-        children: [
-          Container(
-            width: 180,
-            height: 250,
-            padding: EdgeInsets.only(top: 70),
-            child: Image.asset('assets/comingsoon.png', fit: BoxFit.fill,),
-          ),
-          Container(
-            height: 50,
-            padding: EdgeInsets.only(top: 15.0),
-            child: Text('Coming Soon..', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
-          ),
-        ],
-      ),
-    );
+
+    // Appointment Tab
 
     final topCard = Card(
       margin: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
@@ -537,6 +524,28 @@ class AppointmentState extends State<Appointment> {
       ),
     );
 
+    // Message Tab
+
+    final messageHome = Container(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListView.builder(
+              itemCount: chatList.length,
+              shrinkWrap: true,
+              padding: EdgeInsets.only(top: 16, bottom: 20),
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index){
+                return Container(
+                  child: ChatWidget(chat: chatList[index],),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+
     return Material(
       child: DefaultTabController(
         length: 2,
@@ -549,14 +558,14 @@ class AppointmentState extends State<Appointment> {
             shadowColor: Colors.teal,
             centerTitle: true,
             toolbarHeight: 50,
-            title: Text('Appointment', style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
+            title: Text('Appointment', style: TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
           ),
           backgroundColor: kBackgroundColor,
           body: Center(
             child: Column(
               children: [
-                pharmaUpdateLogo,
-                pharmaUpdatesTitle,
+                appointmentLogo,
+                appointmentTitle,
                 verticalDivider,
                 SizedBox(height: 10,),
                 TabBar(
@@ -614,7 +623,7 @@ class AppointmentState extends State<Appointment> {
                       Container(
                         child: ListView(
                           children: [
-                            comingSoon,
+                            messageHome,
                           ],
                         ),
                       )

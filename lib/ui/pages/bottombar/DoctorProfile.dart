@@ -929,7 +929,7 @@ class DoctorProfileState extends State<DoctorProfile> {
         shadowColor: Colors.teal,
         iconTheme: IconThemeData(color: kTitleColor),
         toolbarHeight: 50,
-        title: Text('My Profile', style: TextStyle(fontFamily:'Segoe', color: kTitleColor),),
+        title: Text('My Profile', style: TextStyle(fontFamily:'Segoe', fontSize: 18, color: kTitleColor),),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(

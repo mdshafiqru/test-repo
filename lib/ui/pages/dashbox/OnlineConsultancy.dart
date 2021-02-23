@@ -12,19 +12,20 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
   @override
   Widget build(BuildContext context) {
     final onlineConsultancyLogo = Container(
-      width: 80.00,
-      height: 80.00,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: ExactAssetImage('assets/consultancypage.png'),
-            fit: BoxFit.fitHeight,
-          )),
+      child: Hero(
+        tag: 'hero',
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          radius: 35.0,
+          child: Image.asset('assets/consultancypage.png'),
+        ),
+      ),
     );
     final onlineConsultancyTitle = Container(
       width: 250.00,
       height: 30,
       child: Text('Online Consultancy',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
     final topCard = Card(
@@ -215,7 +216,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Emergency Online Consultancy', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Emergency Online Consultancy', style: TextStyle(fontFamily:'Segoe', fontSize: 18, color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(

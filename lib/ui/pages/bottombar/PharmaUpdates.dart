@@ -292,7 +292,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
         tag: 'hero',
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
-          radius: 40.0,
+          radius: 35.0,
           child: Image.asset('assets/pharmaupdate.png'),
         ),
       ),
@@ -301,7 +301,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
     final pharmaUpdatesTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
       child: Text('Pharma Updates',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
 
@@ -401,7 +401,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
             iconTheme: IconThemeData(color: kTitleColor),
             centerTitle: true,
             toolbarHeight: 50,
-            title: Text('Pharma Updates', style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
+            title: Text('Pharma Updates', style: TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
           ),
           backgroundColor: kBackgroundColor,
           body: Center(
