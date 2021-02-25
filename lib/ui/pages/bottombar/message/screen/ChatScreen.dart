@@ -4,10 +4,6 @@ import 'package:pro_health/ui/pages/bottombar/message/models/ChatList.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/ui/pages/bottombar/message/widget/Message.dart';
 import 'package:pro_health/ui/utilities/Constant.dart';
 
-void main() {
-  runApp(ChatScren());
-}
-
 class ChatScren extends StatelessWidget {
   ChatScren({Key key, this.chatList}) : super(key: key);
 
@@ -36,18 +32,19 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          color: Colors.grey[200],
+          icon: Icon(Icons.arrow_back),
+        ),
         flexibleSpace: SafeArea(
           child: Container(
             padding: EdgeInsets.only(right: 16),
             child: Row(
               children: <Widget>[
-                IconButton(
-                  onPressed: (){
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(Icons.arrow_back, color: kTitleColor,),
-                ),
-                SizedBox(width: 2,),
+                SizedBox(width: 55,),
                 CircleAvatar(
                   backgroundImage: NetworkImage(widget.chatList.userimage),
                   maxRadius: 20,
@@ -69,7 +66,7 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
         actions: [
           Container(
             padding: EdgeInsets.only(right: 20),
-            child: Icon(Icons.video_call, color: Colors.grey[200],),
+            child: Icon(Icons.videocam_rounded, color: Colors.grey[200],),
           ),
           Container(
             padding: EdgeInsets.only(right: 20),
@@ -81,7 +78,7 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
           ),
         ],
       ),
-      backgroundColor: Colors.cyan[50],
+      backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
           ListView.builder(
@@ -133,7 +130,7 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
                       child: FloatingActionButton(
                         onPressed: (){},
                         child: Icon(Icons.send,color: Colors.white,size: 17,),
-                        backgroundColor: Colors.blue,
+                        backgroundColor: kBaseColor,
                         elevation: 0,
                       ),
                     ),

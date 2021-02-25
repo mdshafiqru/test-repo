@@ -77,7 +77,7 @@ class _ChatWidgetPageState extends State<ChatWidgetPage> {
                         height: 20,
                         width: 20,
                         decoration: BoxDecoration(
-                            color: Colors.green.shade400,
+                            color: Colors.lightBlue[900],
                             borderRadius: BorderRadius.circular(50)
                         ),
                         child: Center(child: Text(widget.chat.noOfMessage, style: TextStyle(color: Colors.white),)),
