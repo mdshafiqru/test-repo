@@ -7,6 +7,7 @@ const kBaseColor = Color(0xFF01619B);
 const kButtonColor = Color(0xFF0069AA);
 const kBackgroundColor = Color(0xFFECECEE);
 //const kBackgroundColor = Color(0xFFEDEDED);
+const kCardTitleColor = Color(0xFFCECFD1);
 const kDashBoxColor = Color(0xFFFAFAFA);
 const kResendBtnColor = Color(0xFF1888B8);
 const kTitleColor = Color(0xffd3d3d3);
