@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
-import 'package:pro_health/ui/pages/subpages/UpdatePassword.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/UpdatePassword.dart';
 
 class AccountVerify extends StatefulWidget {
   static String tag = 'AccountVerify';
