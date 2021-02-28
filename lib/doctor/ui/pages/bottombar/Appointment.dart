@@ -1,20 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/pages/draweritem/AboutUs.dart';
-import 'package:pro_health/ui/pages/draweritem/ActivityStatus.dart';
-import 'package:pro_health/ui/pages/draweritem/ContactUs.dart';
-import 'package:pro_health/ui/pages/draweritem/Help.dart';
-import 'package:pro_health/ui/pages/draweritem/PrivacyAndPolicy.dart';
-import 'package:pro_health/ui/pages/draweritem/Reviews.dart';
-import 'package:pro_health/ui/pages/draweritem/Settings.dart';
-import 'package:pro_health/ui/pages/draweritem/TermsConditions.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
-
-import 'package:pro_health/ui/pages/Dashboard.dart';
-import 'package:pro_health/ui/pages/SignIn.dart';
+import 'package:flutter/services.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/AboutUs.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/ActivityStatus.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/ContactUs.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/Help.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/PrivacyAndPolicy.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/Reviews.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/Settings.dart';
+import 'package:pro_health/doctor/ui/pages/draweritem/TermsConditions.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/Dashboard.dart';
+import 'package:pro_health/doctor/ui/pages/SignIn.dart';
 import 'DoctorProfile.dart';
-import 'message/data/ChatList.dart';
-import 'message/widget/ChatList.dart';
+import 'ChatScreen.dart';
 
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -27,6 +25,19 @@ class Appointment extends StatefulWidget {
 }
 
 class AppointmentState extends State<Appointment> {
+  List<ChatList> chatList = [
+    ChatList(name: "Sohail Mahmud", lastMessage: "Hey whats up", userimage: "https://avatars.githubusercontent.com/u/46453392?s=460&u=f70020aeb9d5cbd0cbded2f162852c06ad7d72a7&v=4", time:  "Now", noOfMessage: '3'),
+    ChatList(name: "Jahidul Hasan", lastMessage: "How are you?", userimage: "https://avatars.githubusercontent.com/u/39805770?s=400&u=3c9d96d0415af804ca77c0a2dce2c0d3460f058e&v=4", time:  "3 hrs ago", noOfMessage: '1'),
+    ChatList(name: "Mohd Sami", lastMessage: "I  am your bug fan", userimage: "https://ficquotes.com/images/characters/bruce-banner-avengers.jpg", time:  "08.23", noOfMessage: '2'),
+    ChatList(name: "Kamrul Islam", lastMessage: "I want to learn flutter. ", userimage: "https://www.hindustantimes.com/rf/image_size_444x250/HT/p2/2020/06/05/Pictures/_d1034a7e-a715-11ea-b9e4-8ce809f9739c.jpg", time:  "yesterday", noOfMessage: '0'),
+    ChatList(name: "Jakir Ullah", lastMessage: "Hey Joan, How do you do?", userimage: "https://static2.srcdn.com/wordpress/wp-content/uploads/2019/08/Tony-Stark-and-Bruce-Banner-in-The-Avengers-1.jpg?q=50&fit=crop&w=960&h=500", time:  "yesterday", noOfMessage: '0'),
+    ChatList(name: "Tonmoy Datta", lastMessage: "Flutter Demo", userimage: "https://img1.looper.com/img/gallery/the-avenger-who-could-have-singlehandedly-defeated-thanos/intro-1564425786.jpg", time:  "yesterday", noOfMessage: '4'),
+    ChatList(name: "Rajesh Das", lastMessage: "Love you", userimage: "https://i.insider.com/57bf2e72b6fa0217008b4611?width=1100&format=jpeg&auto=webp", time:  "08/01/2019", noOfMessage: '0'),
+    ChatList(name: "Dilip Dey", lastMessage: "Hello What is your name", userimage: "https://images.theconversation.com/files/120476/original/image-20160428-30950-6acgv9.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop", time:  "08/01/2019", noOfMessage: '0'),
+    ChatList(name: "Ripon Hawlader", lastMessage: "Job offer", userimage: "https://i.insider.com/5dcecef7e94e86049649291a?width=1136&format=jpeg", time:  "03/12/2019", noOfMessage: '0'),
+    ChatList(name: "Labib Mahir", lastMessage: "Most Dislikes", userimage: "https://pyxis.nymag.com/v1/imgs/44e/581/197dacaf206831fdb5223da62b58cc3a38-30-avengers-characters.rsquare.w700.jpg", time:  "23/3/2019", noOfMessage: '7'),
+    ChatList(name: "Al Amin", lastMessage: "Trending Tweet", userimage: "https://qph.fs.quoracdn.net/main-qimg-11ef692748351829b4629683eff21100.webp", time:  "02/02/2012", noOfMessage: '0'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -333,22 +344,22 @@ class AppointmentState extends State<Appointment> {
           children: [
             Container(
               height: 65,
-              color: kBaseColor,
+              color: kCardTitleColor,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 12.0, top: 10.0),
-                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kTitleColor),),
+                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kBodyTextColor),),
                     alignment: Alignment.centerLeft,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 10.0),
                     child: Row(
                       children: [
-                        Icon(Icons.access_time, size: 20, color: kTitleColor),
+                        Icon(Icons.access_time, size: 20, color: kBodyTextColor),
                         SizedBox(width: 2.0,),
-                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kTitleColor),)
+                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kBodyTextColor),)
                       ],
                     ),
                   ),
@@ -390,7 +401,7 @@ class AppointmentState extends State<Appointment> {
                 alignment: Alignment.center,
                 child: new Text(
                   "Problem: ৩দিন যাবত জ্বর",
-                  style: TextStyle(fontFamily: 'Segoe', fontWeight: FontWeight.w600, letterSpacing: 0.5, fontSize: 16,),
+                  style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 16,),
                 ),
               ),
             ),
@@ -530,6 +541,28 @@ class AppointmentState extends State<Appointment> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              height: 70,
+              padding: EdgeInsets.only(left: 30, top: 25, right: 30, bottom: 5),
+              child: TextFormField(
+                keyboardType: TextInputType.text,
+                autofocus: false,
+                initialValue: '',
+                style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+                autocorrect: true,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Search',
+                  hintStyle: TextStyle(fontFamily: 'Segoe', fontSize: 20, fontWeight: FontWeight.w500),
+                  contentPadding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  prefixIcon: Container(
+                    child: Icon(Icons.search_rounded, size: 26,),
+                  ),
+                ),
+              ),
+            ),
             ListView.builder(
               itemCount: chatList.length,
               shrinkWrap: true,
