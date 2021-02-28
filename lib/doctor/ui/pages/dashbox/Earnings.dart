@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
-import 'package:pro_health/ui/pages/subpages/Withdraw.dart';
-import 'package:pro_health/ui/pages/subpages/WithdrawDetails.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/Withdraw.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/WithdrawDetails.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 
 class Earnings extends StatefulWidget {

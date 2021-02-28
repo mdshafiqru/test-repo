@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/ui/pages/subpages/AccountVerify.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/TermsAndConditions.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
-class ForgotPassword extends StatefulWidget {
-  ForgotPassword({Key key, this.title}) : super(key: key);
+class NewAccountPassword extends StatefulWidget {
+  NewAccountPassword({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'ForgotPassword';
+  static String tag = 'NewAccountPassword';
   @override
-  ForgotPasswordState createState() => new ForgotPasswordState();
+  NewAccountPasswordState createState() => new NewAccountPasswordState();
 }
 
-class ForgotPasswordState extends State<ForgotPassword> {
+class NewAccountPasswordState extends State<NewAccountPassword> {
 
 
   @override
   Widget build(BuildContext context) {
 
-    final forgotPasswordLogo = Container(
+    final newAccountPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
         tag: 'hero',
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/forgotpassword.png'),
+          child: Image.asset('assets/accountpassword.png'),
         ),
       ),
     );
@@ -32,7 +32,7 @@ class ForgotPasswordState extends State<ForgotPassword> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Forgot Password',
+      child: Text('Account Password',
         style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
@@ -50,48 +50,70 @@ class ForgotPasswordState extends State<ForgotPassword> {
     final forgotPassInstructions = Container(
       padding: EdgeInsets.only(left: 2.0, top: 30.0, right: 2.0, bottom: 120.0),
       child: Text(
-        'Please enter your previous registered phone number & BMDC no.', textAlign: TextAlign.center,
+        'Please enter new password and re-type password to sign in', textAlign: TextAlign.center,
         style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0, color: kBodyTextColor, fontWeight: FontWeight.w500),
       ),
     );
 
-    final phoneNo = Container(
+    final newPassword = Container(
       height: 70,
       padding: EdgeInsets.only(top:0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(11)],
-        keyboardType: TextInputType.number,
+        inputFormatters: [LengthLimitingTextInputFormatter(10)],
+        keyboardType: TextInputType.visiblePassword,
+        obscureText: true,
         validator: numberValidator,
         initialValue: '',
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
-            hintText: 'Phone Number',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-            prefixIcon: Icon(Icons.phone_android_rounded)
+          hintText: 'Password',
+          contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          prefixIcon: Container(
+            height: 12,
+            width: 12,
+            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            child: Image(
+              image: AssetImage(
+                'assets/password.png',
+              ),
+              fit: BoxFit.fitHeight,
+            ),
+          ),
         ),
       ),
     );
 
-    final bmdcNo = Container(
+    final reTypePassword = Container(
       height: 70,
       padding: EdgeInsets.only(top: 0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(11)],
-        keyboardType: TextInputType.streetAddress,
+        keyboardType: TextInputType.visiblePassword,
         validator: numberValidator,
+        obscureText: true,
         initialValue: '',
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
-          hintText: 'BMDC Registration No.',
+          hintText: 'Re-Type Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-          prefixIcon: Icon(Icons.app_registration),
+          prefixIcon: Container(
+            height: 12,
+            width: 12,
+            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            child: Image(
+              image: AssetImage(
+                'assets/retypepassword.png',
+              ),
+              fit: BoxFit.fitHeight,
+            ),
+          ),
         ),
       ),
     );
 
-    final getCodeButton = Container(
+    final signInButton = Container(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 100.0),
         child: MaterialButton(
@@ -99,10 +121,10 @@ class ForgotPasswordState extends State<ForgotPassword> {
             borderRadius: BorderRadius.circular(24),
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (_) => AccountVerify(mobileno: '',)));
+            Navigator.of(context).pushNamed(TermsAndConditions.tag);
           },
           color: kButtonColor,
-          child: Text('Get Code', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+          child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
         ),
       ),
     );
@@ -113,13 +135,13 @@ class ForgotPasswordState extends State<ForgotPassword> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            forgotPasswordLogo,
+            newAccountPasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
             forgotPassInstructions,
-            phoneNo,
-            bmdcNo,
-            getCodeButton,
+            newPassword,
+            reTypePassword,
+            signInButton,
           ],
         ),
       ),

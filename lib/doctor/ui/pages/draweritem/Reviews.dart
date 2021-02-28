@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class Reviews extends StatefulWidget {
@@ -51,12 +51,12 @@ class ReviewsState extends State<Reviews> {
         children: [
           Container(
             padding: EdgeInsets.only(left: 30.0, top: 30.0, right: 20.0, bottom: 10.0),
-            child: Text('Reviews (100)', style: TextStyle(fontFamily: 'Segoe', fontSize: 16, color: kTextLightColor, fontWeight: FontWeight.w500),),
+            child: Text('Reviews (100)', style: TextStyle(fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.5, color: kTextLightColor, fontWeight: FontWeight.w600),),
           ),
-          SizedBox(width: 140,),
+          SizedBox(width: 135,),
           Container(
             padding: EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0, bottom: 10.0),
-            child: Text('Ratings (5.0)', style: TextStyle(fontFamily: 'Segoe', fontSize: 16, color: kTextLightColor, fontWeight: FontWeight.w500),),
+            child: Text('Ratings (5.0)', style: TextStyle(fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.5, color: kTextLightColor, fontWeight: FontWeight.w600),),
           )
         ],
       ),

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
-class TermsConditions extends StatefulWidget {
-  TermsConditions({Key key, this.title}) : super(key: key);
+class Help extends StatefulWidget {
+  Help({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'TermsConditions';
+  static String tag = 'Help';
   @override
-  TermsConditionsState createState() => new TermsConditionsState();
+  HelpState createState() => new HelpState();
 }
 
-class TermsConditionsState extends State<TermsConditions> {
+class HelpState extends State<Help> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class TermsConditionsState extends State<TermsConditions> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/termsconditionpage.png'),
+          child: Image.asset('assets/helppage.png'),
         ),
       ),
     );
@@ -29,7 +29,7 @@ class TermsConditionsState extends State<TermsConditions> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Terms and Conditions',
+      child: Text('Help',
         style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
@@ -73,7 +73,7 @@ class TermsConditionsState extends State<TermsConditions> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Terms and Conditions', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Help', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(

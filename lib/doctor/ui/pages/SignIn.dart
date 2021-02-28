@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/ui/pages/Dashboard.dart';
-import 'package:pro_health/ui/pages/subpages/CreateNewAccount.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
-import 'package:pro_health/ui/pages/subpages/ForgotPassword.dart';
+import 'package:pro_health/doctor/ui/pages/Dashboard.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/CreateNewAccount.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/ForgotPassword.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key key, this.title}) : super(key: key);

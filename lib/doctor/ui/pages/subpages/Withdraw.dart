@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class Withdraw extends StatefulWidget {
   static String tag = 'Withdraw';

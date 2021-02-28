@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
-class Settings extends StatefulWidget {
-  Settings({Key key, this.title}) : super(key: key);
+class TermsConditions extends StatefulWidget {
+  TermsConditions({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'Settings';
+  static String tag = 'TermsConditions';
   @override
-  SettingsState createState() => new SettingsState();
+  TermsConditionsState createState() => new TermsConditionsState();
 }
 
-class SettingsState extends State<Settings> {
+class TermsConditionsState extends State<TermsConditions> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SettingsState extends State<Settings> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/settingspage.png'),
+          child: Image.asset('assets/termsconditionpage.png'),
         ),
       ),
     );
@@ -29,7 +29,7 @@ class SettingsState extends State<Settings> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Settings',
+      child: Text('Terms and Conditions',
         style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
@@ -73,7 +73,7 @@ class SettingsState extends State<Settings> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Settings', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Terms and Conditions', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:settings_ui/settings_ui.dart';
 
-class PrivacyAndPolicy extends StatefulWidget {
-  PrivacyAndPolicy({Key key, this.title}) : super(key: key);
+class Settings extends StatefulWidget {
+  Settings({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'PrivacyAndPolicy';
+  static String tag = 'Settings';
   @override
-  PrivacyAndPolicyState createState() => new PrivacyAndPolicyState();
+  SettingsState createState() => new SettingsState();
 }
 
-class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
+class SettingsState extends State<Settings> {
+  bool value;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/privacypage.png'),
+          child: Image.asset('assets/settingspage.png'),
         ),
       ),
     );
@@ -29,7 +31,7 @@ class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Privacy and Policy',
+      child: Text('Settings',
         style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
@@ -44,23 +46,6 @@ class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
       ),
     );
 
-    final comingSoon = Center(
-      child: Column(
-        children: [
-          Container(
-            width: 180,
-            height: 250,
-            padding: EdgeInsets.only(top: 70),
-            child: Image.asset('assets/comingsoon.png', fit: BoxFit.fill,),
-          ),
-          Container(
-            height: 50,
-            padding: EdgeInsets.only(top: 15.0),
-            child: Text('Coming Soon..', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
-          ),
-        ],
-      ),
-    );
 
     return Scaffold(
       appBar: AppBar(
@@ -73,7 +58,7 @@ class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Privacy and Policy', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Settings', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -83,7 +68,29 @@ class PrivacyAndPolicyState extends State<PrivacyAndPolicy> {
             newAccountPasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
-            comingSoon,
+            Container(
+              child: SettingsList(
+                sections: [
+                  SettingsSection(
+                    title: 'Section',
+                    tiles: [
+                      SettingsTile(
+                        title: 'Language',
+                        subtitle: 'English',
+                        leading: Icon(Icons.language),
+                        onPressed: (BuildContext context) {},
+                      ),
+                      SettingsTile.switchTile(
+                        title: 'Use fingerprint',
+                        leading: Icon(Icons.fingerprint),
+                        switchValue: value,
+                        onToggle: (bool value) {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

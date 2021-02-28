@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/ui/pages/subpages/TermsAndConditions.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/Dashboard.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
-class NewAccountPassword extends StatefulWidget {
-  NewAccountPassword({Key key, this.title}) : super(key: key);
+class UpdatePassword extends StatefulWidget {
+  UpdatePassword({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'NewAccountPassword';
+  static String tag = 'UpdatePassword';
   @override
-  NewAccountPasswordState createState() => new NewAccountPasswordState();
+  UpdatePasswordState createState() => new UpdatePasswordState();
 }
 
-class NewAccountPasswordState extends State<NewAccountPassword> {
+class UpdatePasswordState extends State<UpdatePassword> {
 
 
   @override
   Widget build(BuildContext context) {
 
-    final newAccountPasswordLogo = Container(
+    final forgotPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
         tag: 'hero',
         child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: 40.0,
-          child: Image.asset('assets/accountpassword.png'),
+          radius: 42,
+          backgroundColor: kBodyTextColor,
+          child: CircleAvatar(
+            backgroundColor: kWhiteShade,
+            radius: 41,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 40.0,
+              child: Image.asset('assets/doctorimg.png'),
+            ),
+          ),
         ),
       ),
     );
@@ -32,8 +40,8 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Account Password',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text('Pro. Mohammed Hanif',
+        style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
 
@@ -121,7 +129,7 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
             borderRadius: BorderRadius.circular(24),
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed(TermsAndConditions.tag);
+            Navigator.of(context).pushNamed(Dashboard.tag);
           },
           color: kButtonColor,
           child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
@@ -135,7 +143,7 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            newAccountPasswordLogo,
+            forgotPasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
             forgotPassInstructions,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class OnlineConsultancy extends StatefulWidget {
   static String tag = 'OnlineConsultancy';
@@ -40,22 +40,22 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
           children: [
             Container(
               height: 65,
-              color: kBaseColor,
+              color: kCardTitleColor,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 12.0, top: 10.0),
-                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kTitleColor),),
+                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kBodyTextColor),),
                     alignment: Alignment.centerLeft,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 10.0),
                     child: Row(
                       children: [
-                        Icon(Icons.access_time, size: 20, color: kTitleColor),
+                        Icon(Icons.access_time, size: 20, color: kBodyTextColor),
                         SizedBox(width: 2.0,),
-                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kTitleColor),)
+                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kBodyTextColor),)
                       ],
                     ),
                   ),

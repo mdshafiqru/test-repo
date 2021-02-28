@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class DrugInfo extends StatefulWidget {
   static String tag = 'DrugInfo';

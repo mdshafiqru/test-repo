@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/pages/Dashboard.dart';
-import 'package:pro_health/ui/pages/SignIn.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/Dashboard.dart';
+import 'package:pro_health/doctor/ui/pages/SignIn.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class TermsAndConditions extends StatefulWidget {
   TermsAndConditions({Key key, this.title}) : super(key: key);

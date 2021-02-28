@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
-import 'package:pro_health/ui/pages/SignIn.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/SignIn.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -43,12 +43,10 @@ class HomeScreenState extends State<HomeScreen> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const ListTile(
-                //leading: Icon(Icons.person_add_sharp, color: Colors.white, size: 40),
                 leading: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 30.0,
                   backgroundImage: AssetImage('assets/doctorsignin.png'),
-                  // no matter how big it is, it won't overflow
                 ),
                 title: Text('Sign In as Doctor',
                   style: TextStyle(fontFamily: 'Segoe', fontSize: 20.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.bold),
@@ -82,7 +80,6 @@ class HomeScreenState extends State<HomeScreen> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const ListTile(
-                //leading: Icon(Icons.person_add_sharp, color: Colors.white, size: 40),
                 leading: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 30.0,
