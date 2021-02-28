@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/ui/pages/subpages/NewAccountVerify.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/pages/subpages/NewAccountVerify.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class CreateNewAccount extends StatefulWidget {
   CreateNewAccount({Key key, this.title}) : super(key: key);
