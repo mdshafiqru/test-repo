@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:pro_health/ui/utilities/Constant.dart';
+import 'package:pro_health/doctor/ui/utilities/Constant.dart';
 
 class ActivityStatus extends StatefulWidget {
   ActivityStatus({Key key, this.title}) : super(key: key);
