@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({Key key, this.chatList}) : super(key: key);
