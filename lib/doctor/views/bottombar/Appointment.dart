@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/AboutUs.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/ActivityStatus.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/ContactUs.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/Help.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/PrivacyAndPolicy.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/Reviews.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/Settings.dart';
-import 'package:pro_health/doctor/ui/pages/draweritem/TermsConditions.dart';
-import 'package:pro_health/doctor/ui/utilities/Constant.dart';
-import 'package:pro_health/doctor/ui/pages/Dashboard.dart';
-import 'package:pro_health/doctor/ui/pages/SignIn.dart';
+import 'package:pro_health/doctor/views/draweritem/AboutUs.dart';
+import 'package:pro_health/doctor/views/draweritem/ActivityStatus.dart';
+import 'package:pro_health/doctor/views/draweritem/ContactUs.dart';
+import 'package:pro_health/doctor/views/draweritem/Help.dart';
+import 'package:pro_health/doctor/views/draweritem/PrivacyAndPolicy.dart';
+import 'package:pro_health/doctor/views/draweritem/Reviews.dart';
+import 'package:pro_health/doctor/views/draweritem/Settings.dart';
+import 'package:pro_health/doctor/views/draweritem/TermsConditions.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/doctor/views/Dashboard.dart';
+import 'package:pro_health/doctor/views/signin.dart';
 import 'DoctorProfile.dart';
 import 'ChatScreen.dart';
 
