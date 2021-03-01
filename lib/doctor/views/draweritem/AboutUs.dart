@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
 
 class AboutUs extends StatefulWidget {
   AboutUs({Key key, this.title}) : super(key: key);
