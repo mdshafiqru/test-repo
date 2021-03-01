@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_health/doctor/ui/utilities/Constant.dart';
-import 'package:pro_health/doctor/ui/pages/SignIn.dart';
+import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/doctor/views/signin.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
