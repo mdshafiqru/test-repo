@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/configs/routes.dart';
-import 'package:pro_health/doctor/ui/pages/HomeScreen.dart';
-import 'package:pro_health/doctor/ui/utilities/Constant.dart';
+import 'package:pro_health/app/app_view.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class App extends StatelessWidget {
 
