@@ -86,7 +86,7 @@ class AccountVerifyState extends State<AccountVerify> with SingleTickerProviderS
     return Padding(
       padding: EdgeInsets.only(top: 10.0, left: 8.0, bottom: 25.0, right: 8.0),
       child: Text(
-        "Please enter the OTP sent on your registered phone number",
+        "Please enter the OTP sent to your registered phone number",
         textAlign: TextAlign.center,
         style: new TextStyle(
           fontFamily: 'Segoe', color: kBodyTextColor,),
