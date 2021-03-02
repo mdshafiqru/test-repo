@@ -18,7 +18,7 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:weekday_selector/weekday_selector.dart';
 
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';
@@ -520,7 +520,7 @@ class DoctorProfileState extends State<DoctorProfile> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed(SignIn.tag);
+                  Navigator.of(context).pushNamed(SignInDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
