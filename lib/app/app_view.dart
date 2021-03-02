@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/doctor/views/signin.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/signin/signin_patient.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -57,7 +58,7 @@ class HomeScreenState extends State<HomeScreen> {
             ],
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed(SignIn.tag);
+            Navigator.of(context).pushNamed(SignInDoctor.tag);
           },
         ),
       ),
@@ -94,7 +95,7 @@ class HomeScreenState extends State<HomeScreen> {
             ],
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed('');
+            Navigator.of(context).pushNamed(SignInPatient.tag);
           },
         ),
       ),
