@@ -10,7 +10,7 @@ import 'package:pro_health/doctor/views/draweritem/Settings.dart';
 import 'package:pro_health/doctor/views/draweritem/TermsConditions.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 import 'DoctorProfile.dart';
 import 'ChatScreen.dart';
 
@@ -257,7 +257,7 @@ class AppointmentState extends State<Appointment> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed(SignIn.tag);
+                  Navigator.of(context).pushNamed(SignInDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
