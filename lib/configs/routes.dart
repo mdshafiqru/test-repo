@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
 import 'package:pro_health/app/app_view.dart';
-import 'package:pro_health/doctor/views/signin.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/Appointment.dart';
 import 'package:pro_health/doctor/views/bottombar/DoctorProfile.dart';
 import 'package:pro_health/doctor/views/bottombar/Home.dart';
@@ -28,12 +28,17 @@ import 'package:pro_health/doctor/views/subpages/TermsAndConditions.dart';
 import 'package:pro_health/doctor/views/subpages/UpdatePassword.dart';
 import 'package:pro_health/doctor/views/subpages/Withdraw.dart';
 import 'package:pro_health/doctor/views/subpages/WithdrawDetails.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/signin/signin_patient.dart';
+import 'package:pro_health/patient/views/forgot_pass/forgot_password_patient.dart';
+import 'package:pro_health/patient/views/update_pass/update_password_patient.dart';
+import 'package:pro_health/patient/views/verification/account_verify_patient.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
-  // Doctor
   HomeScreen.tag: (context) => HomeScreen(),
-  SignIn.tag: (context) => SignIn(),
+
+  // Doctor
+  SignInDoctor.tag: (context) => SignInDoctor(),
   Dashboard.tag: (context) => Dashboard(),
   Home.tag: (context) => Home(),
   Appointment.tag: (context) => Appointment(),
@@ -63,5 +68,9 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   Reviews.tag: (context) => Reviews(),
 
   // Patient
+  SignInPatient.tag: (context) => SignInPatient(),
+  ForgotPasswordPatient.tag: (context) => ForgotPasswordPatient(),
+  AccountVerifyPatient.tag: (context) => AccountVerifyPatient(mobileno: ''),
+  UpdatePasswordPatient.tag: (context) => UpdatePasswordPatient(),
 
 };

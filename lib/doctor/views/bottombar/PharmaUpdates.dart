@@ -10,7 +10,7 @@ import 'package:pro_health/doctor/views/draweritem/TermsConditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/SignIn.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 import 'DoctorProfile.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -242,7 +242,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed(SignIn.tag);
+                  Navigator.of(context).pushNamed(SignInDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

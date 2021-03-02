@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/subpages/CreateNewAccount.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
-import 'package:pro_health/doctor/views/subpages/ForgotPassword.dart';
+import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/patient/views/forgot_pass/forgot_password_patient.dart';
 
-class SignIn extends StatefulWidget {
-  SignIn({Key key, this.title}) : super(key: key);
+class SignInPatient extends StatefulWidget {
+  SignInPatient({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'SignIn';
+  static String tag = 'SignInPatient';
   @override
-  SignInState createState() => new SignInState();
+  SignInPatientState createState() => new SignInPatientState();
 }
 
-class SignInState extends State<SignIn> {
+class SignInPatientState extends State<SignInPatient> {
 
   bool showvalue = false;
   bool _passwordVisible;
@@ -39,7 +37,7 @@ class SignInState extends State<SignIn> {
     );
 
     final signInInstructions = Padding(
-      padding: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 40.0),
+      padding: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 60.0),
       child: Text(
         'Please enter following informations to sign in', textAlign: TextAlign.center,
         style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.w500),
@@ -68,35 +66,6 @@ class SignInState extends State<SignIn> {
             child: Image(
               image: AssetImage(
                 'assets/phoneno.png',
-              ),
-              fit: BoxFit.fitHeight,
-            ),
-          ),
-        ),
-      ),
-    );
-
-    final bmdcNo = Container(
-      height: 70,
-      padding: EdgeInsets.only(bottom: 20),
-      child: TextFormField(
-        inputFormatters: [LengthLimitingTextInputFormatter(11)],
-        keyboardType: TextInputType.streetAddress,
-        validator: numberValidator,
-        autofocus: false,
-        initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
-        decoration: InputDecoration(
-          hintText: 'BMDC Registration No.',
-          contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-          prefixIcon: Container(
-            height: 10,
-            width: 10,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
-            child: Image(
-              image: AssetImage(
-                'assets/bmdcno.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -150,13 +119,13 @@ class SignInState extends State<SignIn> {
     );
 
     final signInButton = Padding(
-      padding: EdgeInsets.symmetric(horizontal: 100.0),
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100.0),
       child: MaterialButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.tag);
+          Navigator.of(context).pushNamed('');
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
@@ -202,7 +171,7 @@ class SignInState extends State<SignIn> {
               child: Text('Forgotten Password?', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15), textAlign: TextAlign.right,),
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(ForgotPassword.tag);
+              Navigator.of(context).pushNamed(ForgotPasswordPatient.tag);
             },
           ),
         ],
@@ -216,7 +185,7 @@ class SignInState extends State<SignIn> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(CreateNewAccount.tag);
+          Navigator.of(context).pushNamed('');
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
@@ -234,7 +203,6 @@ class SignInState extends State<SignIn> {
             signInLogo,
             signInInstructions,
             phoneNo,
-            bmdcNo,
             password,
             signInButton,
             rememberForgotLabel,

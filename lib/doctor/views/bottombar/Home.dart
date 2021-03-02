@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/SignIn.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/DoctorProfile.dart';
 import 'package:pro_health/doctor/views/dashbox/Earnings.dart';
 import 'package:pro_health/doctor/views/dashbox/ConsultationHistory.dart';
@@ -322,7 +322,7 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed(SignIn.tag);
+                  Navigator.of(context).pushNamed(SignInDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

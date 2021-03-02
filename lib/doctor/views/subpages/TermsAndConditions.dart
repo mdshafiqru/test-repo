@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin.dart';
+import 'package:pro_health/doctor/views/signin_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 class TermsAndConditions extends StatefulWidget {
@@ -75,7 +75,7 @@ class TermsAndConditionsState extends State<TermsAndConditions> {
                 borderRadius: BorderRadius.circular(24),
               ),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) => SignIn()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => SignInDoctor()));
               },
               padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
               color: Colors.red,
