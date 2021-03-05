@@ -18,7 +18,7 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:weekday_selector/weekday_selector.dart';
 
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';

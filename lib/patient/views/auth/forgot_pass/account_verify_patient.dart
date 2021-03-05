@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/update_pass/update_password_patient.dart';
+import 'package:pro_health/patient/views/auth/forgot_pass/update_password_patient.dart';
 
 class AccountVerifyPatient extends StatefulWidget {
   static String tag = 'AccountVerifyPatient';

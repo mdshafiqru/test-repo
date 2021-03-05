@@ -28,7 +28,7 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:simple_autocomplete_formfield/simple_autocomplete_formfield.dart';
 
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 import 'DoctorProfile.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -1406,7 +1406,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   borderRadius: BorderRadius.circular(25),
                 ),
                 padding: EdgeInsets.only(left: 6, top: 6, right: 6, bottom: 6),
-                color: kDashBoxColor,
+                color: kButtonColor,
                 child: Text('Add', style: TextStyle(fontFamily: 'Segoe', fontSize: 15, color: Colors.white, fontWeight: FontWeight.w700)),
               ),
             ),
@@ -1636,7 +1636,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
         ),
         padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 8),
         color: kWhiteShadow,
-        child: Text('Telemedicine', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
+        child: Text('Send to Patient', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
       ),
     );
 
@@ -1849,7 +1849,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
             MaterialButton(
@@ -1860,7 +1860,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
           ],
@@ -1881,7 +1881,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
             MaterialButton(
@@ -1892,7 +1892,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
           ],
@@ -1914,7 +1914,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
             MaterialButton(
@@ -1925,7 +1925,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 Navigator.of(context).pop();
               },
               padding: EdgeInsets.all(10),
-              color: kDashBoxColor,
+              color: kButtonColor,
               child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
             ),
           ],
@@ -1947,7 +1947,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               Navigator.of(context).pop();
             },
             padding: EdgeInsets.all(10),
-            color: kDashBoxColor,
+            color: kButtonColor,
             child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
           ),
           MaterialButton(
@@ -1958,7 +1958,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               Navigator.of(context).pop();
             },
             padding: EdgeInsets.all(10),
-            color: kDashBoxColor,
+            color: kButtonColor,
             child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
           ),
         ],

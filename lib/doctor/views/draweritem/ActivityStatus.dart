@@ -66,7 +66,7 @@ class ActivityStatusState extends State<ActivityStatus> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: FlutterSwitch(
-                  width: 80.0,
+                  width: 50.0,
                   height: 25.0,
                   valueFontSize: 12.0,
                   toggleSize: 18.0,
@@ -102,7 +102,7 @@ class ActivityStatusState extends State<ActivityStatus> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: FlutterSwitch(
-                  width: 80.0,
+                  width: 50.0,
                   height: 25.0,
                   valueFontSize: 12.0,
                   toggleSize: 18.0,
@@ -138,7 +138,7 @@ class ActivityStatusState extends State<ActivityStatus> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: FlutterSwitch(
-                  width: 80.0,
+                  width: 50.0,
                   height: 25.0,
                   valueFontSize: 12.0,
                   toggleSize: 18.0,

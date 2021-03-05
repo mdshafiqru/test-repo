@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
 
-class TermsAndConditions extends StatefulWidget {
-  TermsAndConditions({Key key, this.title}) : super(key: key);
+class TermsAndConditionsPatient extends StatefulWidget {
+  TermsAndConditionsPatient({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'TermsAndConditions';
+  static String tag = 'TermsAndConditionsPatient';
   @override
-  TermsAndConditionsState createState() => new TermsAndConditionsState();
+  TermsAndConditionsPatientState createState() => new TermsAndConditionsPatientState();
 }
 
-class TermsAndConditionsState extends State<TermsAndConditions> {
+class TermsAndConditionsPatientState extends State<TermsAndConditionsPatient> {
 
 
   @override
@@ -53,8 +52,8 @@ class TermsAndConditionsState extends State<TermsAndConditions> {
         padding: EdgeInsets.only(left: 25.0, top: 30.0, right: 25.0, bottom: 20.0),
         child: Text(
           'These terms and conditions are a set of rules about use of an application. '
-              'They set out how users may use the site or application, and what they can and cannot do on the application. '
-              'For example, if a user posts offensive or defamatory content on a website, the owner of the app will want'
+              'They set out how users may use the application, and what they can and cannot do on the application. '
+              'For example, if a user posts offensive or defamatory content on an application, the owner of the app will want'
               ' to have terms and conditions to fall back on which clearly state that the owner of the app does not permit '
               'or take responsibility for that offensive content, and that any liability (such as a defamation claim) '
               'should therefore sit with the user.\nIn addition, the owner of the site may want to have the ability to '
@@ -75,7 +74,7 @@ class TermsAndConditionsState extends State<TermsAndConditions> {
                 borderRadius: BorderRadius.circular(24),
               ),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) => SignInDoctor()));
+                Navigator.of(context).pushNamed(SignInPatient.tag);
               },
               padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
               color: Colors.red,
@@ -90,7 +89,7 @@ class TermsAndConditionsState extends State<TermsAndConditions> {
                 borderRadius: BorderRadius.circular(24),
               ),
               onPressed: () {
-                Navigator.of(context).pushNamed(Dashboard.tag);
+                Navigator.of(context).pushNamed('');
               },
               padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
               color: kButtonColor,

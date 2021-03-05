@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/verification/account_verify_patient.dart';
+import 'account_verify_patient.dart';
 
 class ForgotPasswordPatient extends StatefulWidget {
   ForgotPasswordPatient({Key key, this.title}) : super(key: key);

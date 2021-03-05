@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
 import 'package:pro_health/app/app_view.dart';
-import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/Appointment.dart';
 import 'package:pro_health/doctor/views/bottombar/DoctorProfile.dart';
 import 'package:pro_health/doctor/views/bottombar/Home.dart';
@@ -28,10 +28,15 @@ import 'package:pro_health/doctor/views/subpages/TermsAndConditions.dart';
 import 'package:pro_health/doctor/views/subpages/UpdatePassword.dart';
 import 'package:pro_health/doctor/views/subpages/Withdraw.dart';
 import 'package:pro_health/doctor/views/subpages/WithdrawDetails.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/signin/signin_patient.dart';
-import 'package:pro_health/patient/views/forgot_pass/forgot_password_patient.dart';
-import 'package:pro_health/patient/views/update_pass/update_password_patient.dart';
-import 'package:pro_health/patient/views/verification/account_verify_patient.dart';
+import 'package:pro_health/patient/views/auth/forgot_pass/account_verify_patient.dart';
+import 'package:pro_health/patient/views/auth/forgot_pass/forgot_password_patient.dart';
+import 'package:pro_health/patient/views/auth/forgot_pass/update_password_patient.dart';
+import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
+import 'package:pro_health/patient/views/auth/signup/account_password_patient.dart';
+import 'package:pro_health/patient/views/auth/signup/create_account_patient.dart';
+import 'package:pro_health/patient/views/auth/signup/naccount_verify_patient.dart';
+import 'package:pro_health/patient/views/auth/signup/terms_conditions_patient.dart';
+
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
@@ -72,5 +77,9 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   ForgotPasswordPatient.tag: (context) => ForgotPasswordPatient(),
   AccountVerifyPatient.tag: (context) => AccountVerifyPatient(mobileno: ''),
   UpdatePasswordPatient.tag: (context) => UpdatePasswordPatient(),
+  CreateAccountPatient.tag: (context) => CreateAccountPatient(),
+  NewAccountVerifyPatient.tag: (context) => NewAccountVerifyPatient(mobileno: '',),
+  AccountPasswordPatient.tag: (context) => AccountPasswordPatient(),
+  TermsAndConditionsPatient.tag: (context) => TermsAndConditionsPatient(),
 
 };

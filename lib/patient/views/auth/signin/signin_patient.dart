@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/forgot_pass/forgot_password_patient.dart';
+import 'package:pro_health/patient/views/auth/forgot_pass/forgot_password_patient.dart';
+import 'package:pro_health/patient/views/auth/signup/create_account_patient.dart';
 
 class SignInPatient extends StatefulWidget {
   SignInPatient({Key key, this.title}) : super(key: key);
@@ -82,7 +83,6 @@ class SignInPatientState extends State<SignInPatient> {
         keyboardType: TextInputType.visiblePassword,
         validator: numberValidator,
         obscureText: !_passwordVisible,
-        //obscuringCharacter: "*",
         initialValue: '',
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
@@ -185,7 +185,7 @@ class SignInPatientState extends State<SignInPatient> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(CreateAccountPatient.tag);
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,

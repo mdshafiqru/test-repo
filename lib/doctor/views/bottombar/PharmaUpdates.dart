@@ -10,7 +10,7 @@ import 'package:pro_health/doctor/views/draweritem/TermsConditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 import 'DoctorProfile.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';

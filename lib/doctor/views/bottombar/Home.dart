@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/signin_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/DoctorProfile.dart';
 import 'package:pro_health/doctor/views/dashbox/Earnings.dart';
 import 'package:pro_health/doctor/views/dashbox/ConsultationHistory.dart';

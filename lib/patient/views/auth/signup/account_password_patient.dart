@@ -1,18 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/patient/views/auth/signup/terms_conditions_patient.dart';
 
-class UpdatePasswordPatient extends StatefulWidget {
-  UpdatePasswordPatient({Key key, this.title}) : super(key: key);
+class AccountPasswordPatient extends StatefulWidget {
+  AccountPasswordPatient({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'UpdatePasswordPatient';
+  static String tag = 'AccountPasswordPatient';
   @override
-  UpdatePasswordPatientState createState() => new UpdatePasswordPatientState();
+  AccountPasswordPatientState createState() => new AccountPasswordPatientState();
 }
 
-class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
+class AccountPasswordPatientState extends State <AccountPasswordPatient> {
 
+  bool _passwordVisible;
+  bool _reTypePasswordVisible;
+  @override
+  void initState() {
+    _passwordVisible = false;
+    _reTypePasswordVisible = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +30,9 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
       child: Hero(
         tag: 'hero',
         child: CircleAvatar(
-          radius: 42,
-          backgroundColor: kBodyTextColor,
-          child: CircleAvatar(
-            backgroundColor: kWhiteShade,
-            radius: 41,
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: 40.0,
-              child: Image.asset('assets/apatient.png'),
-            ),
-          ),
+          backgroundColor: Colors.transparent,
+          radius: 40.0,
+          child: Image.asset('assets/ppasswordpage.png'),
         ),
       ),
     );
@@ -40,8 +40,8 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('MD Jahidul Hasan',
-        style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text('Account Passowrd',
+        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
 
@@ -69,7 +69,7 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(10)],
         keyboardType: TextInputType.visiblePassword,
-        obscureText: true,
+        obscureText: !_passwordVisible,
         validator: numberValidator,
         initialValue: '',
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
@@ -88,6 +88,18 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
               fit: BoxFit.fitHeight,
             ),
           ),
+          suffixIcon: IconButton(
+            icon: Icon(
+              _passwordVisible
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                _passwordVisible = !_passwordVisible;
+              });
+            },
+          ),
         ),
       ),
     );
@@ -99,7 +111,7 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
         inputFormatters: [LengthLimitingTextInputFormatter(11)],
         keyboardType: TextInputType.visiblePassword,
         validator: numberValidator,
-        obscureText: true,
+        obscureText: !_reTypePasswordVisible,
         initialValue: '',
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
@@ -117,6 +129,18 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
               fit: BoxFit.fitHeight,
             ),
           ),
+          suffixIcon: IconButton(
+            icon: Icon(
+              _reTypePasswordVisible
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                _reTypePasswordVisible = !_reTypePasswordVisible;
+              });
+            },
+          ),
         ),
       ),
     );
@@ -129,7 +153,7 @@ class UpdatePasswordPatientState extends State<UpdatePasswordPatient> {
             borderRadius: BorderRadius.circular(24),
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed('');
+            Navigator.of(context).pushNamed(TermsAndConditionsPatient.tag);
           },
           color: kButtonColor,
           child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
