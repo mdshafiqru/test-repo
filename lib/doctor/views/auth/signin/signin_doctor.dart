@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/Dashboard.dart';
-import 'package:pro_health/doctor/views/subpages/CreateNewAccount.dart';
+import '../../dashboard/dashboard_doctor.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signup/create_account_doctor.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
-import 'package:pro_health/doctor/views/subpages/ForgotPassword.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/forgot_pass/ForgotPassword.dart';
 
 class SignInDoctor extends StatefulWidget {
   SignInDoctor({Key key, this.title}) : super(key: key);
@@ -156,7 +156,7 @@ class SignInDoctorState extends State<SignInDoctor> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.tag);
+          Navigator.of(context).pushNamed(DashboardDoctor.tag);
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,

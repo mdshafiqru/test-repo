@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:pro_health/doctor/views/Dashboard.dart';
+import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/dashboard/dashboard_doctor.dart';
 import 'package:pro_health/app/app_view.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/Appointment.dart';
-import 'package:pro_health/doctor/views/bottombar/DoctorProfile.dart';
-import 'package:pro_health/doctor/views/bottombar/Home.dart';
-import 'package:pro_health/doctor/views/bottombar/PharmaUpdates.dart';
-import 'package:pro_health/doctor/views/bottombar/Prescription.dart';
-import 'package:pro_health/doctor/views/dashbox/ConsultationHistory.dart';
-import 'package:pro_health/doctor/views/dashbox/Earnings.dart';
-import 'package:pro_health/doctor/views/dashbox/OnlineConsultancy.dart';
-import 'package:pro_health/doctor/views/dashbox/DrugInfo.dart';
-import 'package:pro_health/doctor/views/draweritem/AboutUs.dart';
-import 'package:pro_health/doctor/views/draweritem/ActivityStatus.dart';
-import 'package:pro_health/doctor/views/draweritem/ContactUs.dart';
-import 'package:pro_health/doctor/views/draweritem/Help.dart';
-import 'package:pro_health/doctor/views/draweritem/PrivacyAndPolicy.dart';
-import 'package:pro_health/doctor/views/draweritem/Reviews.dart';
-import 'package:pro_health/doctor/views/draweritem/Settings.dart';
-import 'package:pro_health/doctor/views/draweritem/TermsConditions.dart';
-import 'package:pro_health/doctor/views/subpages/AccountVerify.dart';
-import 'package:pro_health/doctor/views/subpages/CreateNewAccount.dart';
-import 'package:pro_health/doctor/views/subpages/ForgotPassword.dart';
-import 'package:pro_health/doctor/views/subpages/NewAccountPassword.dart';
-import 'package:pro_health/doctor/views/subpages/NewAccountVerify.dart';
-import 'package:pro_health/doctor/views/subpages/TermsAndConditions.dart';
-import 'package:pro_health/doctor/views/subpages/UpdatePassword.dart';
-import 'package:pro_health/doctor/views/subpages/Withdraw.dart';
-import 'package:pro_health/doctor/views/subpages/WithdrawDetails.dart';
+import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
+import 'package:pro_health/doctor/views/bottombar/appointment/appointment_doctor.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/home/home_doctor.dart';
+import 'package:pro_health/doctor/views/bottombar/pharma_updates/pharma_updates.dart';
+import 'package:pro_health/doctor/views/bottombar/prescription/prescription.dart';
+import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
+import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
+import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
+import 'package:pro_health/doctor/views/dashboard/drug_info/drug_info.dart';
+import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
+import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
+import 'package:pro_health/doctor/views/drawer/ContactUs.dart';
+import 'package:pro_health/doctor/views/drawer/Help.dart';
+import 'package:pro_health/doctor/views/drawer/PrivacyAndPolicy.dart';
+import 'package:pro_health/doctor/views/drawer/Reviews.dart';
+import 'package:pro_health/doctor/views/drawer/Settings.dart';
+import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
+import 'package:pro_health/doctor/views/auth/forgot_pass/AccountVerify.dart';
+import 'package:pro_health/doctor/views/auth/signup/create_account_doctor.dart';
+import 'package:pro_health/doctor/views/auth/forgot_pass/ForgotPassword.dart';
+import 'package:pro_health/doctor/views/auth/signup/account_password.dart';
+import 'package:pro_health/doctor/views/auth/signup/account_verify_new.dart';
+import 'package:pro_health/doctor/views/auth/signup/terms_and_conditions.dart';
+import 'package:pro_health/doctor/views/auth/forgot_pass/UpdatePassword.dart';
+import 'package:pro_health/doctor/views/dashboard/earnings/withdraw.dart';
+import 'package:pro_health/doctor/views/dashboard/earnings/WithdrawDetails.dart';
 import 'package:pro_health/patient/views/auth/forgot_pass/account_verify_patient.dart';
 import 'package:pro_health/patient/views/auth/forgot_pass/forgot_password_patient.dart';
 import 'package:pro_health/patient/views/auth/forgot_pass/update_password_patient.dart';
@@ -36,6 +36,8 @@ import 'package:pro_health/patient/views/auth/signup/account_password_patient.da
 import 'package:pro_health/patient/views/auth/signup/create_account_patient.dart';
 import 'package:pro_health/patient/views/auth/signup/naccount_verify_patient.dart';
 import 'package:pro_health/patient/views/auth/signup/terms_conditions_patient.dart';
+import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
+import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
 
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -44,7 +46,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // Doctor
   SignInDoctor.tag: (context) => SignInDoctor(),
-  Dashboard.tag: (context) => Dashboard(),
+  DashboardDoctor.tag: (context) => DashboardDoctor(),
   Home.tag: (context) => Home(),
   Appointment.tag: (context) => Appointment(),
   PharmaUpdates.tag: (context) => PharmaUpdates(),
@@ -74,6 +76,8 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // Patient
   SignInPatient.tag: (context) => SignInPatient(),
+  DashboardPatient.tag: (context) => DashboardPatient(),
+  HomePatient.tag: (context) => HomePatient(),
   ForgotPasswordPatient.tag: (context) => ForgotPasswordPatient(),
   AccountVerifyPatient.tag: (context) => AccountVerifyPatient(mobileno: ''),
   UpdatePasswordPatient.tag: (context) => UpdatePasswordPatient(),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/patient/views/auth/forgot_pass/forgot_password_patient.dart';
 import 'package:pro_health/patient/views/auth/signup/create_account_patient.dart';
+import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 
 class SignInPatient extends StatefulWidget {
   SignInPatient({Key key, this.title}) : super(key: key);
@@ -57,7 +58,7 @@ class SignInPatientState extends State<SignInPatient> {
         style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
         autocorrect: true,
         decoration: InputDecoration(
-          hintText: 'Phone Number',
+          hintText: 'P one Number',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
           prefixIcon: Container(
@@ -125,7 +126,7 @@ class SignInPatientState extends State<SignInPatient> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(DashboardPatient.tag);
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
