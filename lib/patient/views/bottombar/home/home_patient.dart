@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
 import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
 import 'package:pro_health/doctor/views/drawer/ContactUs.dart';
@@ -59,16 +59,16 @@ class HomePatientState extends State<HomePatient> {
                 borderRadius: BorderRadius.circular(5),
                 side: BorderSide(
                     color: kTitleColor,
-                    width: 0.8,
+                    width: 0.5,
                     style: BorderStyle.solid
                 ),
               ),
               onPressed: () {
                 Navigator.of(context).pushNamed('');
               },
-              padding: EdgeInsets.only(left: 12, top: 3.0, bottom: 2.0, right: 12),
+              padding: EdgeInsets.only(left: 12, top: 4.0, bottom: 2.0, right: 12),
               color: kBaseColor,
-              child: Text('বাংলা', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 15, color: kTitleColor)),
+              child: Text('বাংলা', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 15, color: kTextLightColor)),
             ),
           ),
         ),
@@ -145,7 +145,7 @@ class HomePatientState extends State<HomePatient> {
                   ),
                 ),
                 onTap: (){
-                  Navigator.of(context).pushNamed(DoctorProfile.tag);
+                  Navigator.of(context).pushNamed(ProfileDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

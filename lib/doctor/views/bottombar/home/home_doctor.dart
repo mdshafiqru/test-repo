@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
 import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
@@ -89,13 +89,13 @@ class HomeState extends State<Home> {
               if (result == 'ViewProfile') {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DoctorProfile()),
+                  MaterialPageRoute(builder: (context) => ProfileDoctor()),
                 );
               }
               else if (result == 'EditProfile'){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DoctorProfile()),
+                  MaterialPageRoute(builder: (context) => ProfileDoctor()),
                 );
               }
             },
@@ -174,7 +174,7 @@ class HomeState extends State<Home> {
                   ),
                 ),
                 onTap: (){
-                  Navigator.of(context).pushNamed(DoctorProfile.tag);
+                  Navigator.of(context).pushNamed(ProfileDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

@@ -3,7 +3,7 @@ import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/dashboard/dash
 import 'package:pro_health/app/app_view.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/appointment/appointment_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/home/home_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/pharma_updates/pharma_updates.dart';
 import 'package:pro_health/doctor/views/bottombar/prescription/prescription.dart';
@@ -36,6 +36,9 @@ import 'package:pro_health/patient/views/auth/signup/account_password_patient.da
 import 'package:pro_health/patient/views/auth/signup/create_account_patient.dart';
 import 'package:pro_health/patient/views/auth/signup/naccount_verify_patient.dart';
 import 'package:pro_health/patient/views/auth/signup/terms_conditions_patient.dart';
+import 'package:pro_health/patient/views/bottombar/appointment/appointment_patient.dart';
+import 'package:pro_health/patient/views/bottombar/drug_info/drug_index_patient.dart';
+import 'package:pro_health/patient/views/bottombar/message/message_patient.dart';
 import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
 
@@ -51,7 +54,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   Appointment.tag: (context) => Appointment(),
   PharmaUpdates.tag: (context) => PharmaUpdates(),
   Prescription.tag: (context) => Prescription(),
-  DoctorProfile.tag: (context) => DoctorProfile(),
+  ProfileDoctor.tag: (context) => ProfileDoctor(),
   ForgotPassword.tag: (context) => ForgotPassword(),
   AccountVerify.tag: (context) => AccountVerify(mobileno: '',),
   UpdatePassword.tag: (context) => UpdatePassword(),
@@ -85,5 +88,8 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   NewAccountVerifyPatient.tag: (context) => NewAccountVerifyPatient(mobileno: '',),
   AccountPasswordPatient.tag: (context) => AccountPasswordPatient(),
   TermsAndConditionsPatient.tag: (context) => TermsAndConditionsPatient(),
+  DrugIndexPatient.tag: (context) => DrugIndexPatient(),
+  AppointmentPatient.tag: (context) => AppointmentPatient(),
+  MessagePatient.tag: (context) => MessagePatient(),
 
 };

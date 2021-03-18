@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
+import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 
 class TermsAndConditionsPatient extends StatefulWidget {
   TermsAndConditionsPatient({Key key, this.title}) : super(key: key);
@@ -89,7 +90,7 @@ class TermsAndConditionsPatientState extends State<TermsAndConditionsPatient> {
                 borderRadius: BorderRadius.circular(24),
               ),
               onPressed: () {
-                Navigator.of(context).pushNamed('');
+                Navigator.of(context).pushNamed(DashboardPatient.tag);
               },
               padding: EdgeInsets.only(top: 4.0, bottom: 5.0),
               color: kButtonColor,

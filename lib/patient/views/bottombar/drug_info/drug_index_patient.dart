@@ -16,13 +16,13 @@ import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';
 
-class AppointmentPatient extends StatefulWidget {
-  static String tag = 'AppointmentPatient';
+class DrugIndexPatient extends StatefulWidget {
+  static String tag = 'DrugIndexPatient';
   @override
-  AppointmentPatientState createState() => new AppointmentPatientState();
+  DrugIndexPatientState createState() => new DrugIndexPatientState();
 }
 
-class AppointmentPatientState extends State<AppointmentPatient> {
+class DrugIndexPatientState extends State<DrugIndexPatient> {
 
   @override
   Widget build(BuildContext context) {
@@ -293,14 +293,14 @@ class AppointmentPatientState extends State<AppointmentPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 35.0,
-          child: Image.asset('assets/appointments.png'),
+          child: Image.asset('assets/druginfopage.png'),
         ),
       ),
     );
 
     final pharmaUpdatesTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Appointment',
+      child: Text('Drug Index',
         style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
       ),
     );
@@ -327,7 +327,7 @@ class AppointmentPatientState extends State<AppointmentPatient> {
             iconTheme: IconThemeData(color: kTitleColor),
             centerTitle: true,
             toolbarHeight: 50,
-            title: Text('Appointment', style: TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
+            title: Text('Drug Index', style: TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
           ),
           backgroundColor: kBackgroundColor,
           body: Center(

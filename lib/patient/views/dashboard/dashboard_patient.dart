@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/doctor/views/bottombar/appointment/appointment_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/pharma_updates/pharma_updates.dart';
+import 'package:pro_health/patient/views/bottombar/appointment/appointment_patient.dart';
+import 'package:pro_health/patient/views/bottombar/drug_info/drug_index_patient.dart';
 import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
-import 'package:pro_health/doctor/views/bottombar/prescription/prescription.dart';
-import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
+import 'package:pro_health/patient/views/bottombar/message/message_patient.dart';
 
 
 class DashboardPatient extends StatefulWidget {
@@ -17,7 +17,7 @@ class DashboardPatient extends StatefulWidget {
 
 class DashboardPatientState extends State<DashboardPatient> {
   int selectedIndex = 2;
-  List<Widget> listWidgets = [PharmaUpdates(), Appointment(), HomePatient(), Prescription(), DoctorProfile()];
+  List<Widget> listWidgets = [DrugIndexPatient(), AppointmentPatient(), HomePatient(), MessagePatient(), ProfileDoctor()];
 
 
   @override

@@ -23,16 +23,16 @@ import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';
 
-class DoctorProfile extends StatefulWidget {
-  DoctorProfile({Key key, this.title}) : super(key: key);
+class ProfileDoctor extends StatefulWidget {
+  ProfileDoctor({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'DoctorProfile';
+  static String tag = 'ProfileDoctor';
 
   @override
-  DoctorProfileState createState() => new DoctorProfileState();
+  ProfileDoctorState createState() => new ProfileDoctorState();
 }
 
-class DoctorProfileState extends State<DoctorProfile> {
+class ProfileDoctorState extends State<ProfileDoctor> {
   var rating = 4.5;
   double radius = 32;
   double iconSize = 20;
@@ -367,7 +367,7 @@ class DoctorProfileState extends State<DoctorProfile> {
                   ),
                 ),
                 onTap: (){
-                  Navigator.of(context).pushNamed(DoctorProfile.tag);
+                  Navigator.of(context).pushNamed(ProfileDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),

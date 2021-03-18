@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 
 class UpdatePasswordPatient extends StatefulWidget {
   UpdatePasswordPatient({Key key, this.title}) : super(key: key);
@@ -160,7 +161,7 @@ class UpdatePasswordPatientState extends State <UpdatePasswordPatient> {
             borderRadius: BorderRadius.circular(24),
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed('');
+            Navigator.of(context).pushNamed(DashboardPatient.tag);
           },
           color: kButtonColor,
           child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),

@@ -3,7 +3,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 import '../bottombar/appointment/appointment_doctor.dart';
-import '../bottombar/profile/DoctorProfile.dart';
+import '../bottombar/profile/profile_doctor.dart';
 import '../bottombar/home/home_doctor.dart';
 import '../bottombar/pharma_updates/pharma_updates.dart';
 import '../bottombar/prescription/prescription.dart';
@@ -17,7 +17,7 @@ class DashboardDoctor extends StatefulWidget {
 
 class DashboardDoctorState extends State<DashboardDoctor> {
   int selectedIndex = 2;
-  List<Widget> listWidgets = [PharmaUpdates(), Appointment(), Home(), Prescription(), DoctorProfile()];
+  List<Widget> listWidgets = [PharmaUpdates(), Appointment(), Home(), Prescription(), ProfileDoctor()];
 
 
   @override

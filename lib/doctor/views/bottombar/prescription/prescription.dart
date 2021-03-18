@@ -15,7 +15,7 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:pro_health/doctor/views/bottombar/profile/DoctorProfile.dart';
+import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/prescription/PreviewPrescription.dart';
 import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
 import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
@@ -312,7 +312,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   ),
                 ),
                 onTap: (){
-                  Navigator.of(context).pushNamed(DoctorProfile.tag);
+                  Navigator.of(context).pushNamed(ProfileDoctor.tag);
                 },
               ),
               Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
