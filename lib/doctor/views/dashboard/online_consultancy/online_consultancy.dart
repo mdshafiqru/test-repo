@@ -8,7 +8,6 @@ class OnlineConsultancy extends StatefulWidget {
 }
 
 class OnlineConsultancyState extends State<OnlineConsultancy> {
-
   @override
   Widget build(BuildContext context) {
     final onlineConsultancyLogo = Container(
@@ -24,8 +23,15 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
     final onlineConsultancyTitle = Container(
       width: 250.00,
       height: 30,
-      child: Text('Online Consultancy',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Online Consultancy',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 18,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
     final topCard = Card(
@@ -46,16 +52,25 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 12.0, top: 10.0),
-                    child: Text('Appointment Request', style: TextStyle(fontSize: 16, color: kBodyTextColor),),
+                    child: Text(
+                      'Appointment Request',
+                      style: TextStyle(fontSize: 16, color: kBodyTextColor),
+                    ),
                     alignment: Alignment.centerLeft,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 10.0),
                     child: Row(
                       children: [
-                        Icon(Icons.access_time, size: 20, color: kBodyTextColor),
-                        SizedBox(width: 2.0,),
-                        Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 16, color: kBodyTextColor),)
+                        Icon(Icons.access_time,
+                            size: 20, color: kBodyTextColor),
+                        SizedBox(
+                          width: 2.0,
+                        ),
+                        Text(
+                          '21 Feb 2021, 6:00 PM',
+                          style: TextStyle(fontSize: 16, color: kBodyTextColor),
+                        )
                       ],
                     ),
                   ),
@@ -80,7 +95,10 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                     ),
                   ),
                   Container(
-                    child: Text('MD Jahidul Hasan', style: TextStyle(fontSize: 16),),
+                    child: Text(
+                      'MD Jahidul Hasan',
+                      style: TextStyle(fontSize: 16),
+                    ),
                   )
                 ],
               ),
@@ -97,33 +115,46 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                 alignment: Alignment.center,
                 child: new Text(
                   "Problem: ৩দিন যাবত জ্বর",
-                  style: TextStyle(fontFamily: 'Segoe', fontWeight: FontWeight.w600, letterSpacing: 0.5, fontSize: 16,),
+                  style: TextStyle(
+                    fontFamily: 'Segoe',
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 5.0,),
+            SizedBox(
+              height: 5.0,
+            ),
             Container(
               height: 60,
               child: Row(
                 children: [
                   Container(
-                    width: 185,
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    width: 178,
+                    padding: EdgeInsets.only(left: 25.0, right: 25.0),
                     child: MaterialButton(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
                       ),
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       padding: EdgeInsets.only(top: 2.0, bottom: 3.0),
                       color: kButtonColor,
-                      child: Text('Accept', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 16, color: kWhiteShadow)),
+                      child: Text(
+                        'Accept',
+                        style: TextStyle(
+                            fontFamily: "Segoe",
+                            letterSpacing: 0.5,
+                            fontSize: 16,
+                            color: kWhiteShadow),
+                      ),
                     ),
                   ),
                   Container(
-                    width: 185,
-                    padding: EdgeInsets.only(left: 30.0, right: 10.0),
+                    width: 178,
+                    padding: EdgeInsets.only(left: 25.0, right: 20.0),
                     child: MaterialButton(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -131,14 +162,17 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                         side: BorderSide(
                             color: kBaseColor,
                             width: 0.8,
-                            style: BorderStyle.solid
-                        ),
+                            style: BorderStyle.solid),
                       ),
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       padding: EdgeInsets.only(top: 2.0, bottom: 3.0),
                       color: kWhiteShadow,
-                      child: Text('Decline', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 16, color: kBaseColor)),
+                      child: Text('Decline',
+                          style: TextStyle(
+                              fontFamily: "Segoe",
+                              letterSpacing: 0.5,
+                              fontSize: 16,
+                              color: kBaseColor)),
                     ),
                   ),
                 ],
@@ -150,7 +184,10 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
     );
     final nextAppointmentTitle = Container(
       padding: EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 10.0),
-      child: Text('Next Appointments', style: TextStyle(fontSize: 20, color: kTextLightColor),),
+      child: Text(
+        'Next Appointments',
+        style: TextStyle(fontSize: 20, color: kTextLightColor),
+      ),
     );
     final patientsCard = Container(
       height: 60,
@@ -180,15 +217,23 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  child: Text('MD Jahidul Hasan', style: TextStyle(fontSize: 16),),
+                  child: Text(
+                    'MD Jahidul Hasan',
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
                 Container(
-                  child: Text('21 Feb 2021, 6:00 PM', style: TextStyle(fontSize: 14),),
+                  child: Text(
+                    '21 Feb 2021, 6:00 PM',
+                    style: TextStyle(fontSize: 14),
+                  ),
                 )
               ],
             ),
           ),
-          SizedBox(width: 75,),
+          SizedBox(
+            width: 60,
+          ),
           Container(
               alignment: Alignment.centerRight,
               child: RawMaterialButton(
@@ -199,13 +244,12 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                 ),
                 padding: EdgeInsets.all(8),
                 shape: CircleBorder(),
-              )
-          ),
+              )),
         ],
       ),
     );
 
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
         backgroundColor: kBaseColor,
@@ -216,7 +260,9 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Emergency Online Consultancy', style: TextStyle(fontFamily:'Segoe', fontSize: 18, color: kTitleColor)),
+        title: Text('Emergency Online Consultancy',
+            style: TextStyle(
+                fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -225,7 +271,9 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
             SizedBox(height: 5),
             onlineConsultancyLogo,
             onlineConsultancyTitle,
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             const Divider(
               color: Colors.black,
               height: 0.0,
@@ -240,23 +288,41 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
               child: Column(
                 children: [
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   patientsCard,
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
             )
