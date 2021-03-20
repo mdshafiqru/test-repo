@@ -14,7 +14,6 @@ class SignInDoctor extends StatefulWidget {
 }
 
 class SignInDoctorState extends State<SignInDoctor> {
-
   bool showvalue = false;
   bool _passwordVisible;
   @override
@@ -25,7 +24,6 @@ class SignInDoctorState extends State<SignInDoctor> {
 
   @override
   Widget build(BuildContext context) {
-
     final signInLogo = Container(
       padding: EdgeInsets.only(top: 60, bottom: 20),
       child: Hero(
@@ -41,8 +39,14 @@ class SignInDoctorState extends State<SignInDoctor> {
     final signInInstructions = Padding(
       padding: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 40.0),
       child: Text(
-        'Please enter following informations to sign in', textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.w500),
+        'Please enter following informations to sign in',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            fontSize: 13.0,
+            letterSpacing: 0.5,
+            color: kBodyTextColor,
+            fontWeight: FontWeight.w500),
       ),
     );
 
@@ -50,12 +54,16 @@ class SignInDoctorState extends State<SignInDoctor> {
       height: 70,
       padding: EdgeInsets.only(bottom: 20),
       child: TextFormField(
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(11)],
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(11)
+        ],
         keyboardType: TextInputType.number,
         validator: numberValidator,
         autofocus: false,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         autocorrect: true,
         decoration: InputDecoration(
           hintText: 'Phone Number',
@@ -64,7 +72,9 @@ class SignInDoctorState extends State<SignInDoctor> {
           prefixIcon: Container(
             height: 10,
             width: 10,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
                 'assets/phoneno.png',
@@ -85,7 +95,8 @@ class SignInDoctorState extends State<SignInDoctor> {
         validator: numberValidator,
         autofocus: false,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'BMDC Registration No.',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -93,7 +104,9 @@ class SignInDoctorState extends State<SignInDoctor> {
           prefixIcon: Container(
             height: 10,
             width: 10,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
                 'assets/bmdcno.png',
@@ -115,7 +128,8 @@ class SignInDoctorState extends State<SignInDoctor> {
         obscureText: !_passwordVisible,
         //obscuringCharacter: "*",
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -123,7 +137,9 @@ class SignInDoctorState extends State<SignInDoctor> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
                 'assets/password.png',
@@ -134,9 +150,7 @@ class SignInDoctorState extends State<SignInDoctor> {
           suffixIcon: IconButton(
             icon: Icon(
               // Based on passwordVisible state choose the icon
-              _passwordVisible
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              _passwordVisible ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
               // Update the state i.e. toogle the state of passwordVisible variable
@@ -160,7 +174,12 @@ class SignInDoctorState extends State<SignInDoctor> {
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
-        child: Text('Sign in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+        child: Text('Sign in',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                letterSpacing: 0.5,
+                fontSize: 18,
+                color: kWhiteShadow)),
       ),
     );
 
@@ -183,9 +202,16 @@ class SignInDoctorState extends State<SignInDoctor> {
             ),
           ),
           Container(
-            child: Text('Remember Me', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15), textAlign: TextAlign.left,),
+            child: Text(
+              'Remember Me',
+              style: TextStyle(
+                  fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15),
+              textAlign: TextAlign.left,
+            ),
           ),
-          SizedBox(width: 60,),
+          SizedBox(
+            width: 40,
+          ),
           Container(
             padding: EdgeInsets.all(5.0),
             child: CircleAvatar(
@@ -199,7 +225,12 @@ class SignInDoctorState extends State<SignInDoctor> {
             hoverColor: kBackgroundColor,
             //splashColor: kBackgroundColor,
             child: Container(
-              child: Text('Forgotten Password?', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15), textAlign: TextAlign.right,),
+              child: Text(
+                'Forgotten Password?',
+                style: TextStyle(
+                    fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15),
+                textAlign: TextAlign.right,
+              ),
             ),
             onTap: () {
               Navigator.of(context).pushNamed(ForgotPassword.tag);
@@ -220,7 +251,12 @@ class SignInDoctorState extends State<SignInDoctor> {
         },
         padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
-        child: Text('Create new Account', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+        child: Text('Create new Account',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                letterSpacing: 0.5,
+                fontSize: 18,
+                color: kWhiteShadow)),
       ),
     );
 
@@ -228,7 +264,7 @@ class SignInDoctorState extends State<SignInDoctor> {
       backgroundColor: kBackgroundColor,
       body: Center(
         child: ListView(
-          shrinkWrap: false,
+          shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             signInLogo,
@@ -247,11 +283,11 @@ class SignInDoctorState extends State<SignInDoctor> {
 }
 
 String numberValidator(String value) {
-  if(value == null) {
+  if (value == null) {
     return null;
   }
   final n = num.tryParse(value);
-  if(n == null) {
+  if (n == null) {
     return '"$value" is not a valid number!';
   }
   return null;
