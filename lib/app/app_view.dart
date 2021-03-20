@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-
     final homeScreenLogo = Container(
       padding: EdgeInsets.symmetric(vertical: 60, horizontal: 40),
       child: Hero(
@@ -28,12 +27,12 @@ class HomeScreenState extends State<HomeScreen> {
     );
 
     final signInDoctorCard = Padding(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-      child:
-      Container(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 32),
+      child: Container(
         height: 80,
         child: MaterialButton(
-          padding: EdgeInsets.only(left: 1.0, top: 2.0, right: 1.0, bottom: 2.0),
+          padding:
+              EdgeInsets.only(left: 4.0, top: 2.0, right: 4.0, bottom: 1.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(60.0),
           ),
@@ -48,12 +47,26 @@ class HomeScreenState extends State<HomeScreen> {
                   radius: 30.0,
                   backgroundImage: AssetImage('assets/doctorsignin.png'),
                 ),
-                title: Text('Sign In as Doctor',
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 20.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.bold),
+                title: Text(
+                  'Sign In as Doctor',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      fontSize: 20.0,
+                      letterSpacing: 0.5,
+                      color: kBodyTextColor,
+                      fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
-                subtitle: Text('Connecting Patients for consultation',
-                  style: TextStyle(fontFamily: 'Segoe', fontStyle: FontStyle.italic, color: kTextLightColor, fontSize: 10, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),
+                subtitle: Text(
+                  'Connecting Patients for consultation',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      fontStyle: FontStyle.italic,
+                      color: kTextLightColor,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w700),
+                  textAlign: TextAlign.left,
+                ),
               ),
             ],
           ),
@@ -65,12 +78,12 @@ class HomeScreenState extends State<HomeScreen> {
     );
 
     final signInPatientCard = Padding(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-      child:
-      Container(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 32),
+      child: Container(
         height: 80,
         child: MaterialButton(
-          padding: EdgeInsets.only(left: 1.0, top: 2.0, right: 1.0, bottom: 2.0),
+          padding:
+              EdgeInsets.only(left: 4.0, top: 2.0, right: 4.0, bottom: 1.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(60.0),
           ),
@@ -83,14 +96,29 @@ class HomeScreenState extends State<HomeScreen> {
                 leading: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 30.0,
-                  backgroundImage: AssetImage('assets/patientsignin.png'), // no matter how big it is, it won't overflow
+                  backgroundImage: AssetImage(
+                      'assets/patientsignin.png'), // no matter how big it is, it won't overflow
                 ),
-                title: Text('Sign In as Patient',
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 20.0, letterSpacing: 0.5, color: kBodyTextColor, fontWeight: FontWeight.bold),
+                title: Text(
+                  'Sign In as Patient',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      fontSize: 20.0,
+                      letterSpacing: 0.5,
+                      color: kBodyTextColor,
+                      fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
-                subtitle: Text('Connecting Doctors for consultation',
-                  style: TextStyle(fontFamily: 'Segoe', fontStyle: FontStyle.italic, color: kTextLightColor, fontSize: 10, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),
+                subtitle: Text(
+                  'Connecting Doctors for consultation',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      fontStyle: FontStyle.italic,
+                      color: kTextLightColor,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w700),
+                  textAlign: TextAlign.left,
+                ),
               ),
             ],
           ),
@@ -105,10 +133,18 @@ class HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 0.0, top: 50.0, right: 0.0, bottom: 0.0),
+            padding:
+                EdgeInsets.only(left: 0.0, top: 50.0, right: 0.0, bottom: 0.0),
             child: Text(
-              'Sponsored by', textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Segoe', fontSize: 15.0, letterSpacing: 0.5, color: kBodyTextColor, fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
+              'Sponsored by',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  fontSize: 15.0,
+                  letterSpacing: 0.5,
+                  color: kBodyTextColor,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w700),
             ),
           ),
           Container(
@@ -123,10 +159,18 @@ class HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
+            padding:
+                EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
             child: Text(
-              'Developed by', textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Segoe',fontSize: 15.0, letterSpacing: 0.5, color: kBodyTextColor, fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
+              'Developed by',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  fontSize: 15.0,
+                  letterSpacing: 0.5,
+                  color: kBodyTextColor,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w700),
             ),
           ),
           Container(
@@ -142,7 +186,7 @@ class HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Expanded(
           child: ListView(
-            shrinkWrap: false,
+            shrinkWrap: true,
             padding: EdgeInsets.only(left: 24.0, right: 24.0),
             children: <Widget>[
               homeScreenLogo,
