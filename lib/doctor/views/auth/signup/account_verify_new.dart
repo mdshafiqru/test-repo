@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'account_password.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class NewAccountVerify extends StatefulWidget {
   static String tag = 'NewAccountVerify';
@@ -22,7 +22,8 @@ class NewAccountVerify extends StatefulWidget {
   NewAccountVerifyState createState() => new NewAccountVerifyState();
 }
 
-class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerProviderStateMixin {
+class NewAccountVerifyState extends State<NewAccountVerify>
+    with SingleTickerProviderStateMixin {
   // Constants
   final int time = 30;
   AnimationController _controller;
@@ -43,7 +44,7 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
   bool didReadNotifications = false;
   int unReadNotificationsCount = 0;
 
-  get _getVerificationIcon{
+  get _getVerificationIcon {
     return Container(
       padding: EdgeInsets.only(top: 45),
       child: Hero(
@@ -64,7 +65,11 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
         "Account Verification",
         textAlign: TextAlign.center,
         style: new TextStyle(
-            fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600),
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -89,11 +94,12 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
         "Please enter the OTP sent on your registered phone number",
         textAlign: TextAlign.center,
         style: new TextStyle(
-          fontFamily: 'Segoe', color: kBodyTextColor,),
+          fontFamily: 'Segoe',
+          color: kBodyTextColor,
+        ),
       ),
     );
   }
-
 
   get _getInputField {
     return Container(
@@ -135,7 +141,11 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Icon(Icons.access_time, size: 20.0, color: kBaseColor,),
+            new Icon(
+              Icons.access_time,
+              size: 20.0,
+              color: kBaseColor,
+            ),
             new SizedBox(
               width: 5.0,
             ),
@@ -158,7 +168,11 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
         alignment: Alignment.center,
         child: new Text(
           "Resend OTP",
-          style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15, color: kWhiteShadow),
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              letterSpacing: 0.5,
+              fontSize: 15,
+              color: kWhiteShadow),
         ),
       ),
       onTap: () {
@@ -167,7 +181,7 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
     );
   }
 
-  get _getVerifyButton{
+  get _getVerifyButton {
     return Container(
       padding: EdgeInsets.only(bottom: 30.0),
       child: MaterialButton(
@@ -181,7 +195,11 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
           alignment: Alignment.center,
           child: Text(
             "Verify",
-            style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow),
+            style: TextStyle(
+                fontFamily: 'Segoe',
+                letterSpacing: 0.5,
+                fontSize: 18,
+                color: kWhiteShadow),
           ),
         ),
         onPressed: () {
@@ -305,14 +323,14 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
     totalTimeInSeconds = time;
     super.initState();
     _controller =
-    AnimationController(vsync: this, duration: Duration(seconds: time))
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.dismissed) {
-          setState(() {
-            _hideResendButton = !_hideResendButton;
+        AnimationController(vsync: this, duration: Duration(seconds: time))
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.dismissed) {
+              setState(() {
+                _hideResendButton = !_hideResendButton;
+              });
+            }
           });
-        }
-      });
     _controller.reverse(
         from: _controller.value == 0.0 ? 1.0 : _controller.value);
     _startCountdown();
@@ -331,7 +349,7 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
       backgroundColor: kBackgroundColor,
       body: new Container(
         width: _screenSize.width,
-//        padding: new EdgeInsets.only(bottom: 16.0),
+        padding: new EdgeInsets.only(top: 40.0),
         child: _getInputPart,
       ),
     );
@@ -353,9 +371,9 @@ class NewAccountVerifyState extends State<NewAccountVerify> with SingleTickerPro
 //            color: Colors.grey.withOpacity(0.4),
           border: Border(
               bottom: BorderSide(
-                width: 1.0,
-                color: Colors.black,
-              ))),
+        width: 1.0,
+        color: Colors.black,
+      ))),
     );
   }
 
