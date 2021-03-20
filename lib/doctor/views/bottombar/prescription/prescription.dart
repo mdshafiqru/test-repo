@@ -15,6 +15,7 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:pro_health/doctor/views/bottombar/home/home_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/prescription/PreviewPrescription.dart';
 import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
@@ -27,8 +28,6 @@ import 'package:pro_health/doctor/views/drawer/Settings.dart';
 import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:simple_autocomplete_formfield/simple_autocomplete_formfield.dart';
-
-import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -57,16 +56,39 @@ class PrescriptionState extends State<Prescription> {
   bool before = false;
   bool after = false;
 
-  final brand = <Brand>[Brand('Fenuc Plus', ''), Brand('Mycin', ''), Brand('5-Fluril', ''), Brand('A-Clox', ''), Brand('Geocef', '')];
+  final brand = <Brand>[
+    Brand('Fenuc Plus', ''),
+    Brand('Mycin', ''),
+    Brand('5-Fluril', ''),
+    Brand('A-Clox', ''),
+    Brand('Geocef', '')
+  ];
   Brand selectedBrand;
 
-  final newPatient = <NewPatient>[NewPatient('Sohail', '12345'), NewPatient('Mahmud', '12345'), NewPatient('Sami', '12345'), NewPatient('Alamin', '12345')];
+  final newPatient = <NewPatient>[
+    NewPatient('Sohail', '12345'),
+    NewPatient('Mahmud', '12345'),
+    NewPatient('Sami', '12345'),
+    NewPatient('Alamin', '12345')
+  ];
   NewPatient selectedNewPatient;
 
-  final nextVisit = <NextVisit>[NextVisit('After Day 1', ''), NextVisit('After Day 2', ''), NextVisit('After Day 3', ''), NextVisit('After Day 4', ''), NextVisit('After Day 5', '')];
+  final nextVisit = <NextVisit>[
+    NextVisit('After Day 1', ''),
+    NextVisit('After Day 2', ''),
+    NextVisit('After Day 3', ''),
+    NextVisit('After Day 4', ''),
+    NextVisit('After Day 5', '')
+  ];
   NextVisit selectedNextVisit;
 
-  final paidTK = <PaidTK>[PaidTK('100', ''), PaidTK('200', ''), PaidTK('300', ''), PaidTK('After Day 4', ''), PaidTK('After Day 5', '')];
+  final paidTK = <PaidTK>[
+    PaidTK('100', ''),
+    PaidTK('200', ''),
+    PaidTK('300', ''),
+    PaidTK('After Day 4', ''),
+    PaidTK('After Day 5', '')
+  ];
   PaidTK selectedPaidTK;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -83,7 +105,7 @@ class PrescriptionState extends State<Prescription> {
   }
 
   Future<void> generateExampleDocument() async {
-    var htmlContent =""" <!DOCTYPE html>
+    var htmlContent = """ <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 <title>Page 1</title>
@@ -192,53 +214,38 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
 
   final pdf = pw.Document();
 
-  writeOnPdf(){
-
-    pdf.addPage(
-        pw.MultiPage(
-          pageFormat: PdfPageFormat.a5,
-          margin: pw.EdgeInsets.all(32),
-
-          build: (pw.Context context){
-            return <pw.Widget>  [
-              pw.Header(
-                  level: 0,
-                  child: pw.Text("Easy Approach Document", style: pw.TextStyle(fontSize: 40))
-              ),
-
-              pw.Paragraph(
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."
-              ),
-
-              pw.Paragraph(
-                  text: "Lorem ipsum dolor sit a1met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."
-              ),
-
-              pw.Header(
-                  level: 1,
-                  child: pw.Text("Second Heading")
-              ),
-
-              pw.Paragraph(
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."
-              ),
-
-              pw.Paragraph(
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."
-              ),
-
-              pw.Paragraph(
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."
-              ),
-            ];
-          },
-
-
-        )
-    );
+  writeOnPdf() {
+    pdf.addPage(pw.MultiPage(
+      pageFormat: PdfPageFormat.a5,
+      margin: pw.EdgeInsets.all(32),
+      build: (pw.Context context) {
+        return <pw.Widget>[
+          pw.Header(
+              level: 0,
+              child: pw.Text("Easy Approach Document",
+                  style: pw.TextStyle(fontSize: 40))),
+          pw.Paragraph(
+              text:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."),
+          pw.Paragraph(
+              text:
+                  "Lorem ipsum dolor sit a1met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."),
+          pw.Header(level: 1, child: pw.Text("Second Heading")),
+          pw.Paragraph(
+              text:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."),
+          pw.Paragraph(
+              text:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."),
+          pw.Paragraph(
+              text:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas sed tempus urna. Quisque sagittis purus sit amet. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra justo nec ultrices dui sapien eget mi proin sed."),
+        ];
+      },
+    ));
   }
 
-  Future savePdf() async{
+  Future savePdf() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
 
     String documentPath = documentDirectory.path;
@@ -253,16 +260,14 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
     final drawer = Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        shrinkWrap: false,
+        shrinkWrap: true,
         children: <Widget>[
           Container(
-            height: 175,
+            height: 210,
             child: UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                 color: kBaseColor,
               ),
-              accountName: const Text(_AccountName, style: TextStyle(fontFamily: 'Segoe', fontSize: 16),),
-              accountEmail: const Text(_AccountEmail, style: TextStyle(fontFamily: 'Segoe', fontSize: 13),),
               currentAccountPicture: CircleAvatar(
                 radius: 30,
                 backgroundColor: kBaseColor,
@@ -276,234 +281,411 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   ),
                 ),
               ),
+              accountName: const Text(
+                _AccountName,
+                style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
+              ),
+              accountEmail: const Text(
+                _AccountEmail,
+                style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
+              ),
             ),
           ),
           Container(
             height: MediaQuery.of(context).size.height,
             color: kBackgroundColor,
-            child: Column(children: <Widget>[
-              ListTile(
-                dense: true,
-                title: Text("Home", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/homed.png'),
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Home",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(DashboardDoctor.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Profile", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700)),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/profiled.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/homed.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Home.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(ProfileDoctor.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Active Status", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/statusd.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text("Profile",
+                      style: TextStyle(
+                          color: kBaseColor,
+                          fontFamily: 'Segoe',
+                          fontSize: 16,
+                          letterSpacing: 0.6,
+                          fontWeight: FontWeight.w700)),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/profiled.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(ProfileDoctor.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(ActivityStatus.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Terms and Conditions", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/termsd.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Active Status",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(TermsConditions.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Privacy and Policy", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/privacyd.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/statusd.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(ActivityStatus.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("About Us", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/aboutd.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Terms and Conditions",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(AboutUs.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Contact Us", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/contactd.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/termsd.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(TermsConditions.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(ContactUs.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Help", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/helpd.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Privacy and Policy",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(Help.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Settings", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/settingsd.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/privacyd.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(Settings.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Version v-0.0.1", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/versiond.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "About Us",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: (){
-                  Navigator.pushNamed(context, "");
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Sign Out", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/signoutd.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/aboutd.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(AboutUs.tag);
+                  },
                 ),
-                onTap: () {
-                  Navigator.of(context).pushNamed(SignInDoctor.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: true,
-                title: Text("Renew", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/renewd.png'),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Contact Us",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
                   ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pushNamed('');
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-              ListTile(
-                dense: false,
-                title: Text("Reviews", style: TextStyle(color: kBaseColor, fontFamily: 'Segoe', fontSize: 16, letterSpacing: 0.6, fontWeight: FontWeight.w700),),
-                leading: CircleAvatar(
-                  backgroundColor: kShadowColor,
-                  radius: 13,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 12.0,
-                    child: Image.asset('assets/reviewsd.png'),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/contactd.png'),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(ContactUs.tag);
+                  },
                 ),
-                onTap: (){
-                  Navigator.of(context).pushNamed(Reviews.tag);
-                },
-              ),
-              Divider(height: 0.0, thickness: 0.5, indent: 18.0, endIndent: 0.0, color: kTitleTextColor),
-            ],),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Help",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/helpd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Help.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Settings",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/settingsd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Settings.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Version v-0.0.1",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/versiond.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pushNamed(context, "");
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Sign Out",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/signoutd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(SignInDoctor.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Renew",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/renewd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('');
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: false,
+                  title: Text(
+                    "Reviews",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/reviewsd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Reviews.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+              ],
+            ),
           ),
         ],
       ),
@@ -527,16 +709,27 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   child: Image.asset('assets/patientinfo.png'),
                 ),
               ),
-              title: Text('Patient Information', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+              title: Text(
+                'Patient Information',
+                style: TextStyle(
+                    fontFamily: 'Segoe',
+                    color: kBaseColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700),
+              ),
               children: <Widget>[
-                SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 ListTile(
                   title: Container(
                     child: SimpleAutocompleteFormField<NewPatient>(
                       decoration: InputDecoration(
                         hintText: "Type Patient Name",
-                        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(32.0)),
                       ),
                       suggestionsHeight: 80.0,
                       itemBuilder: (context, newPatient) => Padding(
@@ -545,25 +738,31 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(newPatient.name,
-                                  style: TextStyle(fontWeight: FontWeight.bold)),
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                               Text(newPatient.phone)
                             ]),
                       ),
                       onSearch: (search) async => newPatient
                           .where((newPatient) =>
-                      newPatient.name
-                          .toLowerCase()
-                          .contains(search.toLowerCase()) ||
-                          newPatient.phone
-                              .toLowerCase()
-                              .contains(search.toLowerCase()))
+                              newPatient.name
+                                  .toLowerCase()
+                                  .contains(search.toLowerCase()) ||
+                              newPatient.phone
+                                  .toLowerCase()
+                                  .contains(search.toLowerCase()))
                           .toList(),
                       itemFromString: (string) => newPatient.singleWhere(
-                              (newPatient) => newPatient.name.toLowerCase() == string.toLowerCase(),
+                          (newPatient) =>
+                              newPatient.name.toLowerCase() ==
+                              string.toLowerCase(),
                           orElse: () => null),
-                      onChanged: (value) => setState(() => selectedNewPatient = value),
-                      onSaved: (value) => setState(() => selectedNewPatient = value),
-                      validator: (person) => person == null ? 'Invalid Patient.' : null,
+                      onChanged: (value) =>
+                          setState(() => selectedNewPatient = value),
+                      onSaved: (value) =>
+                          setState(() => selectedNewPatient = value),
+                      validator: (person) =>
+                          person == null ? 'Invalid Patient.' : null,
                     ),
                   ),
                 ),
@@ -571,8 +770,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: new TextField(
                     decoration: new InputDecoration(
                       hintText: "Mobile Number",
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                   ),
                 ),
@@ -580,8 +781,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: new DropdownButtonFormField(
                     decoration: new InputDecoration(
                       hintText: "Select Gender",
-                      contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                     items: <DropdownMenuItem>[
                       DropdownMenuItem<int>(
@@ -609,13 +812,21 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                     },
                     decoration: InputDecoration(
                       hintText: "Date of Birth",
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                   ),
                 ),
-                SizedBox(height: 2,),
-                Text('Address', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600), textAlign: TextAlign.left,),
+                SizedBox(
+                  height: 2,
+                ),
+                Text(
+                  'Address',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.left,
+                ),
                 const Divider(
                   height: 4.0,
                   color: kTextLightColor,
@@ -624,8 +835,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: DropdownButtonFormField(
                     decoration: new InputDecoration(
                       hintText: "Select District",
-                      contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                     items: <DropdownMenuItem>[
                       DropdownMenuItem<int>(
@@ -642,12 +855,12 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   ),
                 ),
                 ListTile(
-
                   title: new DropdownButtonFormField(
                     decoration: new InputDecoration(
                       hintText: "Select Thana",
                       contentPadding: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                     items: <DropdownMenuItem>[
                       DropdownMenuItem<int>(
@@ -671,8 +884,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: new DropdownButtonFormField(
                     decoration: new InputDecoration(
                       hintText: "Select Post Code",
-                      contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                     items: <DropdownMenuItem>[
                       DropdownMenuItem<int>(
@@ -703,8 +918,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: new TextField(
                     decoration: new InputDecoration(
                       hintText: "Email Address",
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                   ),
                 ),
@@ -720,8 +937,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                     },
                     decoration: InputDecoration(
                       hintText: "Select Current Date",
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                   ),
                 ),
@@ -729,8 +948,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   title: new DropdownButtonFormField(
                     decoration: new InputDecoration(
                       hintText: "Referred By",
-                      contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
                     ),
                     items: <DropdownMenuItem>[
                       DropdownMenuItem<int>(
@@ -750,7 +971,9 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                     onSaved: (val) => print(val),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 /*new ListTile(
                         title: const Text("Referred By"),
                         trailing: const Icon(Icons.check_circle, color: Colors.green,),
@@ -776,7 +999,14 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/diseasecondition.png'),
           ),
         ),
-        title: Text('Disease Condition', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'Disease Condition',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
           ListTile(
             title: new TextField(
@@ -789,7 +1019,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   icon: Icon(Icons.add),
                 ),
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -810,9 +1041,15 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/cc.png'),
           ),
         ),
-        title: Text('C/C', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'C/C',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
-
           ListTile(
             title: new TextField(
               keyboardType: TextInputType.text,
@@ -824,7 +1061,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   icon: Icon(Icons.add),
                 ),
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -846,7 +1084,14 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/oe.png'),
           ),
         ),
-        title: Text('O/E', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'O/E',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
           ListTile(
             title: new TextField(
@@ -855,7 +1100,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "BP",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -866,7 +1112,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Height",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -877,7 +1124,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Weight",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -888,7 +1136,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "BMI",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -905,7 +1154,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: InputDecoration(
                 hintText: "LMP",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -916,7 +1166,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "EDD",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -927,7 +1178,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "P.Dose",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -938,7 +1190,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Pulse",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -949,7 +1202,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "SPO2",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -960,13 +1214,20 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "R/R",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
           ExpansionTileCard(
             baseColor: kBackgroundColor,
-            title: Text('Allergy (Select Type)', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontWeight: FontWeight.w700),),
+            title: Text(
+              'Allergy (Select Type)',
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  color: kBaseColor,
+                  fontWeight: FontWeight.w700),
+            ),
             contentPadding: EdgeInsets.fromLTRB(28.0, 10.0, 20.0, 10.0),
             borderRadius: BorderRadius.circular(50.0),
             children: [
@@ -975,7 +1236,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   decoration: new InputDecoration(
                     hintText: "Drug",
                     contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(32.0)),
                   ),
                   items: <DropdownMenuItem>[
                     DropdownMenuItem<int>(
@@ -996,7 +1258,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   decoration: new InputDecoration(
                     hintText: "Food",
                     contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(32.0)),
                   ),
                   items: <DropdownMenuItem>[
                     DropdownMenuItem<int>(
@@ -1032,14 +1295,22 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/history.png'),
           ),
         ),
-        title: Text('History', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'History',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
           ListTile(
             title: new DropdownButtonFormField(
               decoration: new InputDecoration(
                 hintText: "Drug",
                 contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
               items: <DropdownMenuItem>[
                 DropdownMenuItem<int>(
@@ -1060,7 +1331,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Family",
                 contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
               items: <DropdownMenuItem>[
                 DropdownMenuItem<int>(
@@ -1081,7 +1353,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Medical",
                 contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
               items: <DropdownMenuItem>[
                 DropdownMenuItem<int>(
@@ -1115,7 +1388,14 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/medication.png'),
           ),
         ),
-        title: Text('Medication', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'Medication',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
           ListTile(
             title: Card(
@@ -1131,36 +1411,59 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                     children: [
                       Container(
                           child: Padding(
-                            padding: EdgeInsets.only(left: 12.0, top: 10.0, right: 0.0, bottom: 5.0),
-                            child: Text(
-                              'Brand Name', textAlign: TextAlign.center,
-                              style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
-                            ),
-                          )
-                      ),
+                        padding: EdgeInsets.only(
+                            left: 12.0, top: 10.0, right: 0.0, bottom: 5.0),
+                        child: Text(
+                          'Brand Name',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Segoe',
+                              fontSize: 18.0,
+                              color: kBaseColor,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      )),
                       Container(
                         height: 30,
-                        child: VerticalDivider(color: Colors.black54, thickness: 0.8,),
+                        child: VerticalDivider(
+                          color: Colors.black54,
+                          thickness: 0.8,
+                        ),
                       ),
                       Container(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 5.0),
+                          padding: EdgeInsets.only(
+                              left: 0.0, top: 10.0, right: 0.0, bottom: 5.0),
                           child: Text(
-                            'Medicine Category', textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
+                            'Medicine Category',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 18.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
                       Container(
                         height: 30,
-                        child: VerticalDivider(color: Colors.black54, thickness: 0.8,),
+                        child: VerticalDivider(
+                          color: Colors.black54,
+                          thickness: 0.8,
+                        ),
                       ),
                       Container(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 5.0),
+                          padding: EdgeInsets.only(
+                              left: 0.0, top: 10.0, right: 0.0, bottom: 5.0),
                           child: Text(
-                            'Group', textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
+                            'Group',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 18.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
@@ -1170,34 +1473,57 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                     children: [
                       Container(
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20.0, top: 0.0, right: 0.0, bottom: 10.0),
-                            child: Text(
-                              'Company Name', textAlign: TextAlign.center,
-                              style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
-                            ),
-                          )
-                      ),
+                        padding: EdgeInsets.only(
+                            left: 20.0, top: 0.0, right: 0.0, bottom: 10.0),
+                        child: Text(
+                          'Company Name',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Segoe',
+                              fontSize: 18.0,
+                              color: kBaseColor,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      )),
                       Container(
                           height: 30,
-                          child: VerticalDivider(color: Colors.black54, thickness: 0.8,)),
+                          child: VerticalDivider(
+                            color: Colors.black54,
+                            thickness: 0.8,
+                          )),
                       Container(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 10.0),
+                          padding: EdgeInsets.only(
+                              left: 0.0, top: 0.0, right: 0.0, bottom: 10.0),
                           child: Text(
-                            'Price', textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
+                            'Price',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 18.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
                       Container(
                           height: 30,
-                          child: VerticalDivider(color: Colors.black54, thickness: 0.8,)),
+                          child: VerticalDivider(
+                            color: Colors.black54,
+                            thickness: 0.8,
+                          )),
                       Container(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 10.0),
+                          padding: EdgeInsets.only(
+                              left: 0.0, top: 0.0, right: 0.0, bottom: 10.0),
                           child: Text(
-                            'FDA Approved', textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Segoe', fontSize: 18.0, color: kBaseColor, fontWeight: FontWeight.w600),
+                            'FDA Approved',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 18.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
@@ -1207,15 +1533,17 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListTile(
             title: Container(
-              child:
-              SimpleAutocompleteFormField<Brand>(
+              child: SimpleAutocompleteFormField<Brand>(
                 decoration: InputDecoration(
                   hintText: "Type Brand Name",
                   contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                 ),
                 suggestionsHeight: 80.0,
                 itemBuilder: (context, person) => Padding(
@@ -1230,31 +1558,35 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 onSearch: (search) async => brand
                     .where((person) =>
-                person.name
-                    .toLowerCase()
-                    .contains(search.toLowerCase()) ||
-                    person.address
-                        .toLowerCase()
-                        .contains(search.toLowerCase()))
+                        person.name
+                            .toLowerCase()
+                            .contains(search.toLowerCase()) ||
+                        person.address
+                            .toLowerCase()
+                            .contains(search.toLowerCase()))
                     .toList(),
                 itemFromString: (string) => brand.singleWhere(
-                        (person) => person.name.toLowerCase() == string.toLowerCase(),
+                    (person) =>
+                        person.name.toLowerCase() == string.toLowerCase(),
                     orElse: () => null),
                 onChanged: (value) => setState(() => selectedBrand = value),
                 onSaved: (value) => setState(() => selectedBrand = value),
-                validator: (person) => person == null ? 'Invalid person.' : null,
+                validator: (person) =>
+                    person == null ? 'Invalid person.' : null,
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListTile(
             title: Container(
-              child:
-              SimpleAutocompleteFormField<Brand>(
+              child: SimpleAutocompleteFormField<Brand>(
                 decoration: InputDecoration(
                   hintText: "Type Dose",
                   contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                 ),
                 suggestionsHeight: 80.0,
                 itemBuilder: (context, person) => Padding(
@@ -1269,15 +1601,16 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 onSearch: (search) async => brand
                     .where((person) =>
-                person.name
-                    .toLowerCase()
-                    .contains(search.toLowerCase()) ||
-                    person.address
-                        .toLowerCase()
-                        .contains(search.toLowerCase()))
+                        person.name
+                            .toLowerCase()
+                            .contains(search.toLowerCase()) ||
+                        person.address
+                            .toLowerCase()
+                            .contains(search.toLowerCase()))
                     .toList(),
                 itemFromString: (string) => brand.singleWhere(
-                        (person) => person.name.toLowerCase() == string.toLowerCase(),
+                    (person) =>
+                        person.name.toLowerCase() == string.toLowerCase(),
                     orElse: () => null),
                 onChanged: (value) => setState(() => selectedBrand = value),
                 onSaved: (value) => setState(() => selectedBrand = value),
@@ -1285,15 +1618,17 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListTile(
             title: Container(
-              child:
-              SimpleAutocompleteFormField<Brand>(
+              child: SimpleAutocompleteFormField<Brand>(
                 decoration: InputDecoration(
                   hintText: "Duration",
                   contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                 ),
                 suggestionsHeight: 80.0,
                 itemBuilder: (context, person) => Padding(
@@ -1308,25 +1643,33 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 onSearch: (search) async => brand
                     .where((person) =>
-                person.name
-                    .toLowerCase()
-                    .contains(search.toLowerCase()) ||
-                    person.address
-                        .toLowerCase()
-                        .contains(search.toLowerCase()))
+                        person.name
+                            .toLowerCase()
+                            .contains(search.toLowerCase()) ||
+                        person.address
+                            .toLowerCase()
+                            .contains(search.toLowerCase()))
                     .toList(),
                 itemFromString: (string) => brand.singleWhere(
-                        (person) => person.name.toLowerCase() == string.toLowerCase(),
+                    (person) =>
+                        person.name.toLowerCase() == string.toLowerCase(),
                     orElse: () => null),
                 onChanged: (value) => setState(() => selectedBrand = value),
                 onSaved: (value) => setState(() => selectedBrand = value),
-                validator: (person) => person == null ? 'Invalid person.' : null,
+                validator: (person) =>
+                    person == null ? 'Invalid person.' : null,
               ),
             ),
           ),
           ListTile(
-            title:
-            Text('Taking Medicine', style: TextStyle(fontFamily: 'Segoe', fontSize: 16, fontWeight: FontWeight.w600), textAlign: TextAlign.left,),
+            title: Text(
+              'Taking Medicine',
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+              textAlign: TextAlign.left,
+            ),
           ),
           Row(
             children: [
@@ -1344,15 +1687,15 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                       },
                       child: before
                           ? Icon(
-                        Icons.check_box,
-                        color: kBaseColor,
-                        size: 20,
-                      )
+                              Icons.check_box,
+                              color: kBaseColor,
+                              size: 20,
+                            )
                           : Icon(
-                        Icons.check_box_outline_blank,
-                        color: Colors.black54,
-                        size: 20,
-                      ),
+                              Icons.check_box_outline_blank,
+                              color: Colors.black54,
+                              size: 20,
+                            ),
                     ),
                     SizedBox(width: 5),
                     Text("Before Eating"),
@@ -1373,15 +1716,15 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                       },
                       child: after
                           ? Icon(
-                        Icons.check_box,
-                        color: kBaseColor,
-                        size: 20,
-                      )
+                              Icons.check_box,
+                              color: kBaseColor,
+                              size: 20,
+                            )
                           : Icon(
-                        Icons.check_box_outline_blank,
-                        color: Colors.black54,
-                        size: 20,
-                      ),
+                              Icons.check_box_outline_blank,
+                              color: Colors.black54,
+                              size: 20,
+                            ),
                     ),
                     SizedBox(width: 2),
                     Text("After Eating"),
@@ -1390,14 +1733,23 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               ),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListTile(
-            title: Text('Previous entered field data show as a label text. Entered all field data show as a label text.',
-              style: TextStyle(fontFamily: 'Segoe', fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.left,),
+            title: Text(
+              'Previous entered field data show as a label text. Entered all field data show as a label text.',
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600),
+              textAlign: TextAlign.left,
+            ),
           ),
           Container(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 120),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 120),
               child: MaterialButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('');
@@ -1407,7 +1759,12 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 padding: EdgeInsets.only(left: 6, top: 6, right: 6, bottom: 6),
                 color: kButtonColor,
-                child: Text('Add', style: TextStyle(fontFamily: 'Segoe', fontSize: 15, color: Colors.white, fontWeight: FontWeight.w700)),
+                child: Text('Add',
+                    style: TextStyle(
+                        fontFamily: 'Segoe',
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700)),
               ),
             ),
           ),
@@ -1416,8 +1773,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 hintText: "",
-                contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
               maxLines: 25,
               minLines: 6,
@@ -1430,7 +1789,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Next Visit",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
                 suffixText: 'Month/Day',
                 suffixStyle: TextStyle(color: kBodyTextColor),
               ),
@@ -1438,12 +1798,12 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           ),
           ListTile(
             title: Container(
-              child:
-              SimpleAutocompleteFormField<NextVisit>(
+              child: SimpleAutocompleteFormField<NextVisit>(
                 decoration: InputDecoration(
                   hintText: "Next Visit",
                   contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                 ),
                 suggestionsHeight: 80.0,
                 itemBuilder: (context, nextVisit) => Padding(
@@ -1458,30 +1818,32 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 onSearch: (search) async => nextVisit
                     .where((nextVisit) =>
-                nextVisit.name
-                    .toLowerCase()
-                    .contains(search.toLowerCase()) ||
-                    nextVisit.address
-                        .toLowerCase()
-                        .contains(search.toLowerCase()))
+                        nextVisit.name
+                            .toLowerCase()
+                            .contains(search.toLowerCase()) ||
+                        nextVisit.address
+                            .toLowerCase()
+                            .contains(search.toLowerCase()))
                     .toList(),
                 itemFromString: (string) => nextVisit.singleWhere(
-                        (nextVisit) => nextVisit.name.toLowerCase() == string.toLowerCase(),
+                    (nextVisit) =>
+                        nextVisit.name.toLowerCase() == string.toLowerCase(),
                     orElse: () => null),
                 onChanged: (value) => setState(() => selectedNextVisit = value),
                 onSaved: (value) => setState(() => selectedNextVisit = value),
-                validator: (nextVisit) => nextVisit == null ? 'Invalid person.' : null,
+                validator: (nextVisit) =>
+                    nextVisit == null ? 'Invalid person.' : null,
               ),
             ),
           ),
           ListTile(
             title: Container(
-              child:
-              SimpleAutocompleteFormField<PaidTK>(
+              child: SimpleAutocompleteFormField<PaidTK>(
                 decoration: InputDecoration(
                   hintText: "Paid (TK)",
                   contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                 ),
                 suggestionsHeight: 80.0,
                 itemBuilder: (context, paidTK) => Padding(
@@ -1496,19 +1858,21 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 ),
                 onSearch: (search) async => paidTK
                     .where((paidTK) =>
-                paidTK.name
-                    .toLowerCase()
-                    .contains(search.toLowerCase()) ||
-                    paidTK.address
-                        .toLowerCase()
-                        .contains(search.toLowerCase()))
+                        paidTK.name
+                            .toLowerCase()
+                            .contains(search.toLowerCase()) ||
+                        paidTK.address
+                            .toLowerCase()
+                            .contains(search.toLowerCase()))
                     .toList(),
                 itemFromString: (string) => paidTK.singleWhere(
-                        (paidTK) => paidTK.name.toLowerCase() == string.toLowerCase(),
+                    (paidTK) =>
+                        paidTK.name.toLowerCase() == string.toLowerCase(),
                     orElse: () => null),
                 onChanged: (value) => setState(() => selectedPaidTK = value),
                 onSaved: (value) => setState(() => selectedPaidTK = value),
-                validator: (paidTK) => paidTK == null ? 'Invalid person.' : null,
+                validator: (paidTK) =>
+                    paidTK == null ? 'Invalid person.' : null,
               ),
             ),
           ),
@@ -1518,7 +1882,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
               decoration: new InputDecoration(
                 hintText: "Visit No.",
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -1539,7 +1904,14 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             child: Image.asset('assets/advises.png'),
           ),
         ),
-        title: Text('Advises', style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, fontSize: 16, fontWeight: FontWeight.w700),),
+        title: Text(
+          'Advises',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              color: kBaseColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
         children: <Widget>[
           ListTile(
             title: new TextField(
@@ -1552,7 +1924,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   icon: Icon(Icons.add),
                 ),
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -1567,7 +1940,8 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   icon: Icon(Icons.add),
                 ),
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
           ),
@@ -1590,38 +1964,47 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
         ),
         padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 8),
         color: kWhiteShadow,
-        child: Text('Preview', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
+        child: Text('Preview',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                fontSize: 15,
+                color: kBaseColor,
+                fontWeight: FontWeight.w700)),
       ),
     );
 
     final saveAndPrint = Padding(
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 90),
       child: MaterialButton(
-
-        onPressed: ()async{
+        onPressed: () async {
           writeOnPdf();
           await savePdf();
 
-          Directory documentDirectory = await getApplicationDocumentsDirectory();
+          Directory documentDirectory =
+              await getApplicationDocumentsDirectory();
 
           String documentPath = documentDirectory.path;
 
           String fullPath = "$documentPath/example.pdf";
 
-          Navigator.push(context, MaterialPageRoute(
-              builder: (context) => PdfPreviewScreen(
-                path: fullPath,
-              )
-          ));
-
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PdfPreviewScreen(
+                        path: fullPath,
+                      )));
         },
-
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
         ),
         padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 8),
         color: kWhiteShadow,
-        child: Text('Save and Print', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
+        child: Text('Save and Print',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                fontSize: 15,
+                color: kBaseColor,
+                fontWeight: FontWeight.w700)),
       ),
     );
 
@@ -1629,14 +2012,20 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 90),
       child: MaterialButton(
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) => PreviewPrescription()));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => PreviewPrescription()));
         },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
         ),
         padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 8),
         color: kWhiteShadow,
-        child: Text('Send to Patient', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
+        child: Text('Send to Patient',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                fontSize: 15,
+                color: kBaseColor,
+                fontWeight: FontWeight.w700)),
       ),
     );
 
@@ -1646,14 +2035,19 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
       padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
       child: new FindDropdown<UserModel>(
         label: 'Patient Search/Select',
-        labelStyle: TextStyle(fontFamily: 'Segoe', fontSize: 18, fontWeight: FontWeight.w600,),
+        labelStyle: TextStyle(
+          fontFamily: 'Segoe',
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+        ),
         showSearchBox: true,
         searchBoxDecoration: InputDecoration(
             hintText: 'By Name or Phone Number',
-            contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
-            prefixIcon: Icon(Icons.search)
-        ),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
+            prefixIcon: Icon(Icons.search)),
         onFind: (String filter) => getData(filter),
         onChanged: (UserModel data) {
           print(data);
@@ -1667,21 +2061,24 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             ),
             child: (item?.avatar == null)
                 ? ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                radius: 40.0,
-                child: Icon(Icons.wheelchair_pickup_outlined, size: 35,),
-                //Image.asset('assets/apatient.png'),
-              ),
-              title: Text("No patient selected"),
-            )
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 40.0,
+                      child: Icon(
+                        Icons.wheelchair_pickup_outlined,
+                        size: 35,
+                      ),
+                      //Image.asset('assets/apatient.png'),
+                    ),
+                    title: Text("No patient selected"),
+                  )
                 : ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(item.avatar),
-              ),
-              title: Text(item.name),
-              subtitle: Text(item.createdAt.toString()),
-            ),
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(item.avatar),
+                    ),
+                    title: Text(item.name),
+                    subtitle: Text(item.createdAt.toString()),
+                  ),
           );
         },
         dropdownItemBuilder:
@@ -1690,11 +2087,10 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             decoration: !isSelected
                 ? null
                 : BoxDecoration(
-              border:
-              Border.all(color: Theme.of(context).primaryColor),
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white,
-            ),
+                    border: Border.all(color: Theme.of(context).primaryColor),
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.white,
+                  ),
             child: ListTile(
               selected: isSelected,
               title: Text(item.name),
@@ -1719,7 +2115,12 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
         ),
         padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 8),
         color: kWhiteShadow,
-        child: Text('Edit Prescription', style: TextStyle(fontFamily: "Segoe", fontSize: 15, color: kBaseColor, fontWeight: FontWeight.w700)),
+        child: Text('Edit Prescription',
+            style: TextStyle(
+                fontFamily: "Segoe",
+                fontSize: 15,
+                color: kBaseColor,
+                fontWeight: FontWeight.w700)),
       ),
     );
 
@@ -1727,28 +2128,31 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          drawer: drawer,
-          appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: kBaseColor,
-            iconTheme: IconThemeData(color: kTitleColor),
-            toolbarHeight: 50,
-            elevation: 2.0,
-            title: Text('Prescription', style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
-          ),
+            drawer: drawer,
+            appBar: AppBar(
+              centerTitle: true,
+              backgroundColor: kBaseColor,
+              iconTheme: IconThemeData(color: kTitleColor),
+              toolbarHeight: 50,
+              elevation: 2.0,
+              title: Text('Prescription',
+                  style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
+            ),
             backgroundColor: kBackgroundColor,
             body: Center(
               child: Column(
                 children: [
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   TabBar(
                       unselectedLabelColor: kBaseColor,
                       labelColor: kBackgroundColor,
                       indicatorColor: kBaseColor,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicator: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [kBaseColor, kBaseColor]),
+                          gradient:
+                              LinearGradient(colors: [kBaseColor, kBaseColor]),
                           borderRadius: BorderRadius.circular(50),
                           color: kBaseColor),
                       tabs: [
@@ -1757,10 +2161,17 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                             width: 205,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                border: Border.all(color: kBaseColor, width: 1.2)),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.2)),
                             child: Align(
                               alignment: Alignment.center,
-                              child: Text("Follow-Up Patient", style: TextStyle(fontFamily: 'Segoe', fontSize: 16, fontWeight: FontWeight.w700),),
+                              child: Text(
+                                "Follow-Up Patient",
+                                style: TextStyle(
+                                    fontFamily: 'Segoe',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
+                              ),
                             ),
                           ),
                         ),
@@ -1769,58 +2180,69 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                             width: 205,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(color: kBaseColor, width: 1.2)),
-
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.2)),
                             child: Align(
                               alignment: Alignment.center,
-                              child: Text("New Patient", style: TextStyle(fontFamily: 'Segoe', fontSize: 16, fontWeight: FontWeight.w700),),
+                              child: Text(
+                                "New Patient",
+                                style: TextStyle(
+                                    fontFamily: 'Segoe',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
+                              ),
                             ),
                           ),
                         ),
                       ]),
                   Expanded(
-                      child: TabBarView(
-                          children: <Widget>[
-                            Container(
-                              color: kBackgroundColor,
-                              child: ListView(
-                                padding: EdgeInsets.all(4),
-                                children: [
-                                  SizedBox(height: 30,),
-                                  oldPatientSearch,
-                                  SizedBox(height: 0,),
-                                  editPrescription
-                                ],
-                              ),
+                    child: TabBarView(children: <Widget>[
+                      Container(
+                        color: kBackgroundColor,
+                        child: ListView(
+                          padding: EdgeInsets.all(4),
+                          children: [
+                            SizedBox(
+                              height: 30,
                             ),
-                            Container(
-                              color: kBackgroundColor,
-                              child: ListView(
-                                children: [
-                                  SizedBox(height: 20,),
-                                  patientInfo,
-                                  diseaseCondition,
-                                  chiefComplaint,
-                                  oE,
-                                  history,
-                                  medication,
-                                  advises,
-                                  preview,
-                                  saveAndPrint,
-                                  teleMedicine,
-                                  SizedBox(height: 50,),
-                                ],
-                              ),
-                              //color: kBackgroundColor,
+                            oldPatientSearch,
+                            SizedBox(
+                              height: 0,
                             ),
-                            //Icon(Icons.movie),
-                          ]
+                            editPrescription
+                          ],
+                        ),
                       ),
+                      Container(
+                        color: kBackgroundColor,
+                        child: ListView(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            patientInfo,
+                            diseaseCondition,
+                            chiefComplaint,
+                            oE,
+                            history,
+                            medication,
+                            advises,
+                            preview,
+                            saveAndPrint,
+                            teleMedicine,
+                            SizedBox(
+                              height: 50,
+                            ),
+                          ],
+                        ),
+                        //color: kBackgroundColor,
+                      ),
+                      //Icon(Icons.movie),
+                    ]),
                   ),
                 ],
               ),
-            )
-        ),
+            )),
       ),
     );
   }
@@ -1834,103 +2256,131 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
     var models = UserModel.fromJsonList(response.data);
     return models;
   }
+
   addDiseaseCondition() {
     showDialog(
         context: context,
         builder: (_) => new AlertDialog(
-          title: new Text("Add New Disease Condition"),
-          content: new Text("Hey! Are you sure? You want to add new Disease Condition!"),
-          actions: <Widget>[
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-          ],
-        ));
+              title: new Text("Add New Disease Condition"),
+              content: new Text(
+                  "Hey! Are you sure? You want to add new Disease Condition!"),
+              actions: <Widget>[
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Cancel',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Add',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+              ],
+            ));
   }
+
   addChiefComplaint() {
     showDialog(
         context: context,
         builder: (_) => new AlertDialog(
-          title: new Text("Add New Chief Complaint"),
-          content: new Text("Hey! I'm from Chief Complaint!"),
-          actions: <Widget>[
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-          ],
-        ));
+              title: new Text("Add New Chief Complaint"),
+              content: new Text("Hey! I'm from Chief Complaint!"),
+              actions: <Widget>[
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Cancel',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Add',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+              ],
+            ));
   }
+
   addGeneralAdvise() {
     showDialog(
         context: context,
         builder: (_) => new AlertDialog(
-          title: new Text("Add New General Advise"),
-          content: new Text("Hey! I'm from General Advises!"),
-          actions: <Widget>[
-
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              padding: EdgeInsets.all(10),
-              color: kButtonColor,
-              child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
-            ),
-          ],
-        ));
+              title: new Text("Add New General Advise"),
+              content: new Text("Hey! I'm from General Advises!"),
+              actions: <Widget>[
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Cancel',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  padding: EdgeInsets.all(10),
+                  color: kButtonColor,
+                  child: Text('Add',
+                      style: TextStyle(
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 14,
+                          color: Colors.white)),
+                ),
+              ],
+            ));
   }
+
   addDiagnosisAdvise() {
     showDialog(
       context: context,
@@ -1938,7 +2388,6 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
         title: new Text("Add New Diagnosis Advise"),
         content: new Text("Hey! I'm from Diagnosis Advises!"),
         actions: <Widget>[
-
           MaterialButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
@@ -1948,7 +2397,11 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             },
             padding: EdgeInsets.all(10),
             color: kButtonColor,
-            child: Text('Cancel', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
+            child: Text('Cancel',
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 14,
+                    color: Colors.white)),
           ),
           MaterialButton(
             shape: RoundedRectangleBorder(
@@ -1959,31 +2412,31 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
             },
             padding: EdgeInsets.all(10),
             color: kButtonColor,
-            child: Text('Add', style: TextStyle(fontFamily: "Poppins-Bold", fontSize: 14, color: Colors.white)),
+            child: Text('Add',
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 14,
+                    color: Colors.white)),
           ),
         ],
       ),
     );
   }
-
 }
 
 class PdfPreviewScreen extends StatelessWidget {
   final String path;
 
-  PdfPreviewScreen({this.path,  appBarAppBar, AppBar appBar});
+  PdfPreviewScreen({this.path, appBarAppBar, AppBar appBar});
 
   @override
   Widget build(BuildContext context) {
     return PDFViewerScaffold(
-      appBar: AppBar(
-          title: Text("Generated PDF Document")
-      ),
+      appBar: AppBar(title: Text("Generated PDF Document")),
       path: path,
     );
   }
 }
-
 
 class PaidTK {
   PaidTK(this.name, this.address);
@@ -2013,7 +2466,6 @@ class NewPatient {
   String toString() => name;
 }
 
-
 class UserModel {
   final String id;
   final DateTime createdAt;
@@ -2026,8 +2478,8 @@ class UserModel {
     if (json == null) return null;
     return UserModel(
       id: json["id"],
-      createdAt: json["createdAt"] == null ? null : DateTime.parse(
-          json["createdAt"]),
+      createdAt:
+          json["createdAt"] == null ? null : DateTime.parse(json["createdAt"]),
       name: json["name"],
       avatar: json["avatar"],
     );
