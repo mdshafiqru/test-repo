@@ -19,10 +19,12 @@ class NewAccountVerifyPatient extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  NewAccountVerifyPatientState createState() => new NewAccountVerifyPatientState();
+  NewAccountVerifyPatientState createState() =>
+      new NewAccountVerifyPatientState();
 }
 
-class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with SingleTickerProviderStateMixin {
+class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient>
+    with SingleTickerProviderStateMixin {
   // Constants
   final int time = 30;
   AnimationController _controller;
@@ -43,7 +45,7 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
   bool didReadNotifications = false;
   int unReadNotificationsCount = 0;
 
-  get _getVerificationIcon{
+  get _getVerificationIcon {
     return Container(
       padding: EdgeInsets.only(top: 45),
       child: Hero(
@@ -64,7 +66,11 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
         "Account Verification",
         textAlign: TextAlign.center,
         style: new TextStyle(
-            fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600),
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -89,11 +95,12 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
         "Please enter the OTP sent to your registered phone number",
         textAlign: TextAlign.center,
         style: new TextStyle(
-          fontFamily: 'Segoe', color: kBodyTextColor,),
+          fontFamily: 'Segoe',
+          color: kBodyTextColor,
+        ),
       ),
     );
   }
-
 
   get _getInputField {
     return Container(
@@ -135,7 +142,11 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Icon(Icons.access_time, size: 20.0, color: kBaseColor,),
+            new Icon(
+              Icons.access_time,
+              size: 20.0,
+              color: kBaseColor,
+            ),
             new SizedBox(
               width: 5.0,
             ),
@@ -158,7 +169,11 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
         alignment: Alignment.center,
         child: new Text(
           "Resend OTP",
-          style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 15, color: kWhiteShadow),
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              letterSpacing: 0.5,
+              fontSize: 15,
+              color: kWhiteShadow),
         ),
       ),
       onTap: () {
@@ -167,7 +182,7 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
     );
   }
 
-  get _getVerifyButton{
+  get _getVerifyButton {
     return Container(
       padding: EdgeInsets.only(bottom: 30.0),
       child: MaterialButton(
@@ -181,7 +196,11 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
           alignment: Alignment.center,
           child: Text(
             "Verify",
-            style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow),
+            style: TextStyle(
+                fontFamily: 'Segoe',
+                letterSpacing: 0.5,
+                fontSize: 18,
+                color: kWhiteShadow),
           ),
         ),
         onPressed: () {
@@ -305,14 +324,14 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
     totalTimeInSeconds = time;
     super.initState();
     _controller =
-    AnimationController(vsync: this, duration: Duration(seconds: time))
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.dismissed) {
-          setState(() {
-            _hideResendButton = !_hideResendButton;
+        AnimationController(vsync: this, duration: Duration(seconds: time))
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.dismissed) {
+              setState(() {
+                _hideResendButton = !_hideResendButton;
+              });
+            }
           });
-        }
-      });
     _controller.reverse(
         from: _controller.value == 0.0 ? 1.0 : _controller.value);
     _startCountdown();
@@ -331,7 +350,7 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
       backgroundColor: kBackgroundColor,
       body: new Container(
         width: _screenSize.width,
-//        padding: new EdgeInsets.only(bottom: 16.0),
+        padding: new EdgeInsets.only(top: 40.0),
         child: _getInputPart,
       ),
     );
@@ -353,9 +372,9 @@ class NewAccountVerifyPatientState extends State<NewAccountVerifyPatient> with S
 //            color: Colors.grey.withOpacity(0.4),
           border: Border(
               bottom: BorderSide(
-                width: 1.0,
-                color: Colors.black,
-              ))),
+        width: 1.0,
+        color: Colors.black,
+      ))),
     );
   }
 
