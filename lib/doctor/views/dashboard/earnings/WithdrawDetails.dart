@@ -8,7 +8,6 @@ class WithdrawDetails extends StatefulWidget {
 }
 
 class WithdrawDetailsState extends State<WithdrawDetails> {
-
   @override
   Widget build(BuildContext context) {
     final withdrawLogo = Padding(
@@ -18,16 +17,23 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
         height: 80.00,
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: ExactAssetImage('assets/withdrawdetails.png'),
-              fit: BoxFit.fitHeight,
-            )),
+          image: ExactAssetImage('assets/withdrawdetails.png'),
+          fit: BoxFit.fitHeight,
+        )),
       ),
     );
     final withdrawTitle = Container(
       width: 250.00,
       height: 30,
-      child: Text('Withdraw Details',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Withdraw Details',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -37,36 +43,50 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
         padding: EdgeInsets.only(left: 2, right: 2),
         child: DataTable(
           headingRowColor:
-          MaterialStateColor.resolveWith((states) => Colors.grey),
+              MaterialStateColor.resolveWith((states) => Colors.grey),
           dataRowHeight: 30,
           headingRowHeight: 40,
           showBottomBorder: true,
-          columnSpacing: 18.0,
+          columnSpacing: 20.0,
           columns: [
             DataColumn(
                 label: Text(
-                  "#SL",
-                  style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-                )),
+              "#SL",
+              style: TextStyle(
+                  fontSize: 15.0,
+                  color: kWhiteShade,
+                  fontWeight: FontWeight.w900),
+            )),
             DataColumn(
                 label: Text(
-                  "Withdrawal Amount",
-                  style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-                )),
+              "W/D Amount",
+              style: TextStyle(
+                  fontSize: 15.0,
+                  color: kWhiteShade,
+                  fontWeight: FontWeight.w900),
+            )),
             DataColumn(
                 label: Text(
-                  "Date",
-                  style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-                )),
+              "Date",
+              style: TextStyle(
+                  fontSize: 15.0,
+                  color: kWhiteShade,
+                  fontWeight: FontWeight.w900),
+            )),
             DataColumn(
                 label: Text(
-                  "Status",
-                  style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-                )),
+              "Status",
+              style: TextStyle(
+                  fontSize: 15.0,
+                  color: kWhiteShade,
+                  fontWeight: FontWeight.w900),
+            )),
           ],
           rows: [
             DataRow(cells: [
-              DataCell(Text("1"),),
+              DataCell(
+                Text("1"),
+              ),
               DataCell(Text("2000")),
               DataCell(Text("21-01-2021")),
               DataCell(Text("Received")),
@@ -202,7 +222,7 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
       ),
     );
 
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
         backgroundColor: kBaseColor,
@@ -213,7 +233,8 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Withdraw Details', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Withdraw Details',
+            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -222,7 +243,9 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
             SizedBox(height: 2),
             withdrawLogo,
             withdrawTitle,
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             const Divider(
               color: Colors.black,
               height: 0.0,
@@ -230,7 +253,9 @@ class WithdrawDetailsState extends State<WithdrawDetails> {
               indent: 0.0,
               endIndent: 0.0,
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             appliedData,
           ],
         ),
