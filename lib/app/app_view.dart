@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
+import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -148,7 +148,7 @@ class HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 165),
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 150),
             child: Image.asset('assets/logo.png'),
           )
         ],
@@ -174,7 +174,7 @@ class HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 145),
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 125),
             child: Image.asset('assets/pharmalogo.png'),
           )
         ],
