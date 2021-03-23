@@ -12,12 +12,9 @@ class UpdatePassword extends StatefulWidget {
 }
 
 class UpdatePasswordState extends State<UpdatePassword> {
-
-
   @override
   Widget build(BuildContext context) {
-
-    final forgotPasswordLogo = Container(
+    final updatePasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
         tag: 'hero',
@@ -40,8 +37,15 @@ class UpdatePasswordState extends State<UpdatePassword> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Pro. Mohammed Hanif',
-        style: TextStyle(fontFamily: 'Segoe', color: kBaseColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Pro. Mohammed Hanif',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kBaseColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -58,21 +62,27 @@ class UpdatePasswordState extends State<UpdatePassword> {
     final forgotPassInstructions = Container(
       padding: EdgeInsets.only(left: 2.0, top: 30.0, right: 2.0, bottom: 120.0),
       child: Text(
-        'Please enter new password and re-type password to sign in', textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0, color: kBodyTextColor, fontWeight: FontWeight.w500),
+        'Please enter new password and re-type password to sign in',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            fontSize: 13.0,
+            color: kBodyTextColor,
+            fontWeight: FontWeight.w500),
       ),
     );
 
     final newPassword = Container(
       height: 70,
-      padding: EdgeInsets.only(top:0.0, left: 25, bottom: 20, right: 25),
+      padding: EdgeInsets.only(top: 0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(10)],
         keyboardType: TextInputType.visiblePassword,
         obscureText: true,
         validator: numberValidator,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -80,7 +90,9 @@ class UpdatePasswordState extends State<UpdatePassword> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
                 'assets/password.png',
@@ -101,7 +113,8 @@ class UpdatePasswordState extends State<UpdatePassword> {
         validator: numberValidator,
         obscureText: true,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Re-Type Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -109,7 +122,9 @@ class UpdatePasswordState extends State<UpdatePassword> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
                 'assets/retypepassword.png',
@@ -132,7 +147,12 @@ class UpdatePasswordState extends State<UpdatePassword> {
             Navigator.of(context).pushNamed(DashboardDoctor.tag);
           },
           color: kButtonColor,
-          child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+          child: Text('Sgin in',
+              style: TextStyle(
+                  fontFamily: "Segoe",
+                  letterSpacing: 0.5,
+                  fontSize: 18,
+                  color: kWhiteShadow)),
         ),
       ),
     );
@@ -143,7 +163,7 @@ class UpdatePasswordState extends State<UpdatePassword> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            forgotPasswordLogo,
+            updatePasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
             forgotPassInstructions,
@@ -158,11 +178,11 @@ class UpdatePasswordState extends State<UpdatePassword> {
 }
 
 String numberValidator(String value) {
-  if(value == null) {
+  if (value == null) {
     return null;
   }
   final n = num.tryParse(value);
-  if(n == null) {
+  if (n == null) {
     return '"$value" is not a valid number!';
   }
   return null;
