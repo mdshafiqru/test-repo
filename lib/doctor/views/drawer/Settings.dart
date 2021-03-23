@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
-import 'package:settings_ui/settings_ui.dart';
 
 class Settings extends StatefulWidget {
   Settings({Key key, this.title}) : super(key: key);
@@ -15,7 +14,6 @@ class SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
-
     final newAccountPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
@@ -31,8 +29,15 @@ class SettingsState extends State<Settings> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Settings',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Settings',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -46,7 +51,6 @@ class SettingsState extends State<Settings> {
       ),
     );
 
-
     return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
@@ -58,7 +62,8 @@ class SettingsState extends State<Settings> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Settings', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Settings',
+            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -68,29 +73,6 @@ class SettingsState extends State<Settings> {
             newAccountPasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
-            Container(
-              child: SettingsList(
-                sections: [
-                  SettingsSection(
-                    title: 'Section',
-                    tiles: [
-                      SettingsTile(
-                        title: 'Language',
-                        subtitle: 'English',
-                        leading: Icon(Icons.language),
-                        onPressed: (BuildContext context) {},
-                      ),
-                      SettingsTile.switchTile(
-                        title: 'Use fingerprint',
-                        leading: Icon(Icons.fingerprint),
-                        switchValue: value,
-                        onToggle: (bool value) {},
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
