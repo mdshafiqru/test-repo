@@ -675,8 +675,8 @@ class AppointmentState extends State<Appointment> {
               child: Row(
                 children: [
                   Container(
-                    width: 185,
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    width: 178,
+                    padding: EdgeInsets.only(left: 25.0, right: 25.0),
                     child: MaterialButton(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -696,8 +696,8 @@ class AppointmentState extends State<Appointment> {
                     ),
                   ),
                   Container(
-                    width: 185,
-                    padding: EdgeInsets.only(left: 30.0, right: 10.0),
+                    width: 178,
+                    padding: EdgeInsets.only(left: 25.0, right: 20.0),
                     child: MaterialButton(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -777,7 +777,7 @@ class AppointmentState extends State<Appointment> {
             ),
           ),
           SizedBox(
-            width: 75,
+            width: 60,
           ),
           Container(
               child: RawMaterialButton(
