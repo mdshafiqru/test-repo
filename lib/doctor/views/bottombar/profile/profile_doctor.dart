@@ -308,7 +308,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
         ),
         buttons: [
           DialogButton(
-            width: 275,
+            width: 250,
             child: Text(
               "Update Info",
               style: TextStyle(
@@ -758,10 +758,10 @@ class ProfileDoctorState extends State<ProfileDoctor> {
       ),
     );
 
-    final doctorImgValidEdit = Row(
+    final validationImageEdit = Row(
       children: [
         Container(
-          width: 125,
+          width: 120,
           padding: EdgeInsets.only(left: 18.0),
           child: SizedBox(
             child: Text(
@@ -771,7 +771,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
           ),
         ),
         Container(
-          width: 160,
+          width: 150,
           padding:
               EdgeInsets.only(left: 10.0, top: 2.0, right: 10.0, bottom: 10.0),
           child: Center(
@@ -809,7 +809,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
           ),
         ),
         Container(
-          width: 125,
+          width: 120,
           height: 35,
           padding: EdgeInsets.only(left: 50.0),
           child: Center(
@@ -1274,7 +1274,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            doctorImgValidEdit,
+            validationImageEdit,
             //doctorImg,
             const Divider(
               color: kTitleTextColor,
