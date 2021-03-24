@@ -14,6 +14,7 @@ import 'package:pro_health/doctor/views/drawer/Reviews.dart';
 import 'package:pro_health/doctor/views/drawer/Settings.dart';
 import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';
@@ -31,6 +32,7 @@ class HomePatient extends StatefulWidget {
 
 class HomePatientState extends State<HomePatient> {
   PageController controller;
+  var rating = 5.0;
 
   GlobalKey<PageContainerState> key = GlobalKey();
 
@@ -550,7 +552,7 @@ class HomePatientState extends State<HomePatient> {
 
     final swiperSlide = Container(
       height: 265.0,
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(8),
       child: PageIndicatorContainer(
         key: key,
         child: PageView(
@@ -619,8 +621,8 @@ class HomePatientState extends State<HomePatient> {
     );
 
     final searchDoctor = Container(
-      height: 70,
-      padding: EdgeInsets.only(left: 10, top: 15, right: 10, bottom: 15),
+      height: 60,
+      padding: EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
       child: TextFormField(
         keyboardType: TextInputType.text,
         autofocus: false,
@@ -690,46 +692,361 @@ class HomePatientState extends State<HomePatient> {
     );
 
     final doctorCard = Container(
-      height: 180,
+      height: 200,
       padding: EdgeInsets.only(left: 6, top: 10, right: 5, bottom: 2),
       child: PageView(
         children: [
           Container(
             child: Row(
               children: [
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-1'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 5,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 4, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-2'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 5,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-3'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 5,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -739,39 +1056,354 @@ class HomePatientState extends State<HomePatient> {
           Container(
             child: Row(
               children: [
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-4'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-5'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-6'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -781,39 +1413,711 @@ class HomePatientState extends State<HomePatient> {
           Container(
             child: Row(
               children: [
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-7'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-8'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 127,
-                  height: 170,
-                  padding: EdgeInsets.only(left: 2, right: 2),
-                  child: Card(
-                    elevation: 6,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Doctor-9'),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  elevation: 4,
+                  color: kCardTitleColor,
+                  child: Container(
+                    width: 119,
+                    height: 200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 0, top: 5, right: 0, bottom: 0),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        ExactAssetImage('assets/doctorimg.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 16,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kOnlineColor,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(bottom: 2),
+                                  child: new Text(
+                                    "Online",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        letterSpacing: 0.5,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Prof. Mohammed Hanif',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                fontSize: 12.0,
+                                color: kBaseColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: kButtonColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Pediatrician",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 10,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 2, bottom: 2),
+                          child: SmoothStarRating(
+                              allowHalfRating: false,
+                              onRated: (v) {},
+                              starCount: 5,
+                              rating: rating,
+                              size: 15.0,
+                              isReadOnly: true,
+                              filledIconData: Icons.star,
+                              halfFilledIconData: Icons.star_half,
+                              color: Colors.amber,
+                              borderColor: Colors.amber,
+                              spacing: 0.0),
+                        ),
+                        Container(
+                          height: 16,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: kBaseColor,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(20)),
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(bottom: 2),
+                          child: new Text(
+                            "Details",
+                            style: TextStyle(
+                                fontFamily: 'Segoe',
+                                letterSpacing: 0.5,
+                                fontSize: 12,
+                                color: kWhiteShadow),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -829,56 +2133,170 @@ class HomePatientState extends State<HomePatient> {
 
     final latestUpdate = Container(
       height: 70,
-      padding: EdgeInsets.all(10),
-      child: Card(
-        elevation: 6,
-        child: Row(
-          children: [
-            Container(
-              height: 42,
-              width: 140,
-              padding: EdgeInsets.only(left: 5, top: 10, right: 5, bottom: 10),
-              color: kBaseColor,
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Covid-19 Update',
-                  style: TextStyle(
-                      fontFamily: 'Segoe',
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+      padding: EdgeInsets.only(left: 10, top: 4, right: 10, bottom: 10),
+      child: PageView(
+        children: [
+          Card(
+            elevation: 6,
+            child: Row(
+              children: [
+                Container(
+                  height: 47,
+                  width: 140,
+                  padding:
+                      EdgeInsets.only(left: 5, top: 10, right: 5, bottom: 10),
+                  color: kBaseColor,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Covid-19 Update',
+                      style: TextStyle(
+                          fontFamily: 'Segoe',
+                          fontSize: 16,
+                          color: kBackgroundColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  height: 40,
+                  width: 220,
+                  padding:
+                      EdgeInsets.only(left: 2, top: 10, right: 5, bottom: 10),
+                  color: Colors.white,
+                  child: Marquee(
+                    text:
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694. '
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694.',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    scrollAxis: Axis.horizontal,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    blankSpace: 20.0,
+                    velocity: 100.0,
+                    pauseAfterRound: Duration(seconds: 1),
+                    showFadingOnlyWhenScrolling: true,
+                    fadingEdgeStartFraction: 0.1,
+                    fadingEdgeEndFraction: 0.1,
+                    numberOfRounds: 500,
+                    startPadding: 10.0,
+                    accelerationDuration: Duration(seconds: 1),
+                    accelerationCurve: Curves.linear,
+                    decelerationDuration: Duration(milliseconds: 500),
+                    decelerationCurve: Curves.easeOut,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              height: 40,
-              width: 220,
-              padding: EdgeInsets.only(left: 2, top: 10, right: 5, bottom: 10),
-              color: Colors.white,
-              child: Marquee(
-                text:
-                    'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694. '
-                    'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694.',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                scrollAxis: Axis.horizontal,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                blankSpace: 20.0,
-                velocity: 100.0,
-                pauseAfterRound: Duration(seconds: 1),
-                showFadingOnlyWhenScrolling: true,
-                fadingEdgeStartFraction: 0.1,
-                fadingEdgeEndFraction: 0.1,
-                numberOfRounds: 500,
-                startPadding: 10.0,
-                accelerationDuration: Duration(seconds: 1),
-                accelerationCurve: Curves.linear,
-                decelerationDuration: Duration(milliseconds: 500),
-                decelerationCurve: Curves.easeOut,
-              ),
+          ),
+          Card(
+            elevation: 6,
+            child: Row(
+              children: [
+                Container(
+                  height: 47,
+                  width: 140,
+                  padding:
+                      EdgeInsets.only(left: 5, top: 10, right: 5, bottom: 10),
+                  color: kBaseColor,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Latest App Update',
+                      style: TextStyle(
+                          fontFamily: 'Segoe',
+                          fontSize: 16,
+                          color: kBackgroundColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 40,
+                  width: 220,
+                  padding:
+                      EdgeInsets.only(left: 2, top: 10, right: 5, bottom: 10),
+                  color: Colors.white,
+                  child: Marquee(
+                    text:
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694. '
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694.',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    scrollAxis: Axis.horizontal,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    blankSpace: 20.0,
+                    velocity: 100.0,
+                    pauseAfterRound: Duration(seconds: 1),
+                    showFadingOnlyWhenScrolling: true,
+                    fadingEdgeStartFraction: 0.1,
+                    fadingEdgeEndFraction: 0.1,
+                    numberOfRounds: 500,
+                    startPadding: 10.0,
+                    accelerationDuration: Duration(seconds: 1),
+                    accelerationCurve: Curves.linear,
+                    decelerationDuration: Duration(milliseconds: 500),
+                    decelerationCurve: Curves.easeOut,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Card(
+            elevation: 6,
+            child: Row(
+              children: [
+                Container(
+                  height: 47,
+                  width: 140,
+                  padding:
+                      EdgeInsets.only(left: 5, top: 10, right: 5, bottom: 10),
+                  color: kBaseColor,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'ProHealth Update',
+                      style: TextStyle(
+                          fontFamily: 'Segoe',
+                          fontSize: 16,
+                          color: kBackgroundColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 42,
+                  width: 220,
+                  padding:
+                      EdgeInsets.only(left: 2, top: 10, right: 5, bottom: 10),
+                  color: Colors.white,
+                  child: Marquee(
+                    text:
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694. '
+                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694.',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    scrollAxis: Axis.horizontal,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    blankSpace: 20.0,
+                    velocity: 100.0,
+                    pauseAfterRound: Duration(seconds: 1),
+                    showFadingOnlyWhenScrolling: true,
+                    fadingEdgeStartFraction: 0.1,
+                    fadingEdgeEndFraction: 0.1,
+                    numberOfRounds: 500,
+                    startPadding: 10.0,
+                    accelerationDuration: Duration(seconds: 1),
+                    accelerationCurve: Curves.linear,
+                    decelerationDuration: Duration(milliseconds: 500),
+                    decelerationCurve: Curves.easeOut,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+        controller: controller,
+        physics: BouncingScrollPhysics(),
+        pageSnapping: false,
+        scrollDirection: Axis.vertical,
       ),
     );
 
