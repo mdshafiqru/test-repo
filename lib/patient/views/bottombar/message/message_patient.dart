@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
-import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
-import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
-import 'package:pro_health/doctor/views/drawer/ContactUs.dart';
-import 'package:pro_health/doctor/views/drawer/Help.dart';
-import 'package:pro_health/doctor/views/drawer/PrivacyAndPolicy.dart';
-import 'package:pro_health/doctor/views/drawer/Reviews.dart';
-import 'package:pro_health/doctor/views/drawer/Settings.dart';
-import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
+import 'package:pro_health/doctor/views/drawer/about_us.dart';
+import 'package:pro_health/doctor/views/drawer/activity_status.dart';
+import 'package:pro_health/doctor/views/drawer/contact_us.dart';
+import 'package:pro_health/doctor/views/drawer/help.dart';
+import 'package:pro_health/doctor/views/drawer/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/reviews.dart';
+import 'package:pro_health/doctor/views/drawer/settings.dart';
+import 'package:pro_health/doctor/views/drawer/terms_conditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
@@ -81,7 +81,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/homed.png'),
+                      child: Image.asset('assets/icons/patient/homed.png'),
                     ),
                   ),
                   onTap: () {
@@ -109,7 +109,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/profiled.png'),
+                      child: Image.asset('assets/icons/patient/profiled.png'),
                     ),
                   ),
                   onTap: () {
@@ -125,7 +125,7 @@ class MessagePatientState extends State<MessagePatient> {
                 ListTile(
                   dense: true,
                   title: Text(
-                    "Active Status",
+                    "Favourite",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -139,11 +139,101 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/statusd.png'),
+                      child: Image.asset('assets/icons/patient/favourited.png'),
                     ),
                   ),
                   onTap: () {
                     Navigator.of(context).pushNamed(ActivityStatus.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Recent",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/recentd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(TermsConditions.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Consultation History",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/chistoryd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Medicine Remainder",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/remainderd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(AboutUs.tag);
                   },
                 ),
                 Divider(
@@ -169,71 +259,11 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/termsd.png'),
+                      child: Image.asset('assets/icons/patient/termsd.png'),
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(TermsConditions.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "Privacy and Policy",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/privacyd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "About Us",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/aboutd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(AboutUs.tag);
+                    Navigator.of(context).pushNamed(ContactUs.tag);
                   },
                 ),
                 Divider(
@@ -259,37 +289,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/contactd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(ContactUs.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "Help",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/helpd.png'),
+                      child: Image.asset('assets/icons/patient/contactd.png'),
                     ),
                   ),
                   onTap: () {
@@ -319,7 +319,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/settingsd.png'),
+                      child: Image.asset('assets/icons/patient/settingsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -349,7 +349,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/versiond.png'),
+                      child: Image.asset('assets/icons/patient/versiond.png'),
                     ),
                   ),
                   onTap: () {
@@ -379,7 +379,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/signoutd.png'),
+                      child: Image.asset('assets/icons/patient/signoutd.png'),
                     ),
                   ),
                   onTap: () {
@@ -395,7 +395,7 @@ class MessagePatientState extends State<MessagePatient> {
                 ListTile(
                   dense: true,
                   title: Text(
-                    "Renew",
+                    "Complaint",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -409,7 +409,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/renewd.png'),
+                      child: Image.asset('assets/icons/patient/complaintd.png'),
                     ),
                   ),
                   onTap: () {
@@ -439,7 +439,7 @@ class MessagePatientState extends State<MessagePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/reviewsd.png'),
+                      child: Image.asset('assets/icons/patient/reviewsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -466,7 +466,7 @@ class MessagePatientState extends State<MessagePatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 35.0,
-          child: Image.asset('assets/appointments.png'),
+          child: Image.asset('assets/icons/patient/messagepage.png'),
         ),
       ),
     );
