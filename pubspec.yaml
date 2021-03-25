@@ -52,6 +52,7 @@ dependencies:
   flutter_switch: ^0.2.0
   page_indicator: ^0.3.0
   marquee: ^1.7.0
+  percent_indicator: ^3.0.1
 
 
 dev_dependencies:
@@ -64,6 +65,7 @@ flutter:
     - assets/logo.png
     - assets/icons/doctor/
     - assets/icons/patient/
+    - assets/icons/patient/messagepage.png
   fonts:
     - family: Segoe
       fonts:

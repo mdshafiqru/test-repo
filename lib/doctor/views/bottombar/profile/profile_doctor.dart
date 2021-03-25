@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:pro_health/doctor/views/bottombar/home/home_doctor.dart';
-import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
-import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
-import 'package:pro_health/doctor/views/drawer/ContactUs.dart';
-import 'package:pro_health/doctor/views/drawer/Help.dart';
-import 'package:pro_health/doctor/views/drawer/PrivacyAndPolicy.dart';
-import 'package:pro_health/doctor/views/drawer/Reviews.dart';
-import 'package:pro_health/doctor/views/drawer/Settings.dart';
-import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
+import 'package:pro_health/doctor/views/drawer/about_us.dart';
+import 'package:pro_health/doctor/views/drawer/activity_status.dart';
+import 'package:pro_health/doctor/views/drawer/contact_us.dart';
+import 'package:pro_health/doctor/views/drawer/help.dart';
+import 'package:pro_health/doctor/views/drawer/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/reviews.dart';
+import 'package:pro_health/doctor/views/drawer/settings.dart';
+import 'package:pro_health/doctor/views/drawer/terms_conditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -758,74 +758,76 @@ class ProfileDoctorState extends State<ProfileDoctor> {
       ),
     );
 
-    final validationImageEdit = Row(
-      children: [
-        Container(
-          width: 120,
-          padding: EdgeInsets.only(left: 18.0),
-          child: SizedBox(
-            child: Text(
-              'Validity: 364 Days',
-              style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0),
+    final validationImageEdit = Container(
+      child: Row(
+        children: [
+          Container(
+            width: 120,
+            padding: EdgeInsets.only(left: 18.0),
+            child: SizedBox(
+              child: Text(
+                'Validity: 364 Days',
+                style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0),
+              ),
             ),
           ),
-        ),
-        Container(
-          width: 150,
-          padding:
-              EdgeInsets.only(left: 10.0, top: 2.0, right: 10.0, bottom: 10.0),
-          child: Center(
-            child: Stack(
-              alignment: Alignment.center,
-              // ignore: deprecated_member_use
-              overflow: Overflow.visible,
-              children: [
-                CircleAvatar(
-                  radius: 52,
-                  backgroundColor: kBodyTextColor,
-                  child: CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 51,
+          Container(
+            width: 150,
+            padding: EdgeInsets.only(
+                left: 10.0, top: 2.0, right: 10.0, bottom: 10.0),
+            child: Center(
+              child: Stack(
+                alignment: Alignment.center,
+                // ignore: deprecated_member_use
+                overflow: Overflow.visible,
+                children: [
+                  CircleAvatar(
+                    radius: 52,
+                    backgroundColor: kBodyTextColor,
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 50.0,
-                      child: Image.asset('assets/doctorimg.png'),
+                      backgroundColor: kWhiteShade,
+                      radius: 51,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 50.0,
+                        child: Image.asset('assets/doctorimg.png'),
+                      ),
                     ),
                   ),
-                ),
-                Positioned(
-                  top: -(radius - distance),
-                  right: -(radius + iconSize + distance),
-                  bottom: -iconSize - distance - 65,
-                  left: radius,
-                  child: Icon(
-                    Icons.circle,
-                    color: Color(0xff6ECEC0),
-                    size: iconSize - 4,
+                  Positioned(
+                    top: -(radius - distance),
+                    right: -(radius + iconSize + distance),
+                    bottom: -iconSize - distance - 65,
+                    left: radius,
+                    child: Icon(
+                      Icons.circle,
+                      color: Color(0xff6ECEC0),
+                      size: iconSize - 4,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-        Container(
-          width: 120,
-          height: 35,
-          padding: EdgeInsets.only(left: 50.0),
-          child: Center(
-            child: RawMaterialButton(
-              elevation: 5.0,
-              child: Image.asset('assets/edit.png'),
-              shape: CircleBorder(),
-              //fillColor: Colors.white,
-              padding: const EdgeInsets.all(6.0),
-              onPressed: () {
-                editDoctor;
-              },
+          Container(
+            width: 120,
+            height: 35,
+            padding: EdgeInsets.only(left: 50.0),
+            child: Center(
+              child: RawMaterialButton(
+                elevation: 5.0,
+                child: Image.asset('assets/edit.png'),
+                shape: CircleBorder(),
+                //fillColor: Colors.white,
+                padding: const EdgeInsets.all(6.0),
+                onPressed: () {
+                  editDoctor;
+                },
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
 
     final doctorName = Padding(
