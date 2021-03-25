@@ -5,14 +5,14 @@ import 'package:marquee/marquee.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
-import 'package:pro_health/doctor/views/drawer/AboutUs.dart';
-import 'package:pro_health/doctor/views/drawer/ActivityStatus.dart';
-import 'package:pro_health/doctor/views/drawer/ContactUs.dart';
-import 'package:pro_health/doctor/views/drawer/Help.dart';
-import 'package:pro_health/doctor/views/drawer/PrivacyAndPolicy.dart';
-import 'package:pro_health/doctor/views/drawer/Reviews.dart';
-import 'package:pro_health/doctor/views/drawer/Settings.dart';
-import 'package:pro_health/doctor/views/drawer/TermsConditions.dart';
+import 'package:pro_health/doctor/views/drawer/about_us.dart';
+import 'package:pro_health/doctor/views/drawer/activity_status.dart';
+import 'package:pro_health/doctor/views/drawer/contact_us.dart';
+import 'package:pro_health/doctor/views/drawer/help.dart';
+import 'package:pro_health/doctor/views/drawer/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/reviews.dart';
+import 'package:pro_health/doctor/views/drawer/settings.dart';
+import 'package:pro_health/doctor/views/drawer/terms_conditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -172,7 +172,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/homed.png'),
+                      child: Image.asset('assets/icons/patient/homed.png'),
                     ),
                   ),
                   onTap: () {
@@ -200,7 +200,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/profiled.png'),
+                      child: Image.asset('assets/icons/patient/profiled.png'),
                     ),
                   ),
                   onTap: () {
@@ -216,7 +216,7 @@ class HomePatientState extends State<HomePatient> {
                 ListTile(
                   dense: true,
                   title: Text(
-                    "Active Status",
+                    "Favourite",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -230,11 +230,101 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/statusd.png'),
+                      child: Image.asset('assets/icons/patient/favourited.png'),
                     ),
                   ),
                   onTap: () {
                     Navigator.of(context).pushNamed(ActivityStatus.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Recent",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/recentd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(TermsConditions.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Consultation History",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/chistoryd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
+                  },
+                ),
+                Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  title: Text(
+                    "Medicine Remainder",
+                    style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Segoe',
+                        fontSize: 16,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundColor: kShadowColor,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Image.asset('assets/icons/patient/remainderd.png'),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(AboutUs.tag);
                   },
                 ),
                 Divider(
@@ -260,71 +350,11 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/termsd.png'),
+                      child: Image.asset('assets/icons/patient/termsd.png'),
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(TermsConditions.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "Privacy and Policy",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/privacyd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "About Us",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/aboutd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(AboutUs.tag);
+                    Navigator.of(context).pushNamed(ContactUs.tag);
                   },
                 ),
                 Divider(
@@ -350,37 +380,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/contactd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(ContactUs.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  title: Text(
-                    "Help",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/helpd.png'),
+                      child: Image.asset('assets/icons/patient/contactd.png'),
                     ),
                   ),
                   onTap: () {
@@ -410,7 +410,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/settingsd.png'),
+                      child: Image.asset('assets/icons/patient/settingsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -440,7 +440,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/versiond.png'),
+                      child: Image.asset('assets/icons/patient/versiond.png'),
                     ),
                   ),
                   onTap: () {
@@ -470,7 +470,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/signoutd.png'),
+                      child: Image.asset('assets/icons/patient/signoutd.png'),
                     ),
                   ),
                   onTap: () {
@@ -486,7 +486,7 @@ class HomePatientState extends State<HomePatient> {
                 ListTile(
                   dense: true,
                   title: Text(
-                    "Renew",
+                    "Complaint",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -500,7 +500,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/renewd.png'),
+                      child: Image.asset('assets/icons/patient/complaintd.png'),
                     ),
                   ),
                   onTap: () {
@@ -530,7 +530,7 @@ class HomePatientState extends State<HomePatient> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/reviewsd.png'),
+                      child: Image.asset('assets/icons/patient/reviewsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -703,7 +703,7 @@ class HomePatientState extends State<HomePatient> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  elevation: 5,
+                  elevation: 4,
                   color: kCardTitleColor,
                   child: Container(
                     width: 119,
@@ -712,7 +712,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 4, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -726,10 +726,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -820,7 +820,7 @@ class HomePatientState extends State<HomePatient> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  elevation: 5,
+                  elevation: 4,
                   color: kCardTitleColor,
                   child: Container(
                     width: 119,
@@ -829,7 +829,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -843,10 +843,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -937,7 +937,7 @@ class HomePatientState extends State<HomePatient> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  elevation: 5,
+                  elevation: 4,
                   color: kCardTitleColor,
                   child: Container(
                     width: 119,
@@ -946,7 +946,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -960,10 +960,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -1069,7 +1069,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -1083,10 +1083,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -1186,7 +1186,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -1200,10 +1200,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -1303,7 +1303,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -1317,367 +1317,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                      color: kOnlineColor,
-                                      shape: BoxShape.rectangle,
-                                      borderRadius: BorderRadius.circular(20)),
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.only(bottom: 2),
-                                  child: new Text(
-                                    "Online",
-                                    style: TextStyle(
-                                        fontFamily: 'Segoe',
-                                        letterSpacing: 0.5,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Prof. Mohammed Hanif',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                fontSize: 12.0,
-                                color: kBaseColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: kButtonColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Pediatrician",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 10,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(top: 2, bottom: 2),
-                          child: SmoothStarRating(
-                              allowHalfRating: false,
-                              onRated: (v) {},
-                              starCount: 5,
-                              rating: rating,
-                              size: 15.0,
-                              isReadOnly: true,
-                              filledIconData: Icons.star,
-                              halfFilledIconData: Icons.star_half,
-                              color: Colors.amber,
-                              borderColor: Colors.amber,
-                              spacing: 0.0),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: kBaseColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Details",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 12,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  elevation: 4,
-                  color: kCardTitleColor,
-                  child: Container(
-                    width: 119,
-                    height: 200,
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Container(
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        ExactAssetImage('assets/doctorimg.png'),
-                                    fit: BoxFit.contain),
-                              ),
-                              child: Align(
-                                alignment: Alignment.topRight,
-                                child: Container(
-                                  height: 16,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                      color: kOnlineColor,
-                                      shape: BoxShape.rectangle,
-                                      borderRadius: BorderRadius.circular(20)),
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.only(bottom: 2),
-                                  child: new Text(
-                                    "Online",
-                                    style: TextStyle(
-                                        fontFamily: 'Segoe',
-                                        letterSpacing: 0.5,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Prof. Mohammed Hanif',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                fontSize: 12.0,
-                                color: kBaseColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: kButtonColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Pediatrician",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 10,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(top: 2, bottom: 2),
-                          child: SmoothStarRating(
-                              allowHalfRating: false,
-                              onRated: (v) {},
-                              starCount: 5,
-                              rating: rating,
-                              size: 15.0,
-                              isReadOnly: true,
-                              filledIconData: Icons.star,
-                              halfFilledIconData: Icons.star_half,
-                              color: Colors.amber,
-                              borderColor: Colors.amber,
-                              spacing: 0.0),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: kBaseColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Details",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 12,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  elevation: 4,
-                  color: kCardTitleColor,
-                  child: Container(
-                    width: 119,
-                    height: 200,
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Container(
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        ExactAssetImage('assets/doctorimg.png'),
-                                    fit: BoxFit.contain),
-                              ),
-                              child: Align(
-                                alignment: Alignment.topRight,
-                                child: Container(
-                                  height: 16,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                      color: kOnlineColor,
-                                      shape: BoxShape.rectangle,
-                                      borderRadius: BorderRadius.circular(20)),
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.only(bottom: 2),
-                                  child: new Text(
-                                    "Online",
-                                    style: TextStyle(
-                                        fontFamily: 'Segoe',
-                                        letterSpacing: 0.5,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Prof. Mohammed Hanif',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                fontSize: 12.0,
-                                color: kBaseColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: kButtonColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Pediatrician",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 10,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(top: 2, bottom: 2),
-                          child: SmoothStarRating(
-                              allowHalfRating: false,
-                              onRated: (v) {},
-                              starCount: 5,
-                              rating: rating,
-                              size: 15.0,
-                              isReadOnly: true,
-                              filledIconData: Icons.star,
-                              halfFilledIconData: Icons.star_half,
-                              color: Colors.amber,
-                              borderColor: Colors.amber,
-                              spacing: 0.0),
-                        ),
-                        Container(
-                          height: 16,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: kBaseColor,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: new Text(
-                            "Details",
-                            style: TextStyle(
-                                fontFamily: 'Segoe',
-                                letterSpacing: 0.5,
-                                fontSize: 12,
-                                color: kWhiteShadow),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  elevation: 4,
-                  color: kCardTitleColor,
-                  child: Container(
-                    width: 119,
-                    height: 200,
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Container(
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        ExactAssetImage('assets/doctorimg.png'),
-                                    fit: BoxFit.contain),
-                              ),
-                              child: Align(
-                                alignment: Alignment.topRight,
-                                child: Container(
-                                  height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -1783,7 +1426,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -1797,10 +1440,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -1900,7 +1543,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -1914,10 +1557,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -2017,7 +1660,7 @@ class HomePatientState extends State<HomePatient> {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                              left: 0, top: 5, right: 0, bottom: 0),
+                              left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
@@ -2031,10 +1674,10 @@ class HomePatientState extends State<HomePatient> {
                                     fit: BoxFit.contain),
                               ),
                               child: Align(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment(1.2, -0.8),
                                 child: Container(
                                   height: 16,
-                                  width: 60,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                       color: kOnlineColor,
                                       shape: BoxShape.rectangle,
@@ -2166,7 +1809,6 @@ class HomePatientState extends State<HomePatient> {
                   color: Colors.white,
                   child: Marquee(
                     text:
-                        'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694. '
                         'Bangladesh Coronavirus Cases: 577,241 Deaths: 8,738 Recovered: 525,694.',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     scrollAxis: Axis.horizontal,
