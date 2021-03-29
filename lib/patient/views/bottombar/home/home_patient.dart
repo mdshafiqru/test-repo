@@ -3,17 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:page_indicator/page_indicator.dart';
-import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
-import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
-import 'package:pro_health/doctor/views/drawer/about_us.dart';
-import 'package:pro_health/doctor/views/drawer/activity_status.dart';
-import 'package:pro_health/doctor/views/drawer/contact_us.dart';
-import 'package:pro_health/doctor/views/drawer/help.dart';
-import 'package:pro_health/doctor/views/drawer/privacy_and_policy.dart';
-import 'package:pro_health/doctor/views/drawer/reviews.dart';
-import 'package:pro_health/doctor/views/drawer/settings.dart';
-import 'package:pro_health/doctor/views/drawer/terms_conditions.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
+import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
+import 'package:pro_health/patient/views/drawer/complaint_patient.dart';
+import 'package:pro_health/patient/views/drawer/consultation_history_patient.dart';
+import 'package:pro_health/patient/views/drawer/contactus_patient.dart';
+import 'package:pro_health/patient/views/drawer/profilep.dart';
+import 'package:pro_health/patient/views/drawer/reviews_patient.dart';
+import 'package:pro_health/patient/views/drawer/terms_conditions_patient.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
@@ -176,7 +174,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(HomePatient.tag);
+                    Navigator.of(context).pushNamed(DashboardPatient.tag);
                   },
                 ),
                 Divider(
@@ -204,7 +202,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(ProfileDoctor.tag);
+                    Navigator.of(context).pushNamed(ProfileP.tag);
                   },
                 ),
                 Divider(
@@ -234,7 +232,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(ActivityStatus.tag);
+                    Navigator.of(context).pushNamed('');
                   },
                 ),
                 Divider(
@@ -264,7 +262,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(TermsConditions.tag);
+                    Navigator.of(context).pushNamed('');
                   },
                 ),
                 Divider(
@@ -294,7 +292,8 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
+                    Navigator.of(context)
+                        .pushNamed(ConsultationHistoryPatient.tag);
                   },
                 ),
                 Divider(
@@ -324,7 +323,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(AboutUs.tag);
+                    Navigator.of(context).pushNamed('');
                   },
                 ),
                 Divider(
@@ -354,7 +353,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(ContactUs.tag);
+                    Navigator.of(context).pushNamed(TermsConditionsPatient.tag);
                   },
                 ),
                 Divider(
@@ -384,7 +383,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(Help.tag);
+                    Navigator.of(context).pushNamed(ContactUsPatient.tag);
                   },
                 ),
                 Divider(
@@ -414,7 +413,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(Settings.tag);
+                    Navigator.of(context).pushNamed('');
                   },
                 ),
                 Divider(
@@ -426,7 +425,7 @@ class HomePatientState extends State<HomePatient> {
                 ListTile(
                   dense: true,
                   title: Text(
-                    "Version v-0.0.1",
+                    "Version v2.4.37",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -474,7 +473,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(SignInDoctor.tag);
+                    Navigator.of(context).pushNamed(SignInPatient.tag);
                   },
                 ),
                 Divider(
@@ -504,7 +503,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(ComplaintPatient.tag);
                   },
                 ),
                 Divider(
@@ -534,7 +533,7 @@ class HomePatientState extends State<HomePatient> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(Reviews.tag);
+                    Navigator.of(context).pushNamed(ReviewsPatient.tag);
                   },
                 ),
                 Divider(
@@ -633,9 +632,9 @@ class HomePatientState extends State<HomePatient> {
         decoration: InputDecoration(
           filled: true,
           fillColor: kDashBoxColor,
-          hintText: 'Search by Doctor/ Hospital/ Disease',
+          hintText: 'Search by Doctors name/ Hospital/ Disease',
           hintStyle: TextStyle(
-              fontFamily: 'Segoe', fontSize: 18, fontWeight: FontWeight.w500),
+              fontFamily: 'Segoe', fontSize: 16, fontWeight: FontWeight.w500),
           contentPadding:
               EdgeInsets.only(left: 10.0, top: 3.0, right: 10.0, bottom: 3.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(40.0)),
