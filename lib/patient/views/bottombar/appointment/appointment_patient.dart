@@ -459,7 +459,7 @@ class AppointmentPatientState extends State<AppointmentPatient> {
       ),
     );
 
-    final pharmaUpdateLogo = Container(
+    final appointmentLogo = Container(
       padding: EdgeInsets.only(top: 2),
       child: Hero(
         tag: 'hero',
@@ -471,7 +471,7 @@ class AppointmentPatientState extends State<AppointmentPatient> {
       ),
     );
 
-    final pharmaUpdatesTitle = Container(
+    final appointmentTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
         'Appointment',
@@ -495,34 +495,30 @@ class AppointmentPatientState extends State<AppointmentPatient> {
       ),
     );
 
-    return Material(
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          drawer: drawer,
-          appBar: AppBar(
-            elevation: 2.0,
-            backgroundColor: kBaseColor,
-            iconTheme: IconThemeData(color: kTitleColor),
-            centerTitle: true,
-            toolbarHeight: 50,
-            title: Text('Appointment',
-                style: TextStyle(
-                    fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
-          ),
-          backgroundColor: kBackgroundColor,
-          body: Center(
-            child: Column(
-              children: [
-                pharmaUpdateLogo,
-                pharmaUpdatesTitle,
-                verticalDivider,
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
-          ),
+    return Scaffold(
+      drawer: drawer,
+      appBar: AppBar(
+        elevation: 2.0,
+        centerTitle: true,
+        backgroundColor: kBaseColor,
+        shadowColor: Colors.teal,
+        iconTheme: IconThemeData(color: kTitleColor),
+        toolbarHeight: 50,
+        title: Text(
+          'Appointment',
+          style:
+              TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor),
+        ),
+      ),
+      backgroundColor: kBackgroundColor,
+      body: Center(
+        child: ListView(
+          shrinkWrap: false,
+          children: <Widget>[
+            appointmentLogo,
+            appointmentTitle,
+            verticalDivider,
+          ],
         ),
       ),
     );
