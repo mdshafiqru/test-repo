@@ -459,7 +459,7 @@ class DrugIndexPatientState extends State<DrugIndexPatient> {
       ),
     );
 
-    final pharmaUpdateLogo = Container(
+    final drugIndexLogo = Container(
       padding: EdgeInsets.only(top: 1),
       child: Hero(
         tag: 'hero',
@@ -471,7 +471,7 @@ class DrugIndexPatientState extends State<DrugIndexPatient> {
       ),
     );
 
-    final pharmaUpdatesTitle = Container(
+    final drugIndexTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
         'Drug Index',
@@ -495,34 +495,30 @@ class DrugIndexPatientState extends State<DrugIndexPatient> {
       ),
     );
 
-    return Material(
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          drawer: drawer,
-          appBar: AppBar(
-            elevation: 2.0,
-            backgroundColor: kBaseColor,
-            iconTheme: IconThemeData(color: kTitleColor),
-            centerTitle: true,
-            toolbarHeight: 50,
-            title: Text('Drug Index',
-                style: TextStyle(
-                    fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
-          ),
-          backgroundColor: kBackgroundColor,
-          body: Center(
-            child: Column(
-              children: [
-                pharmaUpdateLogo,
-                pharmaUpdatesTitle,
-                verticalDivider,
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
-          ),
+    return Scaffold(
+      drawer: drawer,
+      appBar: AppBar(
+        elevation: 2.0,
+        centerTitle: true,
+        backgroundColor: kBaseColor,
+        shadowColor: Colors.teal,
+        iconTheme: IconThemeData(color: kTitleColor),
+        toolbarHeight: 50,
+        title: Text(
+          'Drug Index',
+          style:
+              TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor),
+        ),
+      ),
+      backgroundColor: kBackgroundColor,
+      body: Center(
+        child: ListView(
+          shrinkWrap: false,
+          children: <Widget>[
+            drugIndexLogo,
+            drugIndexTitle,
+            verticalDivider,
+          ],
         ),
       ),
     );
