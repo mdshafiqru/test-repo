@@ -475,7 +475,7 @@ class ProfilePatientState extends State<ProfilePatient> {
           Container(
             width: 150,
             padding:
-                EdgeInsets.only(left: 10.0, top: 2.0, right: 10.0, bottom: 4.0),
+                EdgeInsets.only(left: 10.0, top: 2.0, right: 10.0, bottom: 1.0),
             child: Center(
               child: Stack(
                 alignment: Alignment.center,
@@ -545,6 +545,7 @@ class ProfilePatientState extends State<ProfilePatient> {
     );
 
     final profileProgress = Container(
+      height: 20,
       child: Padding(
         padding: EdgeInsets.only(left: 20, right: 10),
         child: new LinearPercentIndicator(
@@ -569,8 +570,9 @@ class ProfilePatientState extends State<ProfilePatient> {
       ),
     );
 
-    final profileButton = Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 120),
+    final profileButton = Container(
+      height: 30,
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 130),
       child: MaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed('');
@@ -578,7 +580,7 @@ class ProfilePatientState extends State<ProfilePatient> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
         ),
-        padding: EdgeInsets.only(left: 2, top: 5, right: 5, bottom: 5),
+        padding: EdgeInsets.only(left: 5, top: 3, right: 5, bottom: 5),
         color: kBaseColor,
         child: Text('My Profile',
             style: TextStyle(
@@ -587,6 +589,545 @@ class ProfilePatientState extends State<ProfilePatient> {
                 fontSize: 15,
                 color: kTitleColor,
                 fontWeight: FontWeight.w700)),
+      ),
+    );
+
+    final personalInfo = Card(
+      margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 15.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 6,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15.0),
+        child: Column(
+          children: [
+            Container(
+              height: 45,
+              color: kCardTitleColor,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                        left: 12.0, top: 8.0, right: 12, bottom: 8),
+                    child: Text(
+                      'Personal Information',
+                      style: TextStyle(
+                          fontFamily: 'Segoe',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: kBodyTextColor),
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  Container(
+                    width: 160,
+                    height: 35,
+                    padding: EdgeInsets.only(left: 120.0),
+                    child: Center(
+                      child: RawMaterialButton(
+                        elevation: 5.0,
+                        child: Image.asset('assets/edit.png'),
+                        shape: CircleBorder(),
+                        //fillColor: Colors.white,
+                        padding: const EdgeInsets.all(6.0),
+                        onPressed: () {
+                          //editDoctor;
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 180,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 4, right: 10, bottom: 1),
+                        child: Text(
+                          'District :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 210, right: 10),
+                        child: Text(
+                          'Gaibandha',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Thana :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 215, right: 10),
+                        child: Text(
+                          'Polashbari',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Gender :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 244, right: 10),
+                        child: Text(
+                          'Male',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Blood Group :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 225, right: 10),
+                        child: Text(
+                          'O+',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Weight :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 242, right: 10),
+                        child: Text(
+                          '60 kg',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Date of Birth :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 168, right: 10),
+                        child: Text(
+                          '01-01-1998',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Mobile :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 178, right: 10),
+                        child: Text(
+                          '+880 1*********',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Email :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 162, right: 10),
+                        child: Text(
+                          '*********@mail.com',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    final personalHistory = Card(
+      margin: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 5.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 6,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15.0),
+        child: Column(
+          children: [
+            Container(
+              height: 45,
+              color: kCardTitleColor,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                        left: 12.0, top: 8.0, right: 12, bottom: 8),
+                    child: Text(
+                      'Personal History',
+                      style: TextStyle(
+                          fontFamily: 'Segoe',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: kBodyTextColor),
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  Container(
+                    width: 200,
+                    height: 35,
+                    padding: EdgeInsets.only(left: 150.0),
+                    child: Center(
+                      child: RawMaterialButton(
+                        elevation: 5.0,
+                        child: Image.asset('assets/edit.png'),
+                        shape: CircleBorder(),
+                        //fillColor: Colors.white,
+                        padding: const EdgeInsets.all(6.0),
+                        onPressed: () {
+                          //editDoctor;
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 160,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 4, right: 10, bottom: 1),
+                        child: Text(
+                          'Allergies :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 210, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Occupation :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 194, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Smoking :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 212, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Marital Status :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 184, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Alcohol :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 219, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Exercise :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 218, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Divider(
+                      color: Colors.black,
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 0.0,
+                      endIndent: 0.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: 10, top: 2, right: 10, bottom: 1),
+                        child: Text(
+                          'Caffeinated Beverage :',
+                          style: TextStyle(
+                              fontFamily: 'Segoe', fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 138, right: 10),
+                        child: Text(
+                          'Not given',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
 
@@ -614,6 +1155,8 @@ class ProfilePatientState extends State<ProfilePatient> {
             patientName,
             profileProgress,
             profileButton,
+            personalInfo,
+            personalHistory,
           ],
         ),
       ),
