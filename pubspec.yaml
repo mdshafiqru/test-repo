@@ -1,7 +1,7 @@
 name: pro_health
 description: A new Flutter application.
 
-version: 2.4.2021-03-23+6
+version: 2.4.23+6
 
 environment:
   sdk: ">=2.2.2 <11.0.0"
