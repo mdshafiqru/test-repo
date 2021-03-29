@@ -459,7 +459,7 @@ class MessagePatientState extends State<MessagePatient> {
       ),
     );
 
-    final pharmaUpdateLogo = Container(
+    final messageLogo = Container(
       padding: EdgeInsets.only(top: 2),
       child: Hero(
         tag: 'hero',
@@ -471,7 +471,7 @@ class MessagePatientState extends State<MessagePatient> {
       ),
     );
 
-    final pharmaUpdatesTitle = Container(
+    final messageTitle = Container(
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
         'Message',
@@ -495,34 +495,30 @@ class MessagePatientState extends State<MessagePatient> {
       ),
     );
 
-    return Material(
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          drawer: drawer,
-          appBar: AppBar(
-            elevation: 2.0,
-            backgroundColor: kBaseColor,
-            iconTheme: IconThemeData(color: kTitleColor),
-            centerTitle: true,
-            toolbarHeight: 50,
-            title: Text('Message',
-                style: TextStyle(
-                    fontFamily: 'Segoe', fontSize: 18, color: kTitleColor)),
-          ),
-          backgroundColor: kBackgroundColor,
-          body: Center(
-            child: Column(
-              children: [
-                pharmaUpdateLogo,
-                pharmaUpdatesTitle,
-                verticalDivider,
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
-          ),
+    return Scaffold(
+      drawer: drawer,
+      appBar: AppBar(
+        elevation: 2.0,
+        centerTitle: true,
+        backgroundColor: kBaseColor,
+        shadowColor: Colors.teal,
+        iconTheme: IconThemeData(color: kTitleColor),
+        toolbarHeight: 50,
+        title: Text(
+          'Message',
+          style:
+              TextStyle(fontFamily: 'Segoe', fontSize: 18, color: kTitleColor),
+        ),
+      ),
+      backgroundColor: kBackgroundColor,
+      body: Center(
+        child: ListView(
+          shrinkWrap: false,
+          children: <Widget>[
+            messageLogo,
+            messageTitle,
+            verticalDivider,
+          ],
         ),
       ),
     );
