@@ -42,6 +42,12 @@ import 'package:pro_health/patient/views/bottombar/message/message_patient.dart'
 import 'package:pro_health/patient/views/bottombar/profile/profile_patient.dart';
 import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
+import 'package:pro_health/patient/views/drawer/complaint_patient.dart';
+import 'package:pro_health/patient/views/drawer/consultation_history_patient.dart';
+import 'package:pro_health/patient/views/drawer/profilep.dart';
+import 'package:pro_health/patient/views/drawer/reviews_patient.dart';
+import 'package:pro_health/patient/views/drawer/terms_conditions_patient.dart';
+import 'package:pro_health/patient/views/drawer/contactus_patient.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   HomeScreen.tag: (context) => HomeScreen(),
@@ -97,4 +103,10 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   AppointmentPatient.tag: (context) => AppointmentPatient(),
   MessagePatient.tag: (context) => MessagePatient(),
   ProfilePatient.tag: (context) => ProfilePatient(),
+  ProfileP.tag: (context) => ProfileP(),
+  TermsConditionsPatient.tag: (context) => TermsConditionsPatient(),
+  ContactUsPatient.tag: (context) => ContactUsPatient(),
+  ComplaintPatient.tag: (context) => ComplaintPatient(),
+  ReviewsPatient.tag: (context) => ReviewsPatient(),
+  ConsultationHistoryPatient.tag: (context) => ConsultationHistoryPatient(),
 };
