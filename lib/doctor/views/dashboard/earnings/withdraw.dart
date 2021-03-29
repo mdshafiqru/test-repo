@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class Withdraw extends StatefulWidget {
   static String tag = 'Withdraw';
@@ -9,7 +9,6 @@ class Withdraw extends StatefulWidget {
 }
 
 class WithdrawState extends State<Withdraw> {
-
   final withdrawLogo = Padding(
     padding: EdgeInsets.only(top: 2),
     child: Container(
@@ -17,35 +16,59 @@ class WithdrawState extends State<Withdraw> {
       height: 80.00,
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: ExactAssetImage('assets/withdraw.png'),
-            fit: BoxFit.fitHeight,
-          )),
+        image: ExactAssetImage('assets/withdraw.png'),
+        fit: BoxFit.fitHeight,
+      )),
     ),
   );
   final withdrawTitle = Container(
     width: 250.00,
     height: 30,
-    child: Text('Withdraw',
-      style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+    child: Text(
+      'Withdraw',
+      style: TextStyle(
+          fontFamily: 'Segoe',
+          color: kTextLightColor,
+          letterSpacing: 0.5,
+          fontSize: 20,
+          fontWeight: FontWeight.w600),
+      textAlign: TextAlign.center,
     ),
   );
   final amountTextField = Container(
-    padding: EdgeInsets.only(left:25, top: 30, right: 25, bottom: 20),
+    padding: EdgeInsets.only(left: 25, top: 30, right: 25, bottom: 20),
     child: TextFormField(
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(11)],
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+        LengthLimitingTextInputFormatter(11)
+      ],
       keyboardType: TextInputType.number,
       autofocus: false,
       initialValue: '',
-      style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+      style: TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
       autocorrect: true,
       decoration: InputDecoration(
         hintText: 'Enter withdraw amount',
-        hintStyle: TextStyle(fontSize: 17, letterSpacing: 0.8, fontWeight: FontWeight.w300 ),
+        hintStyle: TextStyle(
+            fontSize: 17, letterSpacing: 0.8, fontWeight: FontWeight.w300),
         contentPadding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
         prefixIcon: Container(
-          padding: EdgeInsets.only(left: 50, top: 10.0, right: 20, bottom: 6,),
-          child: Text('৳', style: TextStyle(fontFamily: 'Segoe', fontSize: 25, color: kTextLightColor, fontWeight: FontWeight.bold ), textAlign: TextAlign.center,),
+          padding: EdgeInsets.only(
+            left: 50,
+            top: 10.0,
+            right: 20,
+            bottom: 6,
+          ),
+          child: Text(
+            '৳',
+            style: TextStyle(
+                fontFamily: 'Segoe',
+                fontSize: 25,
+                color: kTextLightColor,
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     ),
@@ -57,11 +80,15 @@ class WithdrawState extends State<Withdraw> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ),
-      onPressed: () {
-      },
+      onPressed: () {},
       padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
       color: kButtonColor,
-      child: Text('Apply', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+      child: Text('Apply',
+          style: TextStyle(
+              fontFamily: "Segoe",
+              letterSpacing: 0.5,
+              fontSize: 18,
+              color: kWhiteShadow)),
     ),
   );
   final appliedData = ClipRRect(
@@ -70,7 +97,7 @@ class WithdrawState extends State<Withdraw> {
       padding: EdgeInsets.only(left: 2, right: 2),
       child: DataTable(
         headingRowColor:
-        MaterialStateColor.resolveWith((states) => Colors.grey),
+            MaterialStateColor.resolveWith((states) => Colors.grey),
         dataRowHeight: 30,
         headingRowHeight: 40,
         showBottomBorder: true,
@@ -78,28 +105,42 @@ class WithdrawState extends State<Withdraw> {
         columns: [
           DataColumn(
               label: Text(
-                "#SL",
-                style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-              )),
+            "#SL",
+            style: TextStyle(
+                fontSize: 15.0,
+                color: kWhiteShade,
+                fontWeight: FontWeight.w900),
+          )),
           DataColumn(
               label: Text(
-                "Applied Amount",
-                style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-              )),
+            "Applied Amount",
+            style: TextStyle(
+                fontSize: 15.0,
+                color: kWhiteShade,
+                fontWeight: FontWeight.w900),
+          )),
           DataColumn(
               label: Text(
-                "Date",
-                style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-              )),
+            "Date",
+            style: TextStyle(
+                fontSize: 15.0,
+                color: kWhiteShade,
+                fontWeight: FontWeight.w900),
+          )),
           DataColumn(
               label: Text(
-                "Status",
-                style: TextStyle(fontSize: 15.0, color: kWhiteShade, fontWeight: FontWeight.w900),
-              )),
+            "Status",
+            style: TextStyle(
+                fontSize: 15.0,
+                color: kWhiteShade,
+                fontWeight: FontWeight.w900),
+          )),
         ],
         rows: [
           DataRow(cells: [
-            DataCell(Text("1"),),
+            DataCell(
+              Text("1"),
+            ),
             DataCell(Text("2000")),
             DataCell(Text("21-01-2021")),
             DataCell(Text("Pending")),
@@ -153,7 +194,7 @@ class WithdrawState extends State<Withdraw> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
         backgroundColor: kBaseColor,
@@ -164,7 +205,8 @@ class WithdrawState extends State<Withdraw> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Withdraw', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('Withdraw',
+            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -173,7 +215,9 @@ class WithdrawState extends State<Withdraw> {
             SizedBox(height: 2),
             withdrawLogo,
             withdrawTitle,
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             const Divider(
               color: Colors.black,
               height: 0.0,
@@ -183,7 +227,9 @@ class WithdrawState extends State<Withdraw> {
             ),
             amountTextField,
             applyButton,
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             appliedData,
           ],
         ),
