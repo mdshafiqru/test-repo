@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class AboutUs extends StatefulWidget {
   AboutUs({Key key, this.title}) : super(key: key);
@@ -10,10 +10,8 @@ class AboutUs extends StatefulWidget {
 }
 
 class AboutUsState extends State<AboutUs> {
-
   @override
   Widget build(BuildContext context) {
-
     final newAccountPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
@@ -29,8 +27,15 @@ class AboutUsState extends State<AboutUs> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('About Us',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'About Us',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -51,12 +56,23 @@ class AboutUsState extends State<AboutUs> {
             width: 180,
             height: 250,
             padding: EdgeInsets.only(top: 70),
-            child: Image.asset('assets/comingsoon.png', fit: BoxFit.fill,),
+            child: Image.asset(
+              'assets/comingsoon.png',
+              fit: BoxFit.fill,
+            ),
           ),
           Container(
             height: 50,
             padding: EdgeInsets.only(top: 15.0),
-            child: Text('Coming Soon..', style: TextStyle(fontFamily: 'Segoe', letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
+            child: Text(
+              'Coming Soon..',
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  letterSpacing: 0.5,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
@@ -73,7 +89,8 @@ class AboutUsState extends State<AboutUs> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('About Us', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('About Us',
+            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
