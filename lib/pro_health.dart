@@ -3,8 +3,7 @@ import 'package:pro_health/configs/routes.dart';
 import 'package:pro_health/app/app_view.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
-class App extends StatelessWidget {
-
+class ProHealth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +14,7 @@ class App extends StatelessWidget {
         primaryColor: kBaseColor,
         fontFamily: 'Nunito',
       ),
-      home: HomeScreen(),
+      home: AppView(),
       routes: routes,
     );
   }
