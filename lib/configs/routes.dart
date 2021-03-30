@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/dashboard/dashboard_doctor.dart';
+import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
 import 'package:pro_health/app/app_view.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/appointment/appointment_doctor.dart';
@@ -11,14 +11,14 @@ import 'package:pro_health/doctor/views/dashboard/consultation_history/consultat
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
 import 'package:pro_health/doctor/views/dashboard/drug_info/drug_info.dart';
-import 'package:pro_health/doctor/views/drawer/about_us.dart';
-import 'package:pro_health/doctor/views/drawer/activity_status.dart';
-import 'package:pro_health/doctor/views/drawer/contact_us.dart';
-import 'package:pro_health/doctor/views/drawer/help.dart';
-import 'package:pro_health/doctor/views/drawer/privacy_and_policy.dart';
-import 'package:pro_health/doctor/views/drawer/reviews.dart';
-import 'package:pro_health/doctor/views/drawer/settings.dart';
-import 'package:pro_health/doctor/views/drawer/terms_conditions.dart';
+import 'package:pro_health/doctor/views/drawer/item/about_us.dart';
+import 'package:pro_health/doctor/views/drawer/item/activity_status.dart';
+import 'package:pro_health/doctor/views/drawer/item/contact_us.dart';
+import 'package:pro_health/doctor/views/drawer/item/help.dart';
+import 'package:pro_health/doctor/views/drawer/item/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/item/reviews.dart';
+import 'package:pro_health/doctor/views/drawer/item/settings.dart';
+import 'package:pro_health/doctor/views/drawer/item/terms_conditions.dart';
 import 'package:pro_health/doctor/views/auth/forgot_pass/AccountVerify.dart';
 import 'package:pro_health/doctor/views/auth/signup/create_account_doctor.dart';
 import 'package:pro_health/doctor/views/auth/forgot_pass/ForgotPassword.dart';
@@ -42,15 +42,16 @@ import 'package:pro_health/patient/views/bottombar/message/message_patient.dart'
 import 'package:pro_health/patient/views/bottombar/profile/profile_patient.dart';
 import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
-import 'package:pro_health/patient/views/drawer/complaint_patient.dart';
-import 'package:pro_health/patient/views/drawer/consultation_history_patient.dart';
-import 'package:pro_health/patient/views/drawer/profilep.dart';
-import 'package:pro_health/patient/views/drawer/reviews_patient.dart';
-import 'package:pro_health/patient/views/drawer/terms_conditions_patient.dart';
-import 'package:pro_health/patient/views/drawer/contactus_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/complaint_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/consultation_history_patient.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/item/profilep.dart';
+import 'package:pro_health/patient/views/drawer/item/reviews_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/terms_conditions_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/contactus_patient.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
-  HomeScreen.tag: (context) => HomeScreen(),
+  AppView.tag: (context) => AppView(),
 
   // Doctor
   SignInDoctor.tag: (context) => SignInDoctor(),
@@ -89,6 +90,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   // Patient
   SignInPatient.tag: (context) => SignInPatient(),
   DashboardPatient.tag: (context) => DashboardPatient(),
+  CustomDrawer.tag: (context) => CustomDrawer(),
   HomePatient.tag: (context) => HomePatient(),
   ForgotPasswordPatient.tag: (context) => ForgotPasswordPatient(),
   AccountVerifyPatient.tag: (context) => AccountVerifyPatient(mobileno: ''),
