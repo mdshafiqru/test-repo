@@ -3,15 +3,15 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key, this.title}) : super(key: key);
+class AppView extends StatefulWidget {
+  AppView({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'HomeScreen';
+  static String tag = 'AppView';
   @override
-  HomeScreenState createState() => new HomeScreenState();
+  AppViewState createState() => new AppViewState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     final homeScreenLogo = Container(
