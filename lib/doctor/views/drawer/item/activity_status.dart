@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class ActivityStatus extends StatefulWidget {
   ActivityStatus({Key key, this.title}) : super(key: key);
@@ -17,7 +17,6 @@ class ActivityStatusState extends State<ActivityStatus> {
 
   @override
   Widget build(BuildContext context) {
-
     final newAccountPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
@@ -33,8 +32,15 @@ class ActivityStatusState extends State<ActivityStatus> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Active Status',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Active Status',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -60,7 +66,8 @@ class ActivityStatusState extends State<ActivityStatus> {
                 padding: EdgeInsets.only(left: 10),
                 alignment: Alignment.centerRight,
                 child: Text(
-                  "Active", style: TextStyle(fontSize: 16),
+                  "Active",
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
               Container(
@@ -95,9 +102,7 @@ class ActivityStatusState extends State<ActivityStatus> {
               Container(
                 padding: EdgeInsets.only(left: 10),
                 alignment: Alignment.centerRight,
-                child: Text(
-                  "Inactive", style: TextStyle(fontSize: 16)
-                ),
+                child: Text("Inactive", style: TextStyle(fontSize: 16)),
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -131,9 +136,7 @@ class ActivityStatusState extends State<ActivityStatus> {
               Container(
                 padding: EdgeInsets.only(left: 10),
                 alignment: Alignment.centerRight,
-                child: Text(
-                  "Automatic", style: TextStyle(fontSize: 16)
-                ),
+                child: Text("Automatic", style: TextStyle(fontSize: 16)),
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -168,7 +171,8 @@ class ActivityStatusState extends State<ActivityStatus> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('User Status', style: TextStyle(fontFamily:'Segoe', color: kTitleColor)),
+        title: Text('User Status',
+            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
