@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 class ComplaintPatient extends StatefulWidget {
@@ -43,7 +45,11 @@ class ComplaintPatientState extends State<ComplaintPatient> {
       autofocus: false,
       maxLines: 4,
       initialValue: '',
-      style: TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
+      style: TextStyle(
+          decoration: TextDecoration.none,
+          fontFamily: "Segoe",
+          fontSize: 18,
+          color: Colors.black),
       autocorrect: true,
       decoration: InputDecoration(
         hintText: 'Describe the complaint',
@@ -55,13 +61,30 @@ class ComplaintPatientState extends State<ComplaintPatient> {
     ),
   );
   final sendButton = Container(
-    padding: EdgeInsets.symmetric(horizontal: 120),
+    padding: EdgeInsets.symmetric(vertical: 25, horizontal: 120),
     child: MaterialButton(
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ),
-      onPressed: () {},
+      onPressed: () {
+        showToast(
+          "✔ complain was successfully sent!",
+          position: ToastPosition.center,
+          duration: Duration(seconds: 3),
+          backgroundColor: kTitleColor,
+          radius: 22.0,
+          textAlign: TextAlign.center,
+          textStyle: TextStyle(
+              decoration: TextDecoration.none,
+              fontFamily: 'Segoe',
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: kBaseColor),
+          textPadding: EdgeInsets.only(left: 15, top: 8, right: 15, bottom: 8),
+          animationBuilder: Miui10AnimBuilder(),
+        );
+      },
       padding: EdgeInsets.only(top: 5.0, bottom: 8.0),
       color: kButtonColor,
       child: Text('Send',
@@ -168,44 +191,43 @@ class ComplaintPatientState extends State<ComplaintPatient> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 5.0,
-        backgroundColor: kBaseColor,
-        centerTitle: true,
-        toolbarHeight: 50,
-        leading: IconButton(
-          color: kTitleColor,
-          onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back),
+    return OKToast(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 5.0,
+          backgroundColor: kBaseColor,
+          centerTitle: true,
+          toolbarHeight: 50,
+          leading: IconButton(
+            color: kTitleColor,
+            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.arrow_back),
+          ),
+          title: Text('Complaint',
+              style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
         ),
-        title: Text('Complaint',
-            style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
-      ),
-      backgroundColor: kBackgroundColor,
-      body: Center(
-        child: ListView(
-          children: [
-            SizedBox(height: 2),
-            complaintLogo,
-            complaintTitle,
-            SizedBox(
-              height: 5,
-            ),
-            const Divider(
-              color: Colors.black,
-              height: 0.0,
-              thickness: 0.5,
-              indent: 0.0,
-              endIndent: 0.0,
-            ),
-            descTextfield,
-            sendButton,
-            SizedBox(
-              height: 50,
-            ),
-            complaintDataTable,
-          ],
+        backgroundColor: kBackgroundColor,
+        body: Center(
+          child: ListView(
+            children: [
+              SizedBox(height: 2),
+              complaintLogo,
+              complaintTitle,
+              SizedBox(
+                height: 5,
+              ),
+              const Divider(
+                color: Colors.black,
+                height: 0.0,
+                thickness: 0.5,
+                indent: 0.0,
+                endIndent: 0.0,
+              ),
+              descTextfield,
+              sendButton,
+              complaintDataTable,
+            ],
+          ),
         ),
       ),
     );
