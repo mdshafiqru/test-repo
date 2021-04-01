@@ -45,8 +45,11 @@ import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/complaint_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/consultation_history_patient.dart';
 import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/item/favorite_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/profilep.dart';
+import 'package:pro_health/patient/views/drawer/item/recent_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/reviews_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/settings_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/terms_conditions_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/contactus_patient.dart';
 
@@ -111,4 +114,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   ComplaintPatient.tag: (context) => ComplaintPatient(),
   ReviewsPatient.tag: (context) => ReviewsPatient(),
   ConsultationHistoryPatient.tag: (context) => ConsultationHistoryPatient(),
+  FavoritePatient.tag: (context) => FavoritePatient(),
+  RecentPatient.tag: (context) => RecentPatient(),
+  SettingsPatient.tag: (context) => SettingsPatient(),
 };

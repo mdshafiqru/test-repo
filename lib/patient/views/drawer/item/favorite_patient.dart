@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
-class RecentPatient extends StatefulWidget {
-  RecentPatient({Key key, this.title}) : super(key: key);
+class FavoritePatient extends StatefulWidget {
+  FavoritePatient({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'RecentPatient';
+  static String tag = 'FavoritePatient';
   @override
-  RecentPatientState createState() => new RecentPatientState();
+  FavoritePatientState createState() => new FavoritePatientState();
 }
 
-class RecentPatientState extends State<RecentPatient> {
+class FavoritePatientState extends State<FavoritePatient> {
   var rating = 5.0;
   bool isRemove = false;
 
   @override
   Widget build(BuildContext context) {
-    final recentLogo = Container(
+    final favouriteLogo = Container(
       padding: EdgeInsets.only(top: 2),
       child: Hero(
         tag: 'hero',
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/icons/patient/recentpage.png'),
+          child: Image.asset('assets/icons/patient/favouritepage.png'),
         ),
       ),
     );
 
-    final recentTitle = Container(
+    final favouriteTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
-        'Recent',
+        'Favourite',
         style: TextStyle(
             fontFamily: 'Segoe',
             color: kTextLightColor,
@@ -135,19 +135,27 @@ class RecentPatientState extends State<RecentPatient> {
           ),
           Container(
             width: 25,
-            child: IconButton(
+            child: PopupMenuButton(
               icon: Icon(Icons.more_vert),
-              onPressed: () {
-                setState(() {
-                  isRemove = !isRemove;
-                });
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem<String>(
+                    value: 'Remove',
+                    child: Text('Remove'),
+                  )
+                ];
+              },
+              onSelected: (result) {
+                if (result == 'Remove') {
+                  Navigator.pop(context);
+                }
               },
             ),
           ),
         ],
       ),
     );
-    final recentlySeenDoctorList = Container(
+    final favoriteDoctorList = Container(
       padding: EdgeInsets.only(left: 20, top: 20, right: 20),
       child: Column(
         children: [
@@ -202,7 +210,7 @@ class RecentPatientState extends State<RecentPatient> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Recent',
+        title: Text('Favourite',
             style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
@@ -210,10 +218,10 @@ class RecentPatientState extends State<RecentPatient> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            recentLogo,
-            recentTitle,
+            favouriteLogo,
+            favouriteTitle,
             verticalDivider,
-            recentlySeenDoctorList,
+            favoriteDoctorList,
           ],
         ),
       ),

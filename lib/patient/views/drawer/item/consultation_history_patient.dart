@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
 
 class ConsultationHistoryPatient extends StatefulWidget {
   static String tag = 'ConsultationHistoryPatient';
@@ -14,17 +13,16 @@ class ConsultationHistoryPatientState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
       appBar: AppBar(
         elevation: 5.0,
         backgroundColor: kBaseColor,
         centerTitle: true,
         toolbarHeight: 50,
-        /*leading: IconButton(
+        leading: IconButton(
           color: kTitleColor,
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
-        ),*/
+        ),
         title: Text(
           'Consultation History',
           style: TextStyle(

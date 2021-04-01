@@ -53,7 +53,7 @@ dependencies:
   page_indicator: ^0.3.0
   marquee: ^1.7.0
   percent_indicator: ^3.0.1
-
+  oktoast: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +65,7 @@ flutter:
     - assets/logo.png
     - assets/icons/doctor/
     - assets/icons/patient/
-    - assets/icons/patient/messagepage.png
+    - assets/icons/patient/settingspage.png
   fonts:
     - family: Segoe
       fonts:

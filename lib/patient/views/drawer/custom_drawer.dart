@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
 import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/favorite_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/recent_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/settings_patient.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/profilep.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/reviews_patient.dart';
 import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/terms_conditions_patient.dart';
@@ -10,8 +13,8 @@ import 'item/complaint_patient.dart';
 import 'item/consultation_history_patient.dart';
 import 'item/contactus_patient.dart';
 
-const String _AccountName = 'Prof. Mohammed Hanif';
-const String _AccountEmail = 'doctor101@prohealth.com';
+const String _AccountName = 'MD Jahidul Hasan';
+const String _AccountEmail = 'patient102@prohealth.com';
 
 class CustomDrawer extends StatefulWidget {
   static String tag = 'CustomDrawer';
@@ -52,7 +55,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 25.0,
-                    child: Image.asset('assets/doctorimg.png'),
+                    child: Image.asset('assets/apatient.png'),
                   ),
                 ),
               ),
@@ -142,7 +145,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(FavoritePatient.tag);
                   },
                 ),
                 Divider(
@@ -172,7 +175,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(RecentPatient.tag);
                   },
                 ),
                 Divider(
@@ -323,7 +326,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(SettingsPatient.tag);
                   },
                 ),
                 Divider(
