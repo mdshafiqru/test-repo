@@ -6,6 +6,7 @@ import 'package:page_indicator/page_indicator.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:pro_health/patient/views/bottombar/home/view_doctors.dart';
 
 class HomePatient extends StatefulWidget {
   static String tag = 'HomePatient';
@@ -21,9 +22,7 @@ class HomePatient extends StatefulWidget {
 class HomePatientState extends State<HomePatient> {
   PageController controller;
   var rating = 5.0;
-
   GlobalKey<PageContainerState> key = GlobalKey();
-
   @override
   void initState() {
     super.initState();
@@ -219,16 +218,23 @@ class HomePatientState extends State<HomePatient> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.only(left: 35, right: 15),
-                child: Text(
-                  'View all',
-                  style: TextStyle(
-                      fontFamily: 'Segoe',
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
+              InkWell(
+                highlightColor: kBackgroundColor,
+                hoverColor: kBackgroundColor,
+                child: Container(
+                  padding: EdgeInsets.only(left: 35, right: 15),
+                  child: Text(
+                    'View all',
+                    style: TextStyle(
+                        fontFamily: 'Segoe',
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
-              )
+                onTap: () {
+                  Navigator.of(context).pushNamed(ViewDoctors.tag);
+                },
+              ),
             ],
           ),
           Container(
