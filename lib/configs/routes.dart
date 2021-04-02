@@ -52,6 +52,7 @@ import 'package:pro_health/patient/views/drawer/item/reviews_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/settings_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/terms_conditions_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/contactus_patient.dart';
+import 'package:pro_health/patient/views/bottombar/home/view_doctors.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   AppView.tag: (context) => AppView(),
@@ -117,4 +118,5 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   FavoritePatient.tag: (context) => FavoritePatient(),
   RecentPatient.tag: (context) => RecentPatient(),
   SettingsPatient.tag: (context) => SettingsPatient(),
+  ViewDoctors.tag: (context) => ViewDoctors(),
 };
