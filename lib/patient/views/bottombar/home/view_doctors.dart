@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:pro_health/patient/views/bottombar/home/doctor_profile.dart';
 
 class ViewDoctors extends StatefulWidget {
   ViewDoctors({Key key, this.title}) : super(key: key);
@@ -336,7 +337,10 @@ class ViewDoctorsState extends State<ViewDoctors> {
                             color: kTitleColor,
                             child: IconButton(
                               icon: Icon(Icons.arrow_forward_rounded),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(DoctorProfile.tag);
+                              },
                             ),
                           ),
                         ),
