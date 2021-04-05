@@ -388,7 +388,8 @@ class HomePatientState extends State<HomePatient> {
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.only(
+                          padding:
+                          EdgeInsets.only(
                               left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
