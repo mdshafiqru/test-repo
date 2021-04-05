@@ -7,6 +7,7 @@ const kBaseColor = Color(0xFF01619B);
 const kButtonColor = Color(0xFF0069AA);
 const kBackgroundColor = Color(0xFFECECEE);
 //const kBackgroundColor = Color(0xFFEDEDED);
+const kConsultationColor = Color(0xFFD4D4D7);
 const kDCardColor = Color(0xFFD9DADC);
 const kOnlineColor = Color(0xFF6ECEC0);
 const kCardTitleColor = Color(0xFFCECFD1);
