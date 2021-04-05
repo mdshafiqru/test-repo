@@ -491,7 +491,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
       padding: EdgeInsets.only(left: 6.0, top: 2.0, right: 6.0, bottom: 2.0),
       child: Card(
         borderOnForeground: true,
-        color: kWhiteShadow,
+        color: kConsultationColor,
         elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
