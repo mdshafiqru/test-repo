@@ -65,7 +65,6 @@ flutter:
     - assets/logo.png
     - assets/icons/doctor/
     - assets/icons/patient/
-    - assets/icons/patient/settingspage.png
   fonts:
     - family: Segoe
       fonts:
