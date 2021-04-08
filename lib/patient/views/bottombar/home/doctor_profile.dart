@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:pro_health/patient/views/bottombar/home/select_patient.dart';
 
 class DoctorProfile extends StatefulWidget {
   static String tag = 'DoctorProfile';
@@ -62,7 +63,7 @@ class DoctorProfileState extends State<DoctorProfile> {
                     left: radius - 20,
                     child: Icon(
                       Icons.circle,
-                      color: Color(0xff6ECEC0),
+                      color: Color(0xff53c8b7),
                       size: iconSize - 4,
                     ),
                   ),
@@ -462,7 +463,7 @@ class DoctorProfileState extends State<DoctorProfile> {
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 80),
       child: MaterialButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(SelectPatient.tag);
         },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
