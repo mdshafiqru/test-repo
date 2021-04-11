@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:pro_health/patient/views/bottombar/home/request_approval.dart';
 
 class SelectPatient extends StatefulWidget {
   SelectPatient({Key key, this.title}) : super(key: key);
@@ -130,13 +131,15 @@ class SelectPatientState extends State<SelectPatient> {
     );
 
     final selfPatient = Container(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 5),
       child: Theme(
         data: theme,
         child: ExpansionTile(
+          initiallyExpanded: true,
           trailing: SizedBox.shrink(),
+          tilePadding: EdgeInsets.zero,
           leading: Container(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 12),
             child: Icon(
               Icons.check_circle,
               size: 28.0,
@@ -151,7 +154,7 @@ class SelectPatientState extends State<SelectPatient> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          childrenPadding: EdgeInsets.only(left: 28, right: 15),
+          childrenPadding: EdgeInsets.only(left: 15, right: 15),
           children: [
             Container(
               padding: EdgeInsets.only(bottom: 10),
@@ -172,7 +175,7 @@ class SelectPatientState extends State<SelectPatient> {
               height: 40,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(width: 0.8),
+                border: Border.all(width: 0.8, color: kTextLightColor),
               ),
               child: Row(
                 children: [
@@ -201,8 +204,8 @@ class SelectPatientState extends State<SelectPatient> {
                     width: 65,
                   ),
                   SizedBox(
-                    height: 38,
-                    width: 38,
+                    height: 36,
+                    width: 36,
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
@@ -211,8 +214,8 @@ class SelectPatientState extends State<SelectPatient> {
                     ),
                   ),
                   SizedBox(
-                    height: 38,
-                    width: 38,
+                    height: 36,
+                    width: 36,
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
@@ -231,12 +234,14 @@ class SelectPatientState extends State<SelectPatient> {
       ),
     );
     final othersPatient = Container(
+      padding: EdgeInsets.only(bottom: 20),
       child: Theme(
         data: theme,
         child: ExpansionTile(
           trailing: SizedBox.shrink(),
+          tilePadding: EdgeInsets.zero,
           leading: Container(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 12),
             child: Icon(
               Icons.check_circle,
               size: 28.0,
@@ -251,20 +256,194 @@ class SelectPatientState extends State<SelectPatient> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          childrenPadding: EdgeInsets.only(left: 28, right: 15),
+          childrenPadding: EdgeInsets.only(left: 15, right: 15),
           children: [
+            Container(
+              height: 50,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    hintText: 'Name:',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: DropdownButtonFormField(
+                  decoration: new InputDecoration(
+                    hintText: 'Relationship:',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                  items: <DropdownMenuItem>[
+                    DropdownMenuItem<int>(
+                      value: 1,
+                      child: Text("Father"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 2,
+                      child: Text("Mother"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 3,
+                      child: Text("Sister"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 4,
+                      child: Text("Brother"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 5,
+                      child: Text("Son"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 6,
+                      child: Text("Daughter"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 7,
+                      child: Text("Grandfather"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 8,
+                      child: Text("Grandmother"),
+                    ),
+                    /*DropdownMenuItem<int>(
+                      value: 9,
+                      child: Text("Father-in-law"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 10,
+                      child: Text("Mother-in-law"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 11,
+                      child: Text("Son-in-law"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 12,
+                      child: Text("Daughter-in-law"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 13,
+                      child: Text("Friends"),
+                    ),*/
+                    DropdownMenuItem<int>(
+                      value: 14,
+                      child: Text("Others"),
+                    ),
+                  ],
+                  onChanged: (val) => print(val),
+                  onSaved: (val) => print(val),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: TextFormField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: 'Age (Years):',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: TextFormField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: 'Weight (kg):',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: DropdownButtonFormField(
+                  decoration: new InputDecoration(
+                    hintText: 'Sex:',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                  items: <DropdownMenuItem>[
+                    DropdownMenuItem<int>(
+                      value: 1,
+                      child: Text("Male"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 2,
+                      child: Text("Female"),
+                    ),
+                  ],
+                  onChanged: (val) => print(val),
+                  onSaved: (val) => print(val),
+                ),
+              ),
+            ),
             Container(
               padding: EdgeInsets.only(bottom: 10),
               child: TextFormField(
                 keyboardType: TextInputType.multiline,
                 decoration: InputDecoration(
                   hintText: 'Describe the problem',
+                  hintStyle: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0)),
                 ),
-                maxLines: 3,
+                maxLines: 2,
                 scrollPadding: const EdgeInsets.all(20),
               ),
             ),
@@ -272,7 +451,7 @@ class SelectPatientState extends State<SelectPatient> {
               height: 40,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(width: 0.8),
+                border: Border.all(width: 0.8, color: kTextLightColor),
               ),
               child: Row(
                 children: [
@@ -301,8 +480,8 @@ class SelectPatientState extends State<SelectPatient> {
                     width: 65,
                   ),
                   SizedBox(
-                    height: 38,
-                    width: 38,
+                    height: 36,
+                    width: 36,
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
@@ -311,8 +490,8 @@ class SelectPatientState extends State<SelectPatient> {
                     ),
                   ),
                   SizedBox(
-                    height: 38,
-                    width: 38,
+                    height: 36,
+                    width: 36,
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
@@ -323,12 +502,33 @@ class SelectPatientState extends State<SelectPatient> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
           ],
         ),
       ),
+    );
+    final proceedButton = Container(
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 80),
+      child: MaterialButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(RequestApproval.tag);
+          },
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
+          padding: EdgeInsets.only(left: 5, top: 5, right: 5, bottom: 5),
+          color: kBaseColor,
+          child: Container(
+            padding: EdgeInsets.only(left: 15, right: 35),
+            child: Text(
+              'Proceed',
+              style: TextStyle(
+                  fontFamily: "Segoe",
+                  letterSpacing: 0.5,
+                  fontSize: 15,
+                  color: kTitleColor,
+                  fontWeight: FontWeight.w700),
+            ),
+          )),
     );
 
     return Scaffold(
@@ -354,6 +554,7 @@ class SelectPatientState extends State<SelectPatient> {
             verticalDivider,
             selfPatient,
             othersPatient,
+            proceedButton,
           ],
         ),
       ),
