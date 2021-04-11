@@ -68,6 +68,7 @@ class CustomDrawerState extends State<CustomDrawer> {
               children: <Widget>[
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Home",
                     style: TextStyle(
@@ -98,6 +99,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text("Profile",
                       style: TextStyle(
                           color: kBaseColor,
@@ -126,6 +128,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Favourite",
                     style: TextStyle(
@@ -156,6 +159,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Recent",
                     style: TextStyle(
@@ -186,6 +190,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Consultation History",
                     style: TextStyle(
@@ -217,6 +222,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Medicine Remainder",
                     style: TextStyle(
@@ -247,6 +253,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Terms and Conditions",
                     style: TextStyle(
@@ -277,6 +284,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Contact Us",
                     style: TextStyle(
@@ -307,6 +315,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Settings",
                     style: TextStyle(
@@ -337,6 +346,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Version v2.4.37",
                     style: TextStyle(
@@ -367,6 +377,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Sign Out",
                     style: TextStyle(
@@ -397,6 +408,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Complaint",
                     style: TextStyle(
@@ -426,7 +438,8 @@ class CustomDrawerState extends State<CustomDrawer> {
                     endIndent: 0.0,
                     color: kTitleTextColor),
                 ListTile(
-                  dense: false,
+                  dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Reviews",
                     style: TextStyle(
