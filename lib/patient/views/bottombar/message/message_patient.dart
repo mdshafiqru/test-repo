@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 
 class MessagePatient extends StatefulWidget {
   static String tag = 'MessagePatient';
@@ -48,7 +48,7 @@ class MessagePatientState extends State<MessagePatient> {
     );
 
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: CustomDrawerPatient(),
       appBar: AppBar(
         elevation: 2.0,
         centerTitle: true,
