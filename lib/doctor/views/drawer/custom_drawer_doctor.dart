@@ -3,10 +3,10 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/drawer/item/privacy_and_policy.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/drawer/item/reviews.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/drawer/item/settings.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/drawer/item/terms_conditions.dart';
+import 'package:pro_health/doctor/views/drawer/item/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/item/reviews.dart';
+import 'package:pro_health/doctor/views/drawer/item/settings.dart';
+import 'package:pro_health/doctor/views/drawer/item/terms_conditions.dart';
 
 import 'item/about_us.dart';
 import 'item/activity_status.dart';
@@ -68,6 +68,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
               children: <Widget>[
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Home",
                     style: TextStyle(
@@ -98,6 +99,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text("Profile",
                       style: TextStyle(
                           color: kBaseColor,
@@ -126,6 +128,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Active Status",
                     style: TextStyle(
@@ -156,6 +159,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Terms and Conditions",
                     style: TextStyle(
@@ -186,6 +190,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Privacy and Policy",
                     style: TextStyle(
@@ -216,6 +221,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "About Us",
                     style: TextStyle(
@@ -246,6 +252,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Contact Us",
                     style: TextStyle(
@@ -276,6 +283,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Help",
                     style: TextStyle(
@@ -306,6 +314,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Settings",
                     style: TextStyle(
@@ -336,6 +345,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Version v-0.0.1",
                     style: TextStyle(
@@ -366,6 +376,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Sign Out",
                     style: TextStyle(
@@ -396,6 +407,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
                 ListTile(
                   dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Renew",
                     style: TextStyle(
@@ -425,7 +437,8 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     endIndent: 0.0,
                     color: kTitleTextColor),
                 ListTile(
-                  dense: false,
+                  dense: true,
+                  horizontalTitleGap: 0.0,
                   title: Text(
                     "Reviews",
                     style: TextStyle(
