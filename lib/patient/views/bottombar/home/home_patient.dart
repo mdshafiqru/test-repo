@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:pro_health/patient/views/bottombar/home/view_doctors.dart';
 
@@ -388,8 +388,7 @@ class HomePatientState extends State<HomePatient> {
                     child: Column(
                       children: [
                         Container(
-                          padding:
-                          EdgeInsets.only(
+                          padding: EdgeInsets.only(
                               left: 2, top: 4, right: 2, bottom: 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
@@ -1504,7 +1503,7 @@ class HomePatientState extends State<HomePatient> {
     );
 
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: CustomDrawerPatient(),
       appBar: appBar,
       backgroundColor: kBackgroundColor,
       body: Center(
