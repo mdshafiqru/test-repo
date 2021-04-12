@@ -5,9 +5,9 @@ import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/favorite_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/recent_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/settings_patient.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/profilep.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/reviews_patient.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/patient/views/drawer/item/terms_conditions_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/profilep.dart';
+import 'package:pro_health/patient/views/drawer/item/reviews_patient.dart';
+import 'package:pro_health/patient/views/drawer/item/terms_conditions_patient.dart';
 
 import 'item/complaint_patient.dart';
 import 'item/consultation_history_patient.dart';
@@ -16,15 +16,15 @@ import 'item/contactus_patient.dart';
 const String _AccountName = 'MD Jahidul Hasan';
 const String _AccountEmail = 'patient102@prohealth.com';
 
-class CustomDrawer extends StatefulWidget {
-  static String tag = 'CustomDrawer';
+class CustomDrawerPatient extends StatefulWidget {
+  static String tag = 'CustomDrawerPatient';
   @override
   State<StatefulWidget> createState() {
-    return CustomDrawerState();
+    return CustomDrawerPatientState();
   }
 }
 
-class CustomDrawerState extends State<CustomDrawer> {
+class CustomDrawerPatientState extends State<CustomDrawerPatient> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
