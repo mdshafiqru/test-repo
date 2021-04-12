@@ -44,7 +44,7 @@ import 'package:pro_health/patient/views/dashboard/dashboard_patient.dart';
 import 'package:pro_health/patient/views/bottombar/home/home_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/complaint_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/consultation_history_patient.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/favorite_patient.dart';
 import 'package:pro_health/patient/views/drawer/item/profilep.dart';
 import 'package:pro_health/patient/views/drawer/item/recent_patient.dart';
@@ -97,7 +97,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   // Patient
   SignInPatient.tag: (context) => SignInPatient(),
   DashboardPatient.tag: (context) => DashboardPatient(),
-  CustomDrawer.tag: (context) => CustomDrawer(),
+  CustomDrawerPatient.tag: (context) => CustomDrawerPatient(),
   HomePatient.tag: (context) => HomePatient(),
   ForgotPasswordPatient.tag: (context) => ForgotPasswordPatient(),
   AccountVerifyPatient.tag: (context) => AccountVerifyPatient(mobileno: ''),
