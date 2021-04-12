@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 
 class ProfilePatient extends StatefulWidget {
   static String tag = 'ProfilePatient';
@@ -684,7 +684,7 @@ class ProfilePatientState extends State<ProfilePatient> {
     );
 
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: CustomDrawerPatient(),
       appBar: AppBar(
         elevation: 2.0,
         centerTitle: true,
