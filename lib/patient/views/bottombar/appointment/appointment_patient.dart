@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
-import 'package:pro_health/patient/views/drawer/custom_drawer.dart';
+import 'package:pro_health/patient/views/bottombar/home/doctor_profile.dart';
+import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class AppointmentPatient extends StatefulWidget {
@@ -332,7 +333,10 @@ class AppointmentPatientState extends State<AppointmentPatient> {
                             color: kTitleColor,
                             child: IconButton(
                               icon: Icon(Icons.arrow_forward_rounded),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(DoctorProfile.tag);
+                              },
                             ),
                           ),
                         ),
@@ -391,7 +395,7 @@ class AppointmentPatientState extends State<AppointmentPatient> {
     );
 
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: CustomDrawerPatient(),
       appBar: AppBar(
         elevation: 2.0,
         centerTitle: true,
