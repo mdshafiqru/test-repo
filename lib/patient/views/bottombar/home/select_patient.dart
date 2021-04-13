@@ -1,4 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:pro_health/patient/views/bottombar/home/request_approval.dart';
@@ -13,6 +16,46 @@ class SelectPatient extends StatefulWidget {
 
 class SelectPatientState extends State<SelectPatient> {
   var rating = 5.0;
+
+  File myImage;
+  Future openCamera() async {
+    // ignore: deprecated_member_use
+    var cameraImage = await ImagePicker.pickImage(source: ImageSource.camera);
+    setState(() {
+      myImage = cameraImage;
+    });
+  }
+
+  List<Asset> images = <Asset>[];
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> addPhotos() async {
+    List<Asset> resultList = <Asset>[];
+    try {
+      resultList = await MultiImagePicker.pickImages(
+        maxImages: 10,
+        enableCamera: true,
+        selectedAssets: images,
+        cupertinoOptions: CupertinoOptions(takePhotoIcon: "chat"),
+        materialOptions: MaterialOptions(
+          statusBarColor: "#01619B",
+          actionBarColor: "#01619B",
+          actionBarTitle: "All Photos",
+          allViewTitle: "Selected Photos",
+          useDetailsView: false,
+          selectCircleStrokeColor: "#01619B",
+        ),
+      );
+    } on Exception {}
+    if (!mounted) return;
+    setState(() {
+      images = resultList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).copyWith(
@@ -190,18 +233,17 @@ class SelectPatientState extends State<SelectPatient> {
                     ),
                   ),
                   Container(
-                    child: Text(
-                      '(Max No. of photos: 10)',
-                      style: TextStyle(
-                        height: 2,
-                        fontFamily: 'Segoe',
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      child: Text(
+                    '(Max No. of photos: 10)',
+                    style: TextStyle(
+                      height: 2,
+                      fontFamily: 'Segoe',
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
                     ),
-                  ),
+                  )),
                   SizedBox(
-                    width: 65,
+                    width: 80,
                   ),
                   SizedBox(
                     height: 36,
@@ -210,7 +252,9 @@ class SelectPatientState extends State<SelectPatient> {
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
                       icon: Image.asset('assets/icons/patient/camera.png'),
-                      onPressed: () {},
+                      onPressed: () {
+                        openCamera();
+                      },
                     ),
                   ),
                   SizedBox(
@@ -220,7 +264,7 @@ class SelectPatientState extends State<SelectPatient> {
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
                       icon: Image.asset('assets/icons/patient/addphotos.png'),
-                      onPressed: () {},
+                      onPressed: addPhotos,
                     ),
                   ),
                 ],
@@ -294,6 +338,8 @@ class SelectPatientState extends State<SelectPatient> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0)),
                   ),
+                  icon: Icon(Icons.arrow_drop_down_circle_outlined),
+                  isExpanded: true,
                   items: <DropdownMenuItem>[
                     DropdownMenuItem<int>(
                       value: 1,
@@ -327,7 +373,7 @@ class SelectPatientState extends State<SelectPatient> {
                       value: 8,
                       child: Text("Grandmother"),
                     ),
-                    /*DropdownMenuItem<int>(
+                    DropdownMenuItem<int>(
                       value: 9,
                       child: Text("Father-in-law"),
                     ),
@@ -346,7 +392,7 @@ class SelectPatientState extends State<SelectPatient> {
                     DropdownMenuItem<int>(
                       value: 13,
                       child: Text("Friends"),
-                    ),*/
+                    ),
                     DropdownMenuItem<int>(
                       value: 14,
                       child: Text("Others"),
@@ -413,6 +459,10 @@ class SelectPatientState extends State<SelectPatient> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0)),
                   ),
+                  icon: Icon(Icons.arrow_drop_down_circle_outlined),
+                  isExpanded: true,
+                  isDense: true,
+                  elevation: 5,
                   items: <DropdownMenuItem>[
                     DropdownMenuItem<int>(
                       value: 1,
@@ -421,6 +471,10 @@ class SelectPatientState extends State<SelectPatient> {
                     DropdownMenuItem<int>(
                       value: 2,
                       child: Text("Female"),
+                    ),
+                    DropdownMenuItem<int>(
+                      value: 3,
+                      child: Text("Others"),
                     ),
                   ],
                   onChanged: (val) => print(val),
@@ -477,7 +531,7 @@ class SelectPatientState extends State<SelectPatient> {
                     ),
                   ),
                   SizedBox(
-                    width: 65,
+                    width: 80,
                   ),
                   SizedBox(
                     height: 36,
@@ -486,7 +540,9 @@ class SelectPatientState extends State<SelectPatient> {
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
                       icon: Image.asset('assets/icons/patient/camera.png'),
-                      onPressed: () {},
+                      onPressed: () {
+                        openCamera();
+                      },
                     ),
                   ),
                   SizedBox(
@@ -496,7 +552,9 @@ class SelectPatientState extends State<SelectPatient> {
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
                       icon: Image.asset('assets/icons/patient/addphotos.png'),
-                      onPressed: () {},
+                      onPressed: () {
+                        addPhotos();
+                      },
                     ),
                   ),
                 ],
