@@ -35,7 +35,7 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
 
   ];
   List<ChatList> chatList = [
-    ChatList(name: "Sohail Mahmud", lastMessage: "Hey whats up", userimage: "https://avatars.githubusercontent.com/u/46453392?s=460&u=f70020aeb9d5cbd0cbded2f162852c06ad7d72a7&v=4", time:  "Now", noOfMessage: '3'),
+    ChatList(name: "Sm Mahmud", lastMessage: "Hey whats up", userimage: "https://avatars.githubusercontent.com/u/46453392?s=460&u=f70020aeb9d5cbd0cbded2f162852c06ad7d72a7&v=4", time:  "Now", noOfMessage: '3'),
     ChatList(name: "Jahidul Hasan", lastMessage: "How are you?", userimage: "https://avatars.githubusercontent.com/u/39805770?s=400&u=3c9d96d0415af804ca77c0a2dce2c0d3460f058e&v=4", time:  "3 hrs ago", noOfMessage: '1'),
     ChatList(name: "Mohd Sami", lastMessage: "I  am your bug fan", userimage: "https://ficquotes.com/images/characters/bruce-banner-avengers.jpg", time:  "08.23", noOfMessage: '2'),
     ChatList(name: "Kamrul Islam", lastMessage: "I want to learn flutter. ", userimage: "https://www.hindustantimes.com/rf/image_size_444x250/HT/p2/2020/06/05/Pictures/_d1034a7e-a715-11ea-b9e4-8ce809f9739c.jpg", time:  "yesterday", noOfMessage: '0'),
@@ -228,7 +228,6 @@ class _MessageWidgetPageState extends State<MessageWidgetPage> {
 }
 
 class ChatWidget extends StatelessWidget {
-  // This widget is the root of your application.
   ChatWidget({Key key, this.chat}) : super(key: key);
 
   ChatList chat;
