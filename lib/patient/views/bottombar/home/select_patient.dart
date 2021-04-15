@@ -251,6 +251,7 @@ class SelectPatientState extends State<SelectPatient> {
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
+                      splashRadius: 20,
                       icon: Image.asset('assets/icons/patient/camera.png'),
                       onPressed: () {
                         openCamera();
@@ -263,6 +264,7 @@ class SelectPatientState extends State<SelectPatient> {
                     child: IconButton(
                       padding: new EdgeInsets.only(
                           left: 5, top: 5, right: 5, bottom: 5),
+                      splashRadius: 20,
                       icon: Image.asset('assets/icons/patient/addphotos.png'),
                       onPressed: addPhotos,
                     ),
