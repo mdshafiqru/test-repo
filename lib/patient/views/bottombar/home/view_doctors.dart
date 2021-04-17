@@ -14,10 +14,37 @@ class ViewDoctors extends StatefulWidget {
   ViewDoctorsState createState() => new ViewDoctorsState();
 }
 
+class SortList {
+  String name;
+  int index;
+  SortList({this.name, this.index});
+}
+
 class ViewDoctorsState extends State<ViewDoctors> {
   var rating = 5.0;
   bool isRemove = false;
   SortCategory category = SortCategory.Online_Doctors;
+
+  String radioItem = 'Mango';
+  int id = 1;
+  List<SortList> fList = [
+    SortList(
+      index: 1,
+      name: "Mango",
+    ),
+    SortList(
+      index: 2,
+      name: "Apple",
+    ),
+    SortList(
+      index: 3,
+      name: "Banana",
+    ),
+    SortList(
+      index: 4,
+      name: "Cherry",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -105,6 +132,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
                       context: context,
                       barrierDismissible: true,
                       builder: (BuildContext context) {
+                        int selectedRadio = 0;
                         return AlertDialog(
                           scrollable: true,
                           shape: RoundedRectangleBorder(
@@ -167,63 +195,21 @@ class ViewDoctorsState extends State<ViewDoctors> {
                               ],
                             ),
                           ),
-                          content: Padding(
-                            padding: EdgeInsets.only(left: 5, right: 5),
-                            child: Form(
-                              child: Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    ListTile(
-                                      title: const Text(
-                                        'Online Doctors',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Radio(
-                                        value: SortCategory.Online_Doctors,
-                                        groupValue: category,
-                                        onChanged: (SortCategory value) {
-                                          setState(() {
-                                            category = value;
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                    ListTile(
-                                      title: const Text(
-                                        'Male Doctors',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Radio(
-                                        value: SortCategory.Male_Doctors,
-                                        groupValue: category,
-                                        onChanged: (SortCategory value) {
-                                          setState(() {
-                                            category = value;
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                    ListTile(
-                                      title: const Text(
-                                        'Female Doctors',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Radio(
-                                        value: SortCategory.Female_Doctors,
-                                        groupValue: category,
-                                        onChanged: (SortCategory value) {
-                                          setState(() {
-                                            category = value;
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                          content: StatefulBuilder(builder:
+                              (BuildContext context, StateSetter setState) {
+                            return Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: List<Widget>.generate(4, (int index) {
+                                return Radio<int>(
+                                  value: index,
+                                  groupValue: selectedRadio,
+                                  onChanged: (int value) {
+                                    setState(() => selectedRadio = value);
+                                  },
+                                );
+                              }),
+                            );
+                          }),
                           actions: [
                             Container(
                               width: 360,
@@ -268,7 +254,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
                   splashRadius: 20,
                   icon: Image.asset('assets/icons/patient/sort.png'),
                   onPressed: () {
-                    showDialog(
+                    showDialog<void>(
                       context: context,
                       barrierDismissible: true,
                       builder: (BuildContext context) {
@@ -335,64 +321,25 @@ class ViewDoctorsState extends State<ViewDoctors> {
                           content: Padding(
                             padding: EdgeInsets.only(left: 5, right: 5),
                             child: Form(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  ListTile(
-                                    dense: true,
-                                    contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 0.0, vertical: 0.0),
-                                    title: const Text(
-                                      'Online Doctors',
-                                      style: TextStyle(),
-                                    ),
-                                    leading: Radio(
-                                      value: SortCategory.Online_Doctors,
-                                      groupValue: category,
-                                      onChanged: (SortCategory value) {
-                                        setState(() {
-                                          category = value;
-                                        });
-                                      },
-                                    ),
+                              child: Expanded(
+                                child: Container(
+                                  height: 350.0,
+                                  child: Column(
+                                    children: fList
+                                        .map((data) => RadioListTile<int>(
+                                              title: Text("${data.name}"),
+                                              groupValue: id,
+                                              value: data.index,
+                                              onChanged: (val) {
+                                                setState(() {
+                                                  radioItem = data.name;
+                                                  id = data.index;
+                                                });
+                                              },
+                                            ))
+                                        .toList(),
                                   ),
-                                  ListTile(
-                                    dense: true,
-                                    contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 0.0, vertical: 0.0),
-                                    title: const Text(
-                                      'Male Doctors',
-                                      style: TextStyle(),
-                                    ),
-                                    leading: Radio(
-                                      value: SortCategory.Male_Doctors,
-                                      groupValue: category,
-                                      onChanged: (SortCategory value) {
-                                        setState(() {
-                                          category = value;
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                  ListTile(
-                                    dense: true,
-                                    contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 0.0, vertical: 0.0),
-                                    title: const Text(
-                                      'Female Doctors',
-                                      style: TextStyle(),
-                                    ),
-                                    leading: Radio(
-                                      value: SortCategory.Female_Doctors,
-                                      groupValue: category,
-                                      onChanged: (SortCategory value) {
-                                        setState(() {
-                                          category = value;
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
                           ),
