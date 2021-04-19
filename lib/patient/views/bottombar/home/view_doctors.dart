@@ -4,8 +4,6 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:pro_health/patient/views/bottombar/home/doctor_profile.dart';
 
-enum SortCategory { Online_Doctors, Male_Doctors, Female_Doctors }
-
 class ViewDoctors extends StatefulWidget {
   ViewDoctors({Key key, this.title}) : super(key: key);
   final String title;
@@ -14,35 +12,52 @@ class ViewDoctors extends StatefulWidget {
   ViewDoctorsState createState() => new ViewDoctorsState();
 }
 
-class SortList {
-  String name;
-  int index;
-  SortList({this.name, this.index});
-}
-
 class ViewDoctorsState extends State<ViewDoctors> {
   var rating = 5.0;
-  bool isRemove = false;
-  SortCategory category = SortCategory.Online_Doctors;
 
-  String radioItem = 'Mango';
-  int id = 1;
-  List<SortList> fList = [
+  String selectedFilterItem = 'Online Doctors';
+  int fId = 1;
+  List<FilterList> filterList = [
+    FilterList(
+      index: 1,
+      name: "Online Doctors",
+    ),
+    FilterList(
+      index: 2,
+      name: "Male Doctors",
+    ),
+    FilterList(
+      index: 3,
+      name: "Female Doctors",
+    ),
+    FilterList(
+      index: 4,
+      name: "Free Doctors",
+    ),
+    FilterList(
+      index: 5,
+      name: "Top Rated",
+    ),
+  ];
+
+  String selectedSortItem = 'Experience: High to Low';
+  int sId = 1;
+  List<SortList> sortList = [
     SortList(
       index: 1,
-      name: "Mango",
+      name: "Experience: High to Low",
     ),
     SortList(
       index: 2,
-      name: "Apple",
+      name: "Experience: Low to High",
     ),
     SortList(
       index: 3,
-      name: "Banana",
+      name: "Fees: High to Low",
     ),
     SortList(
       index: 4,
-      name: "Cherry",
+      name: "Fees: Low to High",
     ),
   ];
 
@@ -132,13 +147,12 @@ class ViewDoctorsState extends State<ViewDoctors> {
                       context: context,
                       barrierDismissible: true,
                       builder: (BuildContext context) {
-                        int selectedRadio = 0;
                         return AlertDialog(
                           scrollable: true,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          backgroundColor: Colors.black26,
+                          backgroundColor: Colors.black38,
                           insetPadding: EdgeInsets.zero,
                           titlePadding: EdgeInsets.zero,
                           contentPadding: EdgeInsets.zero,
@@ -157,7 +171,9 @@ class ViewDoctorsState extends State<ViewDoctors> {
                                           'Filter',
                                           style: TextStyle(
                                             fontFamily: 'Segoe',
-                                            fontSize: 16,
+                                            fontSize: 18,
+                                            letterSpacing: .6,
+                                            fontWeight: FontWeight.bold,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -185,7 +201,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
                                 Container(
                                   padding: EdgeInsets.only(top: 2),
                                   child: Divider(
-                                    color: Colors.black,
+                                    color: kTitleColor,
                                     height: 0.0,
                                     thickness: 0.5,
                                     indent: 0.0,
@@ -197,17 +213,42 @@ class ViewDoctorsState extends State<ViewDoctors> {
                           ),
                           content: StatefulBuilder(builder:
                               (BuildContext context, StateSetter setState) {
-                            return Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: List<Widget>.generate(4, (int index) {
-                                return Radio<int>(
-                                  value: index,
-                                  groupValue: selectedRadio,
-                                  onChanged: (int value) {
-                                    setState(() => selectedRadio = value);
-                                  },
-                                );
-                              }),
+                            return Expanded(
+                              child: Container(
+                                height: 210,
+                                child: Column(
+                                  children: filterList
+                                      .map(
+                                        (data) => ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                              maxHeight: 40, maxWidth: 340),
+                                          child: RadioListTile<int>(
+                                            title: Text(
+                                              "${data.name}",
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                            activeColor: kTitleColor,
+                                            dense: true,
+                                            groupValue: fId,
+                                            value: data.index,
+                                            onChanged: (val) {
+                                              setState(() {
+                                                fId = data.index;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              ),
                             );
                           }),
                           actions: [
@@ -263,7 +304,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          backgroundColor: kTitleColor,
+                          backgroundColor: Colors.black38,
                           insetPadding: EdgeInsets.zero,
                           titlePadding: EdgeInsets.zero,
                           contentPadding: EdgeInsets.zero,
@@ -276,13 +317,16 @@ class ViewDoctorsState extends State<ViewDoctors> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        width: 300,
+                                        width: 290,
                                         alignment: Alignment.center,
                                         child: Text(
                                           'Sort',
                                           style: TextStyle(
                                             fontFamily: 'Segoe',
-                                            fontSize: 16,
+                                            fontSize: 18,
+                                            letterSpacing: .6,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -298,7 +342,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
                                             style: TextStyle(
                                                 fontFamily: 'Segoe',
                                                 fontSize: 15,
-                                                color: Colors.black),
+                                                color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -306,9 +350,9 @@ class ViewDoctorsState extends State<ViewDoctors> {
                                   ),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.only(top: 2),
+                                  padding: EdgeInsets.only(top: 4),
                                   child: Divider(
-                                    color: Colors.black,
+                                    color: kTitleColor,
                                     height: 0.0,
                                     thickness: 0.5,
                                     indent: 0.0,
@@ -318,34 +362,51 @@ class ViewDoctorsState extends State<ViewDoctors> {
                               ],
                             ),
                           ),
-                          content: Padding(
-                            padding: EdgeInsets.only(left: 5, right: 5),
-                            child: Form(
-                              child: Expanded(
+                          content: StatefulBuilder(
+                            builder:
+                                (BuildContext context, StateSetter setState) {
+                              return Expanded(
                                 child: Container(
-                                  height: 350.0,
+                                  height: 170,
                                   child: Column(
-                                    children: fList
-                                        .map((data) => RadioListTile<int>(
-                                              title: Text("${data.name}"),
-                                              groupValue: id,
+                                    children: sortList
+                                        .map(
+                                          (data) => ConstrainedBox(
+                                            constraints: BoxConstraints(
+                                                maxHeight: 40, maxWidth: 340),
+                                            child: RadioListTile<int>(
+                                              title: Text(
+                                                "${data.name}",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                              ),
+                                              activeColor: kTitleColor,
+                                              dense: true,
+                                              groupValue: sId,
                                               value: data.index,
                                               onChanged: (val) {
                                                 setState(() {
-                                                  radioItem = data.name;
-                                                  id = data.index;
+                                                  selectedSortItem = data.name;
+                                                  sId = data.index;
                                                 });
                                               },
-                                            ))
+                                            ),
+                                          ),
+                                        )
                                         .toList(),
                                   ),
                                 ),
-                              ),
-                            ),
+                              );
+                            },
                           ),
                           actions: [
                             Container(
-                              width: 360,
+                              width: 350,
                               height: 30,
                               padding: EdgeInsets.symmetric(horizontal: 70),
                               child: MaterialButton(
@@ -633,47 +694,51 @@ class ViewDoctorsState extends State<ViewDoctors> {
         ),
       ),
     );
-    final doctorViewCardList = Container(
-      padding: EdgeInsets.only(left: 10, top: 10, right: 10),
-      child: Column(
-        children: [
-          doctorCard,
-          SizedBox(
-            height: 10,
+    final doctorViewCardList = Expanded(
+      child: Container(
+        padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+        child: SingleChildScrollView(
+          child: ListBody(
+            children: [
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 10,
+              ),
+              doctorCard,
+              SizedBox(
+                height: 30,
+              ),
+            ],
           ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 30,
-          ),
-        ],
+        ),
       ),
     );
 
@@ -693,8 +758,7 @@ class ViewDoctorsState extends State<ViewDoctors> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             searchDoctor,
             categorySortFilter,
@@ -705,4 +769,16 @@ class ViewDoctorsState extends State<ViewDoctors> {
       ),
     );
   }
+}
+
+class FilterList {
+  String name;
+  int index;
+  FilterList({this.name, this.index});
+}
+
+class SortList {
+  String name;
+  int index;
+  SortList({this.name, this.index});
 }
