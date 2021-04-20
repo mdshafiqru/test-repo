@@ -4,7 +4,7 @@ import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
 import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
-import 'package:pro_health/doctor/views/dashboard/drug_info/drug_info.dart';
+import 'package:pro_health/doctor/views/dashboard/case_exchange/case_exchange.dart';
 import 'package:pro_health/doctor/views/drawer/custom_drawer_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
@@ -219,7 +219,7 @@ class HomeState extends State<Home> {
               color: kDashBoxColor,
               elevation: 12,
               onPressed: () {
-                Navigator.of(context).pushNamed(DrugInfo.tag);
+                Navigator.of(context).pushNamed(CaseExchange.tag);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -228,12 +228,12 @@ class HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
-                      child: Image.asset('assets/druginfo.png'),
+                      child: Image.asset('assets/icons/doctor/cexchange.png'),
                     ),
                   ),
                   Container(
                     child: Text(
-                      'DRUG INFO',
+                      'CASE EXCHANGE',
                       style: TextStyle(
                           fontFamily: 'Segoe',
                           fontSize: 12.0,
