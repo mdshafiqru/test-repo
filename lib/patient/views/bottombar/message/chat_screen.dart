@@ -1,5 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:pro_health/base/utils/constants.dart';
+import 'global.dart';
+import 'widgets.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({Key key, this.chatList}) : super(key: key);
@@ -25,96 +30,43 @@ class ChatScrenpage extends StatefulWidget {
 }
 
 class _ChatScrenpageState extends State<ChatScrenpage> {
-  List<ChatMessage> chatMessage = [
-    ChatMessage(message: "Hi", reciever: true),
-    ChatMessage(message: "This is Louji", reciever: true),
-    ChatMessage(message: "from tenkasi", reciever: true),
-    ChatMessage(message: "Hey", reciever: false),
-    ChatMessage(message: "What's up", reciever: false),
-    ChatMessage(
-        message: "I want to learn Mobile Development. ", reciever: true),
-    ChatMessage(message: "Which is best framework", reciever: true),
-    ChatMessage(message: "Upto me. Flutter will be good", reciever: false),
-  ];
-  List<ChatList> chatList = [
-    ChatList(
-        name: "Sm Mahmud",
-        lastMessage: "Hey whats up",
-        userimage:
-            "https://avatars.githubusercontent.com/u/46453392?s=460&u=f70020aeb9d5cbd0cbded2f162852c06ad7d72a7&v=4",
-        time: "Now",
-        noOfMessage: '3'),
-    ChatList(
-        name: "Jahidul Hasan",
-        lastMessage: "How are you?",
-        userimage:
-            "https://avatars.githubusercontent.com/u/39805770?s=400&u=3c9d96d0415af804ca77c0a2dce2c0d3460f058e&v=4",
-        time: "3 hrs ago",
-        noOfMessage: '1'),
-    ChatList(
-        name: "Mohd Sami",
-        lastMessage: "I  am your bug fan",
-        userimage:
-            "https://ficquotes.com/images/characters/bruce-banner-avengers.jpg",
-        time: "08.23",
-        noOfMessage: '2'),
-    ChatList(
-        name: "Kamrul Islam",
-        lastMessage: "I want to learn flutter. ",
-        userimage:
-            "https://www.hindustantimes.com/rf/image_size_444x250/HT/p2/2020/06/05/Pictures/_d1034a7e-a715-11ea-b9e4-8ce809f9739c.jpg",
-        time: "yesterday",
-        noOfMessage: '0'),
-    ChatList(
-        name: "Jakir Ullah",
-        lastMessage: "Hey Joan, How do you do?",
-        userimage:
-            "https://static2.srcdn.com/wordpress/wp-content/uploads/2019/08/Tony-Stark-and-Bruce-Banner-in-The-Avengers-1.jpg?q=50&fit=crop&w=960&h=500",
-        time: "yesterday",
-        noOfMessage: '0'),
-    ChatList(
-        name: "Tonmoy Datta",
-        lastMessage: "Flutter Demo",
-        userimage:
-            "https://img1.looper.com/img/gallery/the-avenger-who-could-have-singlehandedly-defeated-thanos/intro-1564425786.jpg",
-        time: "yesterday",
-        noOfMessage: '4'),
-    ChatList(
-        name: "Rajesh Das",
-        lastMessage: "Love you",
-        userimage:
-            "https://i.insider.com/57bf2e72b6fa0217008b4611?width=1100&format=jpeg&auto=webp",
-        time: "08/01/2019",
-        noOfMessage: '0'),
-    ChatList(
-        name: "Dilip Dey",
-        lastMessage: "Hello What is your name",
-        userimage:
-            "https://images.theconversation.com/files/120476/original/image-20160428-30950-6acgv9.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop",
-        time: "08/01/2019",
-        noOfMessage: '0'),
-    ChatList(
-        name: "Ripon Hawlader",
-        lastMessage: "Job offer",
-        userimage:
-            "https://i.insider.com/5dcecef7e94e86049649291a?width=1136&format=jpeg",
-        time: "03/12/2019",
-        noOfMessage: '0'),
-    ChatList(
-        name: "Labib Mahir",
-        lastMessage: "Most Dislikes",
-        userimage:
-            "https://pyxis.nymag.com/v1/imgs/44e/581/197dacaf206831fdb5223da62b58cc3a38-30-avengers-characters.rsquare.w700.jpg",
-        time: "23/3/2019",
-        noOfMessage: '7'),
-    ChatList(
-        name: "Al Amin",
-        lastMessage: "Trending Tweet",
-        userimage:
-            "https://qph.fs.quoracdn.net/main-qimg-11ef692748351829b4629683eff21100.webp",
-        time: "02/02/2012",
-        noOfMessage: '0'),
-  ];
+  File myImage;
+  Future openCamera() async {
+    // ignore: deprecated_member_use
+    var cameraImage = await ImagePicker.pickImage(source: ImageSource.camera);
+    setState(() {
+      myImage = cameraImage;
+    });
+  }
+
+  List<Asset> images = <Asset>[];
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> addPhotos() async {
+    List<Asset> resultList = <Asset>[];
+    try {
+      resultList = await MultiImagePicker.pickImages(
+        maxImages: 10,
+        enableCamera: true,
+        selectedAssets: images,
+        materialOptions: MaterialOptions(
+          statusBarColor: "#01619B",
+          actionBarColor: "#01619B",
+          actionBarTitle: "All Photos",
+          allViewTitle: "Selected Photos",
+          useDetailsView: false,
+          selectCircleStrokeColor: "#01619B",
+        ),
+      );
+    } on Exception {}
+    if (!mounted) return;
+    setState(() {
+      images = resultList;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -187,74 +139,95 @@ class _ChatScrenpageState extends State<ChatScrenpage> {
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
-          ListView.builder(
-            itemCount: chatMessage.length,
-            shrinkWrap: true,
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return MessageWidget(
-                chatMessage: chatMessage[index],
-              );
-            },
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(15),
+              itemCount: messages.length,
+              itemBuilder: (ctx, i) {
+                if (messages[i]['status'] == MessageType.received) {
+                  return ReceivedMessagesWidget(i: i);
+                } else {
+                  return SentMessageWidget(i: i);
+                }
+              },
+            ),
           ),
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
               height: 60,
-              padding: EdgeInsets.only(left: 16, top: 8, bottom: 8),
+              padding: EdgeInsets.only(left: 10, top: 8, bottom: 8, right: 8),
               width: double.infinity,
               color: kTitleColor,
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: TextField(
+                    child: TextFormField(
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         hintText: "Write a message",
                         hintStyle: TextStyle(
-                            fontFamily: 'Segoe',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500),
+                          fontFamily: 'Segoe',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
                         contentPadding:
                             EdgeInsets.fromLTRB(20.0, 2.0, 20.0, 2.0),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                         suffixIcon: Container(
-                          child: Icon(
-                            Icons.attach_file_rounded,
-                            size: 26,
+                          height: 30,
+                          width: 30,
+                          padding: EdgeInsets.all(5),
+                          child: FloatingActionButton(
+                            onPressed: () {
+                              addPhotos();
+                            },
+                            child: Icon(
+                              Icons.attach_file_rounded,
+                              color: Colors.grey[800],
+                              size: 25,
+                            ),
+                            backgroundColor: Colors.white,
+                            elevation: 0,
                           ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 5, right: 5),
                     width: 40,
                     height: 50,
-                    child: IconButton(
-                      icon: Icon(Icons.camera_alt_outlined),
-                      color: Colors.grey[800],
-                      splashColor: kBackgroundColor,
-                      onPressed: () {},
+                    padding: EdgeInsets.all(3),
+                    child: FloatingActionButton(
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      onPressed: () {
+                        openCamera();
+                      },
+                      child: Icon(
+                        Icons.camera_alt_outlined,
+                        color: Colors.grey[800],
+                        size: 25,
+                      ),
+                      backgroundColor: kTitleColor,
+                      elevation: 0,
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 5, right: 10),
                     width: 50,
                     height: 50,
+                    padding: EdgeInsets.all(1),
                     child: Center(
                       child: FloatingActionButton(
                         onPressed: () {},
                         child: Icon(
                           Icons.send,
-                          color: Colors.white,
-                          size: 17,
+                          color: Colors.grey[800],
+                          size: 25,
                         ),
-                        backgroundColor: kBaseColor,
-                        elevation: 0,
+                        backgroundColor: kTitleColor,
+                        elevation: 1,
                       ),
                     ),
                   ),
@@ -364,6 +337,10 @@ class ChatWidgetPage extends StatefulWidget {
 }
 
 class _ChatWidgetPageState extends State<ChatWidgetPage> {
+  double radius = 32;
+  double iconSize = 20;
+  double distance = 2;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -383,9 +360,35 @@ class _ChatWidgetPageState extends State<ChatWidgetPage> {
                 Expanded(
                   child: Row(
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(widget.chat.userimage),
-                        maxRadius: 30,
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          CircleAvatar(
+                            radius: 32,
+                            backgroundColor: kBodyTextColor,
+                            child: CircleAvatar(
+                              backgroundColor: kWhiteShade,
+                              radius: 31,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                backgroundImage:
+                                    NetworkImage(widget.chat.userimage),
+                                maxRadius: 30,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: -(radius + 5),
+                            right: -(radius + 15),
+                            bottom: -iconSize - distance - 50,
+                            left: 5,
+                            child: Icon(
+                              Icons.circle,
+                              color: Color(0xff6ECEC0),
+                              size: iconSize - 4,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         width: 16,
