@@ -266,7 +266,9 @@ class SelectPatientState extends State<SelectPatient> {
                           left: 5, top: 5, right: 5, bottom: 5),
                       splashRadius: 20,
                       icon: Image.asset('assets/icons/patient/addphotos.png'),
-                      onPressed: addPhotos,
+                      onPressed: () {
+                        addPhotos();
+                      },
                     ),
                   ),
                 ],
