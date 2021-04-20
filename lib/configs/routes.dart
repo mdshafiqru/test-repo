@@ -10,7 +10,7 @@ import 'package:pro_health/doctor/views/bottombar/prescription/prescription.dart
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
-import 'package:pro_health/doctor/views/dashboard/drug_info/drug_info.dart';
+import 'package:pro_health/doctor/views/dashboard/case_exchange/case_exchange.dart';
 import 'package:pro_health/doctor/views/drawer/item/about_us.dart';
 import 'package:pro_health/doctor/views/drawer/item/activity_status.dart';
 import 'package:pro_health/doctor/views/drawer/item/contact_us.dart';
@@ -79,7 +79,7 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
       ),
   NewAccountPassword.tag: (context) => NewAccountPassword(),
   TermsAndConditions.tag: (context) => TermsAndConditions(),
-  DrugInfo.tag: (context) => DrugInfo(),
+  CaseExchange.tag: (context) => CaseExchange(),
   OnlineConsultancy.tag: (context) => OnlineConsultancy(),
   Earnings.tag: (context) => Earnings(),
   Withdraw.tag: (context) => Withdraw(),
