@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
@@ -94,10 +95,14 @@ class HomeState extends State<Home> {
           width: 35,
           child: Container(
             padding: EdgeInsets.only(left: 0.0, right: 10.0),
-            child: Icon(
-              Icons.notifications_active,
-              size: 30,
+            child: IconButton(
+              padding: EdgeInsets.all(2),
+              icon: Icon(
+                Icons.notifications_active_rounded,
+                size: 28,
+              ),
               color: kTitleColor,
+              onPressed: () {},
             ),
           ),
         ),
