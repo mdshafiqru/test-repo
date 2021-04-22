@@ -11,6 +11,9 @@ import 'package:pro_health/doctor/views/dashboard/consultation_history/consultat
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/online_consultancy/online_consultancy.dart';
 import 'package:pro_health/doctor/views/dashboard/case_exchange/case_exchange.dart';
+import 'package:pro_health/doctor/views/dashboard/case_exchange/create_case.dart';
+import 'package:pro_health/doctor/views/dashboard/case_exchange/case_details.dart';
+import 'package:pro_health/doctor/views/dashboard/case_exchange/saved_case.dart';
 import 'package:pro_health/doctor/views/drawer/item/about_us.dart';
 import 'package:pro_health/doctor/views/drawer/item/activity_status.dart';
 import 'package:pro_health/doctor/views/drawer/item/contact_us.dart';
@@ -93,6 +96,9 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   Help.tag: (context) => Help(),
   Settings.tag: (context) => Settings(),
   Reviews.tag: (context) => Reviews(),
+  CreateCase.tag: (context) => CreateCase(),
+  SavedCase.tag: (context) => SavedCase(),
+  CaseDetails.tag: (context) => CaseDetails(),
 
   // Patient
   SignInPatient.tag: (context) => SignInPatient(),
