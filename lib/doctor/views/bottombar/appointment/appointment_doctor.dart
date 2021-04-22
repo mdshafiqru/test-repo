@@ -330,18 +330,22 @@ class AppointmentState extends State<Appointment> {
             ),
           ),
           SizedBox(
-            width: 60,
+            width: 100,
           ),
           Container(
-              child: RawMaterialButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.more_vert,
-              size: 24,
+            width: 40,
+            height: 40,
+            alignment: Alignment.centerRight,
+            child: RawMaterialButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.more_vert,
+                size: 25,
+              ),
+              padding: EdgeInsets.all(8),
+              shape: CircleBorder(),
             ),
-            padding: EdgeInsets.all(8),
-            shape: CircleBorder(),
-          )),
+          ),
         ],
       ),
     );
