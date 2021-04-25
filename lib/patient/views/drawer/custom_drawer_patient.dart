@@ -28,44 +28,47 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        shrinkWrap: false,
-        children: <Widget>[
-          Container(
-            height: 210,
-            child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                color: kBaseColor,
-              ),
-              accountName: const Text(
-                _AccountName,
-                style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
-              ),
-              accountEmail: const Text(
-                _AccountEmail,
-                style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
-              ),
-              currentAccountPicture: CircleAvatar(
-                radius: 30,
-                backgroundColor: kBaseColor,
-                child: CircleAvatar(
-                  radius: 27,
-                  backgroundColor: kTitleColor,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.85,
+              height: MediaQuery.of(context).size.height,
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: kBaseColor,
+                ),
+                accountName: const Text(
+                  _AccountName,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
+                ),
+                accountEmail: const Text(
+                  _AccountEmail,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
+                ),
+                currentAccountPicture: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: kBaseColor,
                   child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 25.0,
-                    child: Image.asset('assets/apatient.png'),
+                    radius: 27,
+                    backgroundColor: kTitleColor,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 25.0,
+                      child: Image.asset('assets/apatient.png'),
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height,
-            color: kBackgroundColor,
-            child: Column(
-              children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              shrinkWrap: false,
+              children: [
                 ListTile(
                   dense: true,
                   horizontalTitleGap: 0.0,
@@ -470,7 +473,7 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
                     color: kTitleTextColor),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
