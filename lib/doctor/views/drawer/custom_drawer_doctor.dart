@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
@@ -28,44 +29,46 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        children: <Widget>[
-          Container(
-            height: 210,
-            child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                color: kBaseColor,
-              ),
-              currentAccountPicture: CircleAvatar(
-                radius: 30,
-                backgroundColor: kBaseColor,
-                child: CircleAvatar(
-                  radius: 27,
-                  backgroundColor: kTitleColor,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.85,
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: kBaseColor,
+                ),
+                currentAccountPicture: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: kBaseColor,
                   child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 25.0,
-                    child: Image.asset('assets/doctorimg.png'),
+                    radius: 27,
+                    backgroundColor: kTitleColor,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 25.0,
+                      child: Image.asset('assets/doctorimg.png'),
+                    ),
                   ),
                 ),
-              ),
-              accountName: const Text(
-                _AccountName,
-                style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
-              ),
-              accountEmail: const Text(
-                _AccountEmail,
-                style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
+                accountName: const Text(
+                  _AccountName,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
+                ),
+                accountEmail: const Text(
+                  _AccountEmail,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
+                ),
               ),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height,
-            color: kBackgroundColor,
-            child: Column(
-              children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              shrinkWrap: false,
+              children: [
                 ListTile(
                   dense: true,
                   horizontalTitleGap: 0.0,
@@ -469,7 +472,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     color: kTitleTextColor),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
