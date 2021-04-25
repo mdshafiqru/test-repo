@@ -69,7 +69,6 @@ flutter:
   assets:
     - assets/logo.png
     - assets/icons/doctor/
-    - assets/icons/doctor/category.png
     - assets/icons/patient/
   fonts:
     - family: Segoe
