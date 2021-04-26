@@ -239,7 +239,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
 
     File file = File("$documentPath/example.pdf");
 
-    file.writeAsBytesSync(pdf.save());
+    //file.writeAsBytesSync(pdf.save());
   }
 
   @override
