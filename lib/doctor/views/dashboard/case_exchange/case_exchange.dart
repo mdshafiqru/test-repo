@@ -204,7 +204,7 @@ class CaseExchangeState extends State<CaseExchange> {
                           ),
                           SizedBox(width: 135),
                           Container(
-                            width: 30,
+                            width: 25,
                             height: 60,
                             padding: EdgeInsets.only(top: 15),
                             child: PopupMenuButton(
@@ -217,7 +217,7 @@ class CaseExchangeState extends State<CaseExchange> {
                                 return [
                                   PopupMenuItem<String>(
                                     value: 'Save',
-                                    height: 30,
+                                    height: 25,
                                     mouseCursor: MouseCursor.defer,
                                     child: Container(
                                       padding: EdgeInsets.only(left: 20),
@@ -228,8 +228,7 @@ class CaseExchangeState extends State<CaseExchange> {
                               },
                               onSelected: (result) {
                                 if (result == 'Save') {
-                                  Navigator.of(context)
-                                      .pushNamed(SavedCase.tag);
+                                  Navigator.of(context).pushNamed('');
                                 }
                               },
                             ),
