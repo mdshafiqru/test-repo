@@ -1176,7 +1176,7 @@ class DoctorProfileState extends State<DoctorProfile> {
                     indicatorSize: TabBarIndicatorSize.label,
                     indicator: BoxDecoration(
                       gradient:
-                          LinearGradient(colors: [kBaseColor, kBaseColor]),
+                          LinearGradient(colors: [kBaseColor, kButtonColor]),
                       borderRadius: BorderRadius.circular(30),
                       color: kBaseColor,
                     ),
