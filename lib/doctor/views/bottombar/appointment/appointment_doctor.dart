@@ -473,56 +473,67 @@ class AppointmentState extends State<Appointment> {
                 SizedBox(
                   height: 10,
                 ),
-                TabBar(
-                  unselectedLabelColor: kBaseColor,
-                  labelColor: kTitleColor,
-                  indicatorColor: kBaseColor,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicator: BoxDecoration(
-                      gradient:
-                          LinearGradient(colors: [kBaseColor, kBaseColor]),
-                      borderRadius: BorderRadius.circular(50),
-                      color: kBaseColor),
-                  tabs: [
-                    Tab(
-                      child: Container(
-                        width: 205,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            border: Border.all(color: kBaseColor, width: 1.0)),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Appointment",
-                            style: TextStyle(
-                              fontFamily: 'Segoe',
-                              fontSize: 16,
+                Theme(
+                  data: ThemeData(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                  ),
+                  child: Container(
+                    height: 35,
+                    child: TabBar(
+                      unselectedLabelColor: kBaseColor,
+                      labelColor: kTitleColor,
+                      indicatorColor: kBaseColor,
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicator: BoxDecoration(
+                          gradient:
+                              LinearGradient(colors: [kBaseColor, kBaseColor]),
+                          borderRadius: BorderRadius.circular(50),
+                          color: kBaseColor),
+                      tabs: [
+                        Tab(
+                          child: Container(
+                            width: 205,
+                            height: 34,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.0)),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Appointment",
+                                style: TextStyle(
+                                  fontFamily: 'Segoe',
+                                  fontSize: 16,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        width: 205,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            border: Border.all(color: kBaseColor, width: 1.0)),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Message",
-                            style: TextStyle(
-                              fontFamily: 'Segoe',
-                              fontSize: 16,
+                        Tab(
+                          child: Container(
+                            width: 205,
+                            height: 34,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.0)),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Message",
+                                style: TextStyle(
+                                  fontFamily: 'Segoe',
+                                  fontSize: 16,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
                 Expanded(
                   flex: 1,
