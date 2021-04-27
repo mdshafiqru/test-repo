@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
+// ignore: must_be_immutable
 class ChatScreen extends StatelessWidget {
   ChatScreen({Key key, this.chatList}) : super(key: key);
 
@@ -12,6 +13,7 @@ class ChatScreen extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class ChatScrenpage extends StatefulWidget {
   ChatScrenpage({Key key, this.title, this.chatList}) : super(key: key);
 
@@ -180,6 +182,7 @@ class ChatList{
 
   ChatList({this.name, this.lastMessage, this.userimage, this.time, this.noOfMessage});
 }
+// ignore: must_be_immutable
 class MessageWidget extends StatelessWidget {
   MessageWidget({Key key, this.chatMessage}) : super(key: key);
   ChatMessage chatMessage;
@@ -189,6 +192,7 @@ class MessageWidget extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class MessageWidgetPage extends StatefulWidget {
   MessageWidgetPage({Key key, this.title, this.chatMessage}) : super(key: key);
 
@@ -227,6 +231,7 @@ class _MessageWidgetPageState extends State<MessageWidgetPage> {
   }
 }
 
+// ignore: must_be_immutable
 class ChatWidget extends StatelessWidget {
   ChatWidget({Key key, this.chat}) : super(key: key);
 
@@ -237,6 +242,7 @@ class ChatWidget extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class ChatWidgetPage extends StatefulWidget {
   ChatWidgetPage({Key key, this.title, this.chat}) : super(key: key);
 

@@ -24,7 +24,7 @@ class ActivityStatusState extends State<ActivityStatus> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/statuspage.png'),
+          child: Image.asset('assets/icons/doctor/statuspage.png'),
         ),
       ),
     );

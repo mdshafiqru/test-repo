@@ -24,7 +24,7 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/accountpassword.png'),
+          child: Image.asset('assets/icons/doctor/accountpassword.png'),
         ),
       ),
     );
@@ -75,7 +75,7 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
             padding: EdgeInsets.symmetric(vertical: 11.0,),
             child: Image(
               image: AssetImage(
-                'assets/password.png',
+                'assets/icons/doctor/password.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -104,7 +104,7 @@ class NewAccountPasswordState extends State<NewAccountPassword> {
             padding: EdgeInsets.symmetric(vertical: 11.0,),
             child: Image(
               image: AssetImage(
-                'assets/retypepassword.png',
+                'assets/icons/doctor/retypepassword.png',
               ),
               fit: BoxFit.fitHeight,
             ),

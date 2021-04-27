@@ -21,7 +21,7 @@ class SettingsState extends State<Settings> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/settingspage.png'),
+          child: Image.asset('assets/icons/doctor/settingspage.png'),
         ),
       ),
     );

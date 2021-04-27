@@ -27,7 +27,7 @@ class UpdatePasswordState extends State<UpdatePassword> {
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: 40.0,
-              child: Image.asset('assets/doctorimg.png'),
+              child: Image.asset('assets/icons/doctor/doctorimg.png'),
             ),
           ),
         ),
@@ -95,7 +95,7 @@ class UpdatePasswordState extends State<UpdatePassword> {
             ),
             child: Image(
               image: AssetImage(
-                'assets/password.png',
+                'assets/icons/doctor/password.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -127,7 +127,7 @@ class UpdatePasswordState extends State<UpdatePassword> {
             ),
             child: Image(
               image: AssetImage(
-                'assets/retypepassword.png',
+                'assets/icons/doctor/retypepassword.png',
               ),
               fit: BoxFit.fitHeight,
             ),

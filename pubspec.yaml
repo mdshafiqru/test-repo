@@ -66,8 +66,17 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo.png
-    - assets/icons/doctor/
+    - assets/prohealthhlogo.png
+    - assets/doctorsignin.png
+    - assets/patientsignin.png
+    - assets/pharmalogo.png
+    - assets/icons/doctor/phoneno.png
+    - assets/icons/doctor/bmdcno.png
+    - assets/icons/doctor/password.png
+    - assets/icons/doctor/forgotpass.png
+    - assets/icons/doctor/forgotpassword.png
     - assets/icons/patient/
+
   fonts:
     - family: Segoe
       fonts:

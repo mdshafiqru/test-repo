@@ -48,7 +48,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.white,
                       radius: 25.0,
-                      child: Image.asset('assets/doctorimg.png'),
+                      child: Image.asset('assets/icons/doctor/doctorimg.png'),
                     ),
                   ),
                 ),
@@ -87,7 +87,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/homed.png'),
+                      child: Image.asset('assets/icons/doctor/homed.png'),
                     ),
                   ),
                   onTap: () {
@@ -116,7 +116,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/profiled.png'),
+                      child: Image.asset('assets/icons/doctor/profiled.png'),
                     ),
                   ),
                   onTap: () {
@@ -147,7 +147,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/statusd.png'),
+                      child: Image.asset('assets/icons/doctor/statusd.png'),
                     ),
                   ),
                   onTap: () {
@@ -178,7 +178,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/termsd.png'),
+                      child: Image.asset('assets/icons/doctor/termsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -209,7 +209,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/privacyd.png'),
+                      child: Image.asset('assets/icons/doctor/privacyd.png'),
                     ),
                   ),
                   onTap: () {
@@ -240,7 +240,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/aboutd.png'),
+                      child: Image.asset('assets/icons/doctor/aboutd.png'),
                     ),
                   ),
                   onTap: () {
@@ -271,7 +271,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/contactd.png'),
+                      child: Image.asset('assets/icons/doctor/contactd.png'),
                     ),
                   ),
                   onTap: () {
@@ -302,7 +302,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/helpd.png'),
+                      child: Image.asset('assets/icons/doctor/helpd.png'),
                     ),
                   ),
                   onTap: () {
@@ -333,7 +333,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/settingsd.png'),
+                      child: Image.asset('assets/icons/doctor/settingsd.png'),
                     ),
                   ),
                   onTap: () {
@@ -364,7 +364,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/versiond.png'),
+                      child: Image.asset('assets/icons/doctor/versiond.png'),
                     ),
                   ),
                   onTap: () {
@@ -395,7 +395,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/signoutd.png'),
+                      child: Image.asset('assets/icons/doctor/signoutd.png'),
                     ),
                   ),
                   onTap: () {
@@ -426,7 +426,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/renewd.png'),
+                      child: Image.asset('assets/icons/doctor/renewd.png'),
                     ),
                   ),
                   onTap: () {
@@ -457,7 +457,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/reviewsd.png'),
+                      child: Image.asset('assets/icons/doctor/reviewsd.png'),
                     ),
                   ),
                   onTap: () {

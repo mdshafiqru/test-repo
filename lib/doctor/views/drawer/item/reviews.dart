@@ -22,7 +22,7 @@ class ReviewsState extends State<Reviews> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/reviewspage.png'),
+          child: Image.asset('assets/icons/doctor/reviewspage.png'),
         ),
       ),
     );
@@ -111,7 +111,8 @@ class ReviewsState extends State<Reviews> {
                           child: CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: 19.0,
-                            child: Image.asset('assets/doctorimg.png'),
+                            child:
+                                Image.asset('assets/icons/doctor/apatient.png'),
                           ),
                         ),
                       ),
@@ -245,14 +246,21 @@ class ReviewsState extends State<Reviews> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             newAccountPasswordLogo,
             forgotPasswordTitle,
             verticalDivider,
             totalReviewsAndRatings,
-            reviewsList,
+            Expanded(
+              child: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    reviewsList,
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

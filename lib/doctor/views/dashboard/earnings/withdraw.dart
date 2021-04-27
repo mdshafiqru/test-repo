@@ -16,7 +16,7 @@ class WithdrawState extends State<Withdraw> {
       height: 80.00,
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: ExactAssetImage('assets/withdraw.png'),
+        image: ExactAssetImage('assets/icons/doctor/withdraw.png'),
         fit: BoxFit.fitHeight,
       )),
     ),

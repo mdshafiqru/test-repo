@@ -35,7 +35,7 @@ class EarningsState extends State<Earnings> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 35.0,
-          child: Image.asset('assets/earningspage.png'),
+          child: Image.asset('assets/icons/doctor/earningspage.png'),
         ),
       ),
     );
@@ -209,7 +209,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/today.png'),
+                      child: Image.asset('assets/icons/doctor/today.png'),
                     ),
                   ),
                   Container(
@@ -261,7 +261,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/thismonth.png'),
+                      child: Image.asset('assets/icons/doctor/thismonth.png'),
                     ),
                   ),
                   Container(
@@ -313,7 +313,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/total.png'),
+                      child: Image.asset('assets/icons/doctor/total.png'),
                     ),
                   ),
                   Container(
@@ -375,7 +375,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/average.png'),
+                      child: Image.asset('assets/icons/doctor/average.png'),
                     ),
                   ),
                   Container(
@@ -427,7 +427,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/totalreceived.png'),
+                      child: Image.asset('assets/icons/doctor/totalreceived.png'),
                     ),
                   ),
                   Container(
@@ -480,7 +480,7 @@ class EarningsState extends State<Earnings> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 23.0,
-                      child: Image.asset('assets/pending.png'),
+                      child: Image.asset('assets/icons/doctor/pending.png'),
                     ),
                   ),
                   Container(

@@ -33,7 +33,8 @@ class HomeState extends State<Home> {
           margin: EdgeInsets.only(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0),
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 1.5),
-            child: Image.asset('assets/homebarlogo.png', fit: BoxFit.fitHeight),
+            child: Image.asset('assets/icons/doctor/homebarlogo.png',
+                fit: BoxFit.fitHeight),
           ),
         ),
       ),
@@ -53,7 +54,7 @@ class HomeState extends State<Home> {
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 60.0,
-                child: Image.asset('assets/doctorimg.png'),
+                child: Image.asset('assets/icons/doctor/doctorimg.png'),
               ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -115,7 +116,8 @@ class HomeState extends State<Home> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/homebg1.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/icons/doctor/homebg1.png'),
+              fit: BoxFit.cover),
         ),
       ),
     );
@@ -144,7 +146,8 @@ class HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
-                      child: Image.asset('assets/onlineconsultancy.png'),
+                      child: Image.asset(
+                          'assets/icons/doctor/onlineconsultancy.png'),
                     ),
                   ),
                   Container(
@@ -186,7 +189,7 @@ class HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
-                      child: Image.asset('assets/consultationhistory.png'),
+                      child: Image.asset('assets/icons/doctor/consultationhistory.png'),
                     ),
                   ),
                   Container(
@@ -275,7 +278,7 @@ class HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
-                      child: Image.asset('assets/myearnings.png'),
+                      child: Image.asset('assets/icons/doctor/myearnings.png'),
                     ),
                   ),
                   Container(

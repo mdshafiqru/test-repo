@@ -16,7 +16,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 35.0,
-          child: Image.asset('assets/consultancypage.png'),
+          child: Image.asset('assets/icons/doctor/consultancypage.png'),
         ),
       ),
     );
@@ -90,7 +90,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 17.0,
-                        child: Image.asset('assets/doctorimg.png'),
+                        child: Image.asset('assets/icons/doctor/apatient.png'),
                       ),
                     ),
                   ),
@@ -207,7 +207,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 18.0,
-                child: Image.asset('assets/doctorimg.png'),
+                child: Image.asset('assets/icons/doctor/apatient.png'),
               ),
             ),
           ),
@@ -269,7 +269,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
+        child: Column(
           children: [
             SizedBox(height: 5),
             onlineConsultancyLogo,
@@ -286,49 +286,53 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
             ),
             topCard,
             nextAppointmentTitle,
-            Container(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: Column(
-                children: [
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: SingleChildScrollView(
+                  child: ListBody(
+                    children: [
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      patientsCard,
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
                   ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 10,
-                  ),
-                  patientsCard,
-                  SizedBox(
-                    height: 30,
-                  ),
-                ],
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

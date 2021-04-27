@@ -77,7 +77,7 @@ class SignInDoctorState extends State<SignInDoctor> {
             ),
             child: Image(
               image: AssetImage(
-                'assets/phoneno.png',
+                'assets/icons/doctor/phoneno.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -109,7 +109,7 @@ class SignInDoctorState extends State<SignInDoctor> {
             ),
             child: Image(
               image: AssetImage(
-                'assets/bmdcno.png',
+                'assets/icons/doctor/bmdcno.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -142,7 +142,7 @@ class SignInDoctorState extends State<SignInDoctor> {
             ),
             child: Image(
               image: AssetImage(
-                'assets/password.png',
+                'assets/icons/doctor/password.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -217,7 +217,7 @@ class SignInDoctorState extends State<SignInDoctor> {
             child: CircleAvatar(
               radius: 12,
               backgroundColor: Colors.transparent,
-              child: Image.asset('assets/forgotpass.png'),
+              child: Image.asset('assets/icons/doctor/forgotpass.png'),
             ),
           ),
           InkWell(

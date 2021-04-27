@@ -19,7 +19,7 @@ class AboutUsState extends State<AboutUs> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/aboutpage.png'),
+          child: Image.asset('assets/icons/doctor/aboutpage.png'),
         ),
       ),
     );
@@ -57,7 +57,7 @@ class AboutUsState extends State<AboutUs> {
             height: 250,
             padding: EdgeInsets.only(top: 70),
             child: Image.asset(
-              'assets/comingsoon.png',
+              'assets/icons/doctor/comingsoon.png',
               fit: BoxFit.fill,
             ),
           ),

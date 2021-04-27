@@ -237,6 +237,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
 
     String documentPath = documentDirectory.path;
 
+    // ignore: unused_local_variable
     File file = File("$documentPath/example.pdf");
 
     //file.writeAsBytesSync(pdf.save());
@@ -259,7 +260,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 23.0,
-                  child: Image.asset('assets/patientinfo.png'),
+                  child: Image.asset('assets/icons/doctor/patientinfo.png'),
                 ),
               ),
               title: Text(
@@ -549,7 +550,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/diseasecondition.png'),
+            child: Image.asset('assets/icons/doctor/diseasecondition.png'),
           ),
         ),
         title: Text(
@@ -591,7 +592,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/cc.png'),
+            child: Image.asset('assets/icons/doctor/cc.png'),
           ),
         ),
         title: Text(
@@ -634,7 +635,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/oe.png'),
+            child: Image.asset('assets/icons/doctor/oe.png'),
           ),
         ),
         title: Text(
@@ -845,7 +846,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/history.png'),
+            child: Image.asset('assets/icons/doctor/history.png'),
           ),
         ),
         title: Text(
@@ -938,7 +939,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/medication.png'),
+            child: Image.asset('assets/icons/doctor/medication.png'),
           ),
         ),
         title: Text(
@@ -1454,7 +1455,7 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 23.0,
-            child: Image.asset('assets/advises.png'),
+            child: Image.asset('assets/icons/doctor/advises.png'),
           ),
         ),
         title: Text(

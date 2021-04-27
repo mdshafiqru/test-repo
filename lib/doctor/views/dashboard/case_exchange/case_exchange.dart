@@ -170,7 +170,7 @@ class CaseExchangeState extends State<CaseExchange> {
                               child: CircleAvatar(
                                 backgroundColor: Colors.white,
                                 radius: 15.0,
-                                child: Image.asset('assets/doctorimg.png'),
+                                child: Image.asset('assets/icons/doctor/doctorimg.png'),
                               ),
                             ),
                           ),

@@ -97,7 +97,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 55.0,
-                        child: Image.asset('assets/doctorimg.png'),
+                        child: Image.asset('assets/icons/doctor/doctorimg.png'),
                       ),
                     ),
                   ),
@@ -344,7 +344,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 50.0,
-                        child: Image.asset('assets/doctorimg.png'),
+                        child: Image.asset('assets/icons/doctor/doctorimg.png'),
                       ),
                     ),
                   ),
@@ -370,7 +370,7 @@ class ProfileDoctorState extends State<ProfileDoctor> {
             child: Center(
               child: RawMaterialButton(
                 elevation: 5.0,
-                child: Image.asset('assets/edit.png'),
+                child: Image.asset('assets/icons/doctor/edit.png'),
                 shape: CircleBorder(),
                 //fillColor: Colors.white,
                 padding: const EdgeInsets.all(6.0),

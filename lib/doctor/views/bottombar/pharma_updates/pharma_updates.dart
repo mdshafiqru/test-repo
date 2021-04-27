@@ -18,7 +18,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 35.0,
-          child: Image.asset('assets/pharmaupdate.png'),
+          child: Image.asset('assets/icons/doctor/pharmaupdate.png'),
         ),
       ),
     );
@@ -76,7 +76,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/pharmawidthimage.png'),
+              image: AssetImage('assets/icons/doctor/pharmawidthimage.png'),
               fit: BoxFit.fill),
         ),
       ),
@@ -102,7 +102,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/pharmawidthimage.png'),
+              image: AssetImage('assets/icons/doctor/pharmawidthimage.png'),
               fit: BoxFit.fill),
         ),
       ),
@@ -127,7 +127,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/brandwidthimage.png'),
+              image: AssetImage('assets/icons/doctor/brandwidthimage.png'),
               fit: BoxFit.fill),
         ),
       ),
@@ -152,7 +152,7 @@ class PharmaUpdatesState extends State<PharmaUpdates> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/brandwidthimage.png'),
+              image: AssetImage('assets/icons/doctor/brandwidthimage.png'),
               fit: BoxFit.fill),
         ),
       ),
