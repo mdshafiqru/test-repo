@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/base/utils/constants.dart';
+import 'package:pro_health/base/utils/constants.dart';
 
 class OnlineConsultancy extends StatefulWidget {
   static String tag = 'OnlineConsultancy';

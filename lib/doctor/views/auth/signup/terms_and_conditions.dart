@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/dashboard/dashboard_doctor.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/auth/signin/signin_doctor.dart';
+import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
+import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 class TermsAndConditions extends StatefulWidget {

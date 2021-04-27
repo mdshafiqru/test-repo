@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///D:/extreme-sm/project/pro-health/lib/doctor/views/dashboard/dashboard_doctor.dart';
+import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
 class UpdatePassword extends StatefulWidget {
