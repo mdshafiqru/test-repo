@@ -61,7 +61,8 @@ class ComplaintPatientState extends State<ComplaintPatient> {
     ),
   );
   final sendButton = Container(
-    padding: EdgeInsets.symmetric(vertical: 25, horizontal: 120),
+    width: double.infinity,
+    padding: EdgeInsets.symmetric(vertical: 25, horizontal: 100),
     child: MaterialButton(
       elevation: 5,
       shape: RoundedRectangleBorder(
@@ -208,7 +209,7 @@ class ComplaintPatientState extends State<ComplaintPatient> {
         ),
         backgroundColor: kBackgroundColor,
         body: Center(
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(height: 2),
               complaintLogo,
@@ -225,7 +226,15 @@ class ComplaintPatientState extends State<ComplaintPatient> {
               ),
               descTextfield,
               sendButton,
-              complaintDataTable,
+              Expanded(
+                child: SingleChildScrollView(
+                  child: ListBody(
+                    children: [
+                      complaintDataTable,
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
