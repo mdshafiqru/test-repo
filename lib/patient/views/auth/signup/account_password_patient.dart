@@ -8,11 +8,11 @@ class AccountPasswordPatient extends StatefulWidget {
   final String title;
   static String tag = 'AccountPasswordPatient';
   @override
-  AccountPasswordPatientState createState() => new AccountPasswordPatientState();
+  AccountPasswordPatientState createState() =>
+      new AccountPasswordPatientState();
 }
 
-class AccountPasswordPatientState extends State <AccountPasswordPatient> {
-
+class AccountPasswordPatientState extends State<AccountPasswordPatient> {
   bool _passwordVisible;
   bool _reTypePasswordVisible;
   @override
@@ -24,7 +24,6 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
 
   @override
   Widget build(BuildContext context) {
-
     final forgotPasswordLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
@@ -32,7 +31,7 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/ppasswordpage.png'),
+          child: Image.asset('assets/icons/patient/ppasswordpage.png'),
         ),
       ),
     );
@@ -40,8 +39,15 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
     final forgotPasswordTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Account Passowrd',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Account Passowrd',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -58,21 +64,27 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
     final forgotPassInstructions = Container(
       padding: EdgeInsets.only(left: 2.0, top: 30.0, right: 2.0, bottom: 120.0),
       child: Text(
-        'Please type new password and re-type password to sign in', textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0, color: kBodyTextColor, fontWeight: FontWeight.w500),
+        'Please type new password and re-type password to sign in',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            fontSize: 13.0,
+            color: kBodyTextColor,
+            fontWeight: FontWeight.w500),
       ),
     );
 
     final newPassword = Container(
       height: 70,
-      padding: EdgeInsets.only(top:0.0, left: 25, bottom: 20, right: 25),
+      padding: EdgeInsets.only(top: 0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(10)],
         keyboardType: TextInputType.visiblePassword,
         obscureText: !_passwordVisible,
         validator: numberValidator,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -80,19 +92,19 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
-                'assets/password.png',
+                'assets/icons/patient/password.png',
               ),
               fit: BoxFit.fitHeight,
             ),
           ),
           suffixIcon: IconButton(
             icon: Icon(
-              _passwordVisible
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              _passwordVisible ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
               setState(() {
@@ -113,7 +125,8 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
         validator: numberValidator,
         obscureText: !_reTypePasswordVisible,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Re-Type Password',
           contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
@@ -121,19 +134,19 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 11.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 11.0,
+            ),
             child: Image(
               image: AssetImage(
-                'assets/retypepassword.png',
+                'assets/icons/patient/retypepassword.png',
               ),
               fit: BoxFit.fitHeight,
             ),
           ),
           suffixIcon: IconButton(
             icon: Icon(
-              _reTypePasswordVisible
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              _reTypePasswordVisible ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
               setState(() {
@@ -156,7 +169,12 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
             Navigator.of(context).pushNamed(TermsAndConditionsPatient.tag);
           },
           color: kButtonColor,
-          child: Text('Sgin in', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+          child: Text('Sgin in',
+              style: TextStyle(
+                  fontFamily: "Segoe",
+                  letterSpacing: 0.5,
+                  fontSize: 18,
+                  color: kWhiteShadow)),
         ),
       ),
     );
@@ -182,11 +200,11 @@ class AccountPasswordPatientState extends State <AccountPasswordPatient> {
 }
 
 String numberValidator(String value) {
-  if(value == null) {
+  if (value == null) {
     return null;
   }
   final n = num.tryParse(value);
-  if(n == null) {
+  if (n == null) {
     return '"$value" is not a valid number!';
   }
   return null;
