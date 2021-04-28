@@ -1699,56 +1699,67 @@ p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:YRCDEU+TimesNewRoman
                   SizedBox(
                     height: 10,
                   ),
-                  TabBar(
-                      unselectedLabelColor: kBaseColor,
-                      labelColor: kBackgroundColor,
-                      indicatorColor: kBaseColor,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      indicator: BoxDecoration(
-                          gradient:
-                              LinearGradient(colors: [kBaseColor, kBaseColor]),
-                          borderRadius: BorderRadius.circular(50),
-                          color: kBaseColor),
-                      tabs: [
-                        Tab(
-                          child: Container(
-                            width: 205,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                border:
-                                    Border.all(color: kBaseColor, width: 1.2)),
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Follow-Up Patient",
-                                style: TextStyle(
-                                    fontFamily: 'Segoe',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700),
+                  Theme(
+                    data: ThemeData(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                    ),
+                    child: Container(
+                      height: 35,
+                      child: TabBar(
+                          unselectedLabelColor: kBaseColor,
+                          labelColor: kBackgroundColor,
+                          indicatorColor: kBaseColor,
+                          indicatorSize: TabBarIndicatorSize.label,
+                          indicator: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [kBaseColor, kBaseColor]),
+                              borderRadius: BorderRadius.circular(50),
+                              color: kBaseColor),
+                          tabs: [
+                            Tab(
+                              child: Container(
+                                width: 205,
+                                height: 34,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40),
+                                    border: Border.all(
+                                        color: kBaseColor, width: 1.2)),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "Follow-Up Patient",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        Tab(
-                          child: Container(
-                            width: 205,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                border:
-                                    Border.all(color: kBaseColor, width: 1.2)),
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "New Patient",
-                                style: TextStyle(
-                                    fontFamily: 'Segoe',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700),
+                            Tab(
+                              child: Container(
+                                width: 205,
+                                height: 34,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50),
+                                    border: Border.all(
+                                        color: kBaseColor, width: 1.2)),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "New Patient",
+                                    style: TextStyle(
+                                        fontFamily: 'Segoe',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ]),
+                          ]),
+                    ),
+                  ),
                   Expanded(
                     child: TabBarView(children: <Widget>[
                       Container(
