@@ -282,6 +282,7 @@ class AppointmentState extends State<Appointment> {
     );
     final nextAppointmentTitle = Container(
       padding: EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 10.0),
+      alignment: Alignment.centerLeft,
       child: Text(
         'Next Appointments',
         style: TextStyle(fontSize: 20, color: kTextLightColor),
@@ -395,40 +396,37 @@ class AppointmentState extends State<Appointment> {
 
     // Message Tab
 
-    final messageHome = Container(
+    final searchMessage = Container(
+      height: 65,
+      padding: EdgeInsets.only(left: 30, top: 25, right: 30, bottom: 5),
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        autofocus: false,
+        initialValue: '',
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
+        autocorrect: true,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: 'Search',
+          hintStyle: TextStyle(
+              fontFamily: 'Segoe', fontSize: 20, fontWeight: FontWeight.w500),
+          contentPadding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          prefixIcon: Container(
+            child: Icon(
+              Icons.search_rounded,
+              size: 26,
+            ),
+          ),
+        ),
+      ),
+    );
+    final messageHome = Expanded(
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 70,
-              padding: EdgeInsets.only(left: 30, top: 25, right: 30, bottom: 5),
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                autofocus: false,
-                initialValue: '',
-                style: TextStyle(
-                    fontFamily: "Segoe", fontSize: 18, color: Colors.black),
-                autocorrect: true,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Search',
-                  hintStyle: TextStyle(
-                      fontFamily: 'Segoe',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
-                  contentPadding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32.0)),
-                  prefixIcon: Container(
-                    child: Icon(
-                      Icons.search_rounded,
-                      size: 26,
-                    ),
-                  ),
-                ),
-              ),
-            ),
             ListView.builder(
               itemCount: chatList.length,
               shrinkWrap: true,
@@ -540,17 +538,26 @@ class AppointmentState extends State<Appointment> {
                   child: TabBarView(
                     children: [
                       Container(
-                        child: ListView(
+                        child: Column(
                           children: [
                             topCard,
                             nextAppointmentTitle,
-                            awaitedPatients,
+                            Expanded(
+                              child: SingleChildScrollView(
+                                child: ListBody(
+                                  children: [
+                                    awaitedPatients,
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                       Container(
-                        child: ListView(
+                        child: Column(
                           children: [
+                            searchMessage,
                             messageHome,
                           ],
                         ),
