@@ -350,47 +350,49 @@ class AppointmentPatientState extends State<AppointmentPatient> {
         ),
       ),
     );
-    final doctorViewCardList = Container(
-      padding: EdgeInsets.only(left: 10, top: 10, right: 10),
-      child: Column(
-        children: [
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 30,
-          ),
-        ],
+    final doctorViewCardList = Expanded(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+        child: ListBody(
+          children: [
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 30,
+            ),
+          ],
+        ),
       ),
     );
 
@@ -411,8 +413,7 @@ class AppointmentPatientState extends State<AppointmentPatient> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             searchDoctor,
             categorySortFilter,
