@@ -1167,84 +1167,90 @@ class DoctorProfileState extends State<DoctorProfile> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 30,
-                  child: TabBar(
-                    unselectedLabelColor: kBaseColor,
-                    labelColor: kTitleColor,
-                    indicatorColor: kBaseColor,
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicator: BoxDecoration(
-                      gradient:
-                          LinearGradient(colors: [kBaseColor, kButtonColor]),
-                      borderRadius: BorderRadius.circular(30),
-                      color: kBaseColor,
+                Theme(
+                  data: ThemeData(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                  ),
+                  child: Container(
+                    height: 30,
+                    child: TabBar(
+                      unselectedLabelColor: kBaseColor,
+                      labelColor: kTitleColor,
+                      indicatorColor: kBaseColor,
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicator: BoxDecoration(
+                        gradient:
+                            LinearGradient(colors: [kBaseColor, kButtonColor]),
+                        borderRadius: BorderRadius.circular(30),
+                        color: kBaseColor,
+                      ),
+                      tabs: [
+                        Tab(
+                          child: Container(
+                            width: 205,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.0)),
+                            padding: EdgeInsets.only(bottom: 2),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Information",
+                                style: TextStyle(
+                                    fontFamily: 'Segoe',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Container(
+                            width: 205,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.0)),
+                            padding: EdgeInsets.only(bottom: 2),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Experience",
+                                style: TextStyle(
+                                    fontFamily: 'Segoe',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Container(
+                            width: 205,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border:
+                                    Border.all(color: kBaseColor, width: 1.0)),
+                            padding: EdgeInsets.only(bottom: 2),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Reviews",
+                                style: TextStyle(
+                                    fontFamily: 'Segoe',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    tabs: [
-                      Tab(
-                        child: Container(
-                          width: 205,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              border:
-                                  Border.all(color: kBaseColor, width: 1.0)),
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Information",
-                              style: TextStyle(
-                                  fontFamily: 'Segoe',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Tab(
-                        child: Container(
-                          width: 205,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              border:
-                                  Border.all(color: kBaseColor, width: 1.0)),
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Experience",
-                              style: TextStyle(
-                                  fontFamily: 'Segoe',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Tab(
-                        child: Container(
-                          width: 205,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              border:
-                                  Border.all(color: kBaseColor, width: 1.0)),
-                          padding: EdgeInsets.only(bottom: 2),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Reviews",
-                              style: TextStyle(
-                                  fontFamily: 'Segoe',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
                 Expanded(
