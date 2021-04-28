@@ -22,7 +22,7 @@ class TermsAndConditionsPatientState extends State<TermsAndConditionsPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/termsconditions.png'),
+          child: Image.asset('assets/icons/patient/termsconditions.png'),
         ),
       ),
     );
