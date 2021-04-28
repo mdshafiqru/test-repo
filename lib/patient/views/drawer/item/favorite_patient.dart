@@ -155,47 +155,49 @@ class FavoritePatientState extends State<FavoritePatient> {
         ],
       ),
     );
-    final favoriteDoctorList = Container(
-      padding: EdgeInsets.only(left: 20, top: 20, right: 20),
-      child: Column(
-        children: [
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 30,
-          ),
-        ],
+    final favoriteDoctorList = Expanded(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 15, top: 20, right: 15, bottom: 20),
+        child: ListBody(
+          children: [
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
       ),
     );
 
@@ -215,8 +217,7 @@ class FavoritePatientState extends State<FavoritePatient> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             favouriteLogo,
             favouriteTitle,
