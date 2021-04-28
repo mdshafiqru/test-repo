@@ -43,7 +43,8 @@ class ConsultationHistoryPatientState
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 35.0,
-                  child: Image.asset('assets/consulthistorypage.png'),
+                  child: Image.asset(
+                      'assets/icons/patient/consulthistorypage.png'),
                 ),
               ),
             ),
