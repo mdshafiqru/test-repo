@@ -695,49 +695,47 @@ class ViewDoctorsState extends State<ViewDoctors> {
       ),
     );
     final doctorViewCardList = Expanded(
-      child: Container(
+      child: SingleChildScrollView(
         padding: EdgeInsets.only(left: 10, top: 10, right: 10),
-        child: SingleChildScrollView(
-          child: ListBody(
-            children: [
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 10,
-              ),
-              doctorCard,
-              SizedBox(
-                height: 30,
-              ),
-            ],
-          ),
+        child: ListBody(
+          children: [
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 30,
+            ),
+          ],
         ),
       ),
     );
