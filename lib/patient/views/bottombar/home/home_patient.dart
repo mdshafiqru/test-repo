@@ -53,7 +53,8 @@ class HomePatientState extends State<HomePatient> {
           margin: EdgeInsets.only(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0),
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 1.5),
-            child: Image.asset('assets/homebarlogo.png', fit: BoxFit.fitHeight),
+            child: Image.asset('assets/icons/patient/homebarlogo.png',
+                fit: BoxFit.fitHeight),
           ),
         ),
       ),
@@ -114,7 +115,7 @@ class HomePatientState extends State<HomePatient> {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/homebg1.png'),
+                      image: AssetImage('assets/icons/patient/homebg1.png'),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -124,7 +125,7 @@ class HomePatientState extends State<HomePatient> {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/homebg1.png'),
+                      image: AssetImage('assets/icons/patient/homebg1.png'),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -134,7 +135,7 @@ class HomePatientState extends State<HomePatient> {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/homebg1.png'),
+                      image: AssetImage('assets/icons/patient/homebg1.png'),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -144,7 +145,7 @@ class HomePatientState extends State<HomePatient> {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/homebg1.png'),
+                      image: AssetImage('assets/icons/patient/homebg1.png'),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -154,7 +155,7 @@ class HomePatientState extends State<HomePatient> {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/homebg1.png'),
+                      image: AssetImage('assets/icons/patient/homebg1.png'),
                       fit: BoxFit.cover),
                 ),
               ),
