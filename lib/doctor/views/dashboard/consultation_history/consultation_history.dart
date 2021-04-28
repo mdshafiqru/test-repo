@@ -8,10 +8,9 @@ class ConsultationHistory extends StatefulWidget {
 }
 
 class ConsultationHistoryState extends State<ConsultationHistory> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
         backgroundColor: kBaseColor,
@@ -22,11 +21,18 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Consultation History', style: TextStyle(fontFamily:'Segoe', fontSize: 18, color: kTitleColor, letterSpacing: 0.5),),
+        title: Text(
+          'Consultation History',
+          style: TextStyle(
+              fontFamily: 'Segoe',
+              fontSize: 18,
+              color: kTitleColor,
+              letterSpacing: 0.5),
+        ),
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
+        child: Column(
           children: <Widget>[
             SizedBox(height: 5),
             Center(
@@ -35,18 +41,28 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 35.0,
-                  child: Image.asset('assets/icons/doctor/consulthistorypage.png'),
+                  child:
+                      Image.asset('assets/icons/doctor/consulthistorypage.png'),
                 ),
               ),
             ),
             Container(
               width: 250.00,
               height: 30,
-              child: Text('Consultation History',
-                style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 18, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+              child: Text(
+                'Consultation History',
+                style: TextStyle(
+                    fontFamily: 'Segoe',
+                    color: kTextLightColor,
+                    letterSpacing: 0.5,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600),
+                textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             const Divider(
               color: kTitleTextColor,
               height: 0.0,
@@ -54,17 +70,54 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
               indent: 0.0,
               endIndent: 0.0,
             ),
-            SizedBox(height: 15),
-            _buildName(name: "Sohail Mahmud", id: "PSR-012 ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            _buildName(name: "Patient Name:", id: "ID: ", view: "View Details"),
-            SizedBox(height: 20,),
+            Expanded(
+              child: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    SizedBox(height: 15),
+                    _buildName(
+                        name: "Sohail Mahmud",
+                        id: "PSR-012 ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Patient Name:",
+                        id: "ID: ",
+                        view: "View Details"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -78,18 +131,18 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
       child: Card(
         elevation: 5.0,
         shape: RoundedRectangleBorder(
-          //side: BorderSide(color: Colors.white70, width: 1),
+            //side: BorderSide(color: Colors.white70, width: 1),
             side: BorderSide(
               color: Colors.grey.withOpacity(0.2),
               width: 1,
             ),
-            borderRadius: BorderRadius.circular(35.0)
-        ),
+            borderRadius: BorderRadius.circular(35.0)),
         color: Color(0xffd6d7d9),
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 7.0, left: 15.0, bottom: 0.0, right: 15.0),
+              padding: EdgeInsets.only(
+                  top: 7.0, left: 15.0, bottom: 0.0, right: 15.0),
               child: Row(
                 children: <Widget>[
                   Text(name),
@@ -102,12 +155,13 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
                     child: RawMaterialButton(
                       elevation: 2,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0)
-                      ),
+                          borderRadius: BorderRadius.circular(20.0)),
                       fillColor: kWhiteShadow,
-                      child: Text("$view", style: TextStyle(color: kTitleTextColor, fontSize: 12),),
-                      onPressed: () {
-                      },
+                      child: Text(
+                        "$view",
+                        style: TextStyle(color: kTitleTextColor, fontSize: 12),
+                      ),
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -118,5 +172,4 @@ class ConsultationHistoryState extends State<ConsultationHistory> {
       ),
     );
   }
-
 }
