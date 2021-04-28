@@ -210,7 +210,7 @@ class WithdrawState extends State<Withdraw> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
+        child: Column(
           children: [
             SizedBox(height: 2),
             withdrawLogo,
@@ -230,7 +230,15 @@ class WithdrawState extends State<Withdraw> {
             SizedBox(
               height: 50,
             ),
-            appliedData,
+            Expanded(
+              child: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    appliedData,
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
