@@ -18,7 +18,7 @@ class DrugIndexPatientState extends State<DrugIndexPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 36.0,
-          child: Image.asset('assets/druginfopage.png'),
+          child: Image.asset('assets/icons/patient/druginfopage.png'),
         ),
       ),
     );
