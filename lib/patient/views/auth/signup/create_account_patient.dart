@@ -19,7 +19,6 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
 
   @override
   Widget build(BuildContext context) {
-
     final createNewAccountLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
@@ -27,7 +26,7 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 42.0,
-          child: Image.asset('assets/paccountpage.png'),
+          child: Image.asset('assets/icons/patient/paccountpage.png'),
         ),
       ),
     );
@@ -35,8 +34,15 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
     final createNewAccountTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
-      child: Text('Create New Account',
-        style: TextStyle(fontFamily: 'Segoe', color: kTextLightColor, letterSpacing: 0.5, fontSize: 20, fontWeight: FontWeight.w600), textAlign: TextAlign.center,
+      child: Text(
+        'Create New Account',
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            color: kTextLightColor,
+            letterSpacing: 0.5,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     );
 
@@ -53,44 +59,57 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
     final createNewAccountInstructions = Container(
       padding: EdgeInsets.only(top: 30.0, bottom: 60.0),
       child: Text(
-        'Please enter following informations to create account', textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Segoe', fontSize: 14.0, color: kBodyTextColor, fontWeight: FontWeight.w500),
+        'Please enter following informations to create account',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Segoe',
+            fontSize: 14.0,
+            color: kBodyTextColor,
+            fontWeight: FontWeight.w500),
       ),
     );
 
     final name = Container(
       height: 70,
-      padding: EdgeInsets.only(top:0.0, left: 25, bottom: 20, right: 25),
+      padding: EdgeInsets.only(top: 0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(11)],
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(11)
+        ],
         keyboardType: TextInputType.text,
         validator: numberValidator,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
             hintText: 'Name',
             contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-            prefixIcon: Icon(Icons.person_rounded)
-        ),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+            prefixIcon: Icon(Icons.person_rounded)),
       ),
     );
 
     final phoneNo = Container(
       height: 70,
-      padding: EdgeInsets.only(top:0.0, left: 25, bottom: 20, right: 25),
+      padding: EdgeInsets.only(top: 0.0, left: 25, bottom: 20, right: 25),
       child: TextFormField(
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(11)],
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(11)
+        ],
         keyboardType: TextInputType.number,
         validator: numberValidator,
         initialValue: '',
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
             hintText: 'Phone Number',
             contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-            prefixIcon: Icon(Icons.phone_android_rounded)
-        ),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+            prefixIcon: Icon(Icons.phone_android_rounded)),
       ),
     );
 
@@ -106,7 +125,8 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
               initialDate: currentValue ?? DateTime.now(),
               lastDate: DateTime(2100));
         },
-        style: TextStyle(fontFamily:"Segoe", fontSize: 18, color: Colors.black),
+        style:
+            TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
         decoration: InputDecoration(
           hintText: "Date of Birth",
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -114,10 +134,12 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: EdgeInsets.symmetric(vertical: 12.0,),
+            padding: EdgeInsets.symmetric(
+              vertical: 12.0,
+            ),
             child: Image(
               image: AssetImage(
-                'assets/dateofbirth.png',
+                'assets/icons/patient/dateofbirth.png',
               ),
               fit: BoxFit.fitHeight,
             ),
@@ -137,7 +159,12 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
             Navigator.of(context).pushNamed(NewAccountVerifyPatient.tag);
           },
           color: kButtonColor,
-          child: Text('Get OTP', style: TextStyle(fontFamily: "Segoe", letterSpacing: 0.5, fontSize: 18, color: kWhiteShadow)),
+          child: Text('Get OTP',
+              style: TextStyle(
+                  fontFamily: "Segoe",
+                  letterSpacing: 0.5,
+                  fontSize: 18,
+                  color: kWhiteShadow)),
         ),
       ),
     );
@@ -164,11 +191,11 @@ class CreateAccountPatientState extends State<CreateAccountPatient> {
 }
 
 String numberValidator(String value) {
-  if(value == null) {
+  if (value == null) {
     return null;
   }
   final n = num.tryParse(value);
-  if(n == null) {
+  if (n == null) {
     return '"$value" is not a valid number!';
   }
   return null;
