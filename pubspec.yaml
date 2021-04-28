@@ -1,5 +1,5 @@
 name: pro_health
-description: A new Flutter application.
+description: A cross-platform complete healthcare solutions.
 
 version: 2.5.37+6
 
@@ -31,7 +31,6 @@ dependencies:
   find_dropdown: ^1.0.0
   grouped_buttons: ^1.0.4
   fdottedline: ^1.0.1
-  html_editor: ^1.0.1
   simple_autocomplete_formfield: ^0.3.0
   flutter_sparkline: ^0.1.0
   flutter_staggered_grid_view: ^0.4.0
@@ -70,11 +69,9 @@ flutter:
     - assets/doctorsignin.png
     - assets/patientsignin.png
     - assets/pharmalogo.png
-    - assets/icons/doctor/phoneno.png
-    - assets/icons/doctor/bmdcno.png
-    - assets/icons/doctor/password.png
-    - assets/icons/doctor/forgotpass.png
-    - assets/icons/doctor/forgotpassword.png
+    - assets/doctorimg.png
+    - assets/apatient.png
+    - assets/icons/doctor/
     - assets/icons/patient/
 
   fonts:
