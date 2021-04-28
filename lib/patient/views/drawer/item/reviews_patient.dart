@@ -22,7 +22,7 @@ class ReviewsPatientState extends State<ReviewsPatient> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/reviewspage.png'),
+          child: Image.asset('assets/icons/patient/reviewspage.png'),
         ),
       ),
     );
