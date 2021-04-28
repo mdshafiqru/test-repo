@@ -52,7 +52,7 @@ class AccountVerifyPatientState extends State<AccountVerifyPatient>
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/otp.png'),
+          child: Image.asset('assets/icons/patient/otp.png'),
         ),
       ),
     );
