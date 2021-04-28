@@ -183,6 +183,7 @@ class OnlineConsultancyState extends State<OnlineConsultancy> {
       ),
     );
     final nextAppointmentTitle = Container(
+      alignment: Alignment.centerLeft,
       padding: EdgeInsets.only(left: 20.0, top: 5.0, right: 20.0, bottom: 10.0),
       child: Text(
         'Next Appointments',
