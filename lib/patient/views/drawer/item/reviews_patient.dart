@@ -176,47 +176,49 @@ class ReviewsPatientState extends State<ReviewsPatient> {
         ],
       ),
     );
-    final reviewsList = Container(
-      padding: EdgeInsets.only(left: 20, right: 20),
-      child: Column(
-        children: [
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 10,
-          ),
-          singleReview,
-          SizedBox(
-            height: 30,
-          ),
-        ],
+    final reviewsList = Expanded(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: ListBody(
+          children: [
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 10,
+            ),
+            singleReview,
+            SizedBox(
+              height: 30,
+            ),
+          ],
+        ),
       ),
     );
 
@@ -236,8 +238,7 @@ class ReviewsPatientState extends State<ReviewsPatient> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             newAccountPasswordLogo,
             forgotPasswordTitle,

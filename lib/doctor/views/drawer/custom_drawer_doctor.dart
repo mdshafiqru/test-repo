@@ -26,6 +26,7 @@ class CustomDrawerDoctor extends StatefulWidget {
 }
 
 class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
+  bool showUserDetails = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -39,16 +40,19 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                 decoration: BoxDecoration(
                   color: kBaseColor,
                 ),
-                currentAccountPicture: CircleAvatar(
-                  radius: 30,
-                  backgroundColor: kBaseColor,
+                currentAccountPicture: Container(
+                  padding: EdgeInsets.only(top: 24),
                   child: CircleAvatar(
-                    radius: 27,
-                    backgroundColor: kTitleColor,
+                    radius: 30,
+                    backgroundColor: kBaseColor,
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 25.0,
-                      child: Image.asset('assets/icons/doctor/doctorimg.png'),
+                      radius: 27,
+                      backgroundColor: kTitleColor,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 25.0,
+                        child: Image.asset('assets/icons/doctor/doctorimg.png'),
+                      ),
                     ),
                   ),
                 ),
@@ -60,11 +64,16 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                   _AccountEmail,
                   style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
                 ),
+                onDetailsPressed: () {
+                  setState(() {
+                    showUserDetails = !showUserDetails;
+                  });
+                },
               ),
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,

@@ -466,7 +466,11 @@ class CaseDetailsState extends State<CaseDetails> {
       body: Center(
         child: Column(
           children: [
-            caseDetailsCard,
+            Expanded(
+              child: SingleChildScrollView(
+                child: caseDetailsCard,
+              ),
+            ),
             commentBar,
           ],
         ),
