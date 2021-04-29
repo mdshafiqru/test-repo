@@ -32,7 +32,7 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
       child: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Container(
               width: MediaQuery.of(context).size.width * 0.85,
               child: UserAccountsDrawerHeader(
@@ -40,7 +40,6 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
                   color: kBaseColor,
                 ),
                 currentAccountPicture: Container(
-                  padding: EdgeInsets.only(top: 24),
                   child: CircleAvatar(
                     radius: 30,
                     backgroundColor: kBaseColor,
@@ -72,7 +71,7 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 5,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,
