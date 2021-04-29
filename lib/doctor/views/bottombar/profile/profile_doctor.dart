@@ -84,9 +84,8 @@ class ProfileDoctorState extends State<ProfileDoctor> {
             ),
             Container(
               child: Stack(
+                clipBehavior: Clip.none,
                 alignment: Alignment.center,
-                // ignore: deprecated_member_use
-                overflow: Overflow.visible,
                 children: [
                   CircleAvatar(
                     radius: 58,
@@ -312,75 +311,76 @@ class ProfileDoctorState extends State<ProfileDoctor> {
 
   @override
   Widget build(BuildContext context) {
-    final validationImageEdit = Container(
-      child: Row(
-        children: [
-          Container(
-            width: 120,
-            padding: EdgeInsets.only(left: 18.0),
-            child: SizedBox(
-              child: Text(
-                'Validity: 364 Days',
-                style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0),
+    final validationImageEdit = Expanded(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: 15.0, right: 10),
+              child: SizedBox(
+                child: Text(
+                  'Validity: 364 Days',
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 13.0),
+                ),
               ),
             ),
-          ),
-          Container(
-            width: 150,
-            padding: EdgeInsets.only(
-                left: 10.0, top: 2.0, right: 10.0, bottom: 10.0),
-            child: Center(
-              child: Stack(
-                alignment: Alignment.center,
-                // ignore: deprecated_member_use
-                overflow: Overflow.visible,
-                children: [
-                  CircleAvatar(
-                    radius: 52,
-                    backgroundColor: kBodyTextColor,
-                    child: CircleAvatar(
-                      backgroundColor: kWhiteShade,
-                      radius: 51,
+            Container(
+              padding: EdgeInsets.only(
+                  left: 10.0, top: 2.0, right: 10.0, bottom: 10.0),
+              child: Center(
+                child: Stack(
+                  alignment: Alignment.center,
+                  // ignore: deprecated_member_use
+                  overflow: Overflow.visible,
+                  children: [
+                    CircleAvatar(
+                      radius: 52,
+                      backgroundColor: kBodyTextColor,
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 50.0,
-                        child: Image.asset('assets/icons/doctor/doctorimg.png'),
+                        backgroundColor: kWhiteShade,
+                        radius: 51,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 50.0,
+                          child:
+                              Image.asset('assets/icons/doctor/doctorimg.png'),
+                        ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: -(radius - distance),
-                    right: -(radius + iconSize + distance),
-                    bottom: -iconSize - distance - 65,
-                    left: radius,
-                    child: Icon(
-                      Icons.circle,
-                      color: Color(0xff6ECEC0),
-                      size: iconSize - 4,
+                    Positioned(
+                      top: -(radius - distance),
+                      right: -(radius + iconSize + distance),
+                      bottom: -iconSize - distance - 65,
+                      left: radius,
+                      child: Icon(
+                        Icons.circle,
+                        color: Color(0xff6ECEC0),
+                        size: iconSize - 4,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Container(
-            width: 120,
-            height: 35,
-            padding: EdgeInsets.only(left: 50.0),
-            child: Center(
-              child: RawMaterialButton(
-                elevation: 5.0,
-                child: Image.asset('assets/icons/doctor/edit.png'),
-                shape: CircleBorder(),
-                //fillColor: Colors.white,
-                padding: const EdgeInsets.all(6.0),
-                onPressed: () {
-                  editDoctor;
-                },
+            Container(
+              height: 35,
+              padding: EdgeInsets.only(left: 35),
+              child: Center(
+                child: RawMaterialButton(
+                  elevation: 5.0,
+                  child: Image.asset('assets/icons/doctor/edit.png'),
+                  shape: CircleBorder(),
+                  //fillColor: Colors.white,
+                  padding: const EdgeInsets.all(6.0),
+                  onPressed: () {
+                    editDoctor;
+                  },
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
 

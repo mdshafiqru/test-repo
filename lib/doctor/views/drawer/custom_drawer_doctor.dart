@@ -33,7 +33,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
       child: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Container(
               width: MediaQuery.of(context).size.width * 0.85,
               child: UserAccountsDrawerHeader(
@@ -41,7 +41,6 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                   color: kBaseColor,
                 ),
                 currentAccountPicture: Container(
-                  padding: EdgeInsets.only(top: 24),
                   child: CircleAvatar(
                     radius: 30,
                     backgroundColor: kBaseColor,
@@ -58,11 +57,11 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                 ),
                 accountName: const Text(
                   _AccountName,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 15),
                 ),
                 accountEmail: const Text(
                   _AccountEmail,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 12),
                 ),
                 onDetailsPressed: () {
                   setState(() {
@@ -73,7 +72,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 5,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,

@@ -19,7 +19,7 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    var appBar = AppBar(
+    Widget appBar = AppBar(
       centerTitle: true,
       title: Container(
         height: 45,
@@ -91,17 +91,18 @@ class HomeState extends State<Home> {
             },
           ),
         ),
-        SizedBox(
-          height: 50,
-          width: 35,
+        Padding(
+          padding: EdgeInsets.only(left: 0.0, right: 10.0),
           child: Container(
-            padding: EdgeInsets.only(left: 0.0, right: 10.0),
+            height: 50,
+            width: 35,
             child: IconButton(
               padding: EdgeInsets.all(2),
               icon: Icon(
                 Icons.notifications_active_rounded,
                 size: 28,
               ),
+              splashRadius: 20,
               color: kTitleColor,
               onPressed: () {},
             ),
@@ -189,7 +190,8 @@ class HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 35.0,
-                      child: Image.asset('assets/icons/doctor/consultationhistory.png'),
+                      child: Image.asset(
+                          'assets/icons/doctor/consultationhistory.png'),
                     ),
                   ),
                   Container(
