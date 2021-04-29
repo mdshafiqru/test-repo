@@ -25,6 +25,7 @@ class CustomDrawerPatient extends StatefulWidget {
 }
 
 class CustomDrawerPatientState extends State<CustomDrawerPatient> {
+  bool showUserDetails = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -34,37 +35,44 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
             flex: 1,
             child: Container(
               width: MediaQuery.of(context).size.width * 0.85,
-              height: MediaQuery.of(context).size.height,
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(
                   color: kBaseColor,
                 ),
-                accountName: const Text(
-                  _AccountName,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 16),
-                ),
-                accountEmail: const Text(
-                  _AccountEmail,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 13),
-                ),
-                currentAccountPicture: CircleAvatar(
-                  radius: 30,
-                  backgroundColor: kBaseColor,
+                currentAccountPicture: Container(
+                  padding: EdgeInsets.only(top: 24),
                   child: CircleAvatar(
-                    radius: 27,
-                    backgroundColor: kTitleColor,
+                    radius: 30,
+                    backgroundColor: kBaseColor,
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 25.0,
-                      child: Image.asset('assets/apatient.png'),
+                      radius: 27,
+                      backgroundColor: kTitleColor,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 25.0,
+                        child: Image.asset('assets/apatient.png'),
+                      ),
                     ),
                   ),
                 ),
+                accountName: Text(
+                  _AccountName,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 15),
+                ),
+                accountEmail: Text(
+                  _AccountEmail,
+                  style: TextStyle(fontFamily: 'Segoe', fontSize: 12),
+                ),
+                onDetailsPressed: () {
+                  setState(() {
+                    showUserDetails = !showUserDetails;
+                  });
+                },
               ),
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,
@@ -473,7 +481,7 @@ class CustomDrawerPatientState extends State<CustomDrawerPatient> {
                     color: kTitleTextColor),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
