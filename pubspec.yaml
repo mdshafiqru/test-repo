@@ -56,6 +56,7 @@ dependencies:
   multi_image_picker: ^4.7.15
   image_picker: ^0.6.4
   group_radio_button: ^1.0.1
+  share: ^2.0.1
 
 dev_dependencies:
   flutter_test:
