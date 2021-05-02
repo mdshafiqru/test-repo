@@ -34,7 +34,7 @@ class ConsultationHistoryPatientState
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
+        child: Column(
           children: <Widget>[
             SizedBox(height: 5),
             Center(
@@ -72,29 +72,50 @@ class ConsultationHistoryPatientState
               indent: 0.0,
               endIndent: 0.0,
             ),
-            SizedBox(height: 15),
-            _buildName(
-                name: "Prof. Mohd. Hanif",
-                id: "22-03-2021 ",
-                view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            _buildName(
-                name: "Doctor Name:", id: "Date : ", view: "View Details"),
-            SizedBox(
-              height: 20,
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(top: 15, bottom: 10),
+                child: ListBody(
+                  children: [
+                    _buildName(
+                        name: "Prof. Mohd. Hanif",
+                        id: "22-03-2021 ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                    _buildName(
+                        name: "Doctor Name:",
+                        id: "Date : ",
+                        view: "View Details"),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
