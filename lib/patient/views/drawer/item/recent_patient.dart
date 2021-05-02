@@ -11,7 +11,6 @@ class RecentPatient extends StatefulWidget {
 
 class RecentPatientState extends State<RecentPatient> {
   var rating = 5.0;
-  bool isRemove = false;
 
   @override
   Widget build(BuildContext context) {
@@ -135,59 +134,66 @@ class RecentPatientState extends State<RecentPatient> {
           ),
           Container(
             width: 25,
-            child: IconButton(
+            child: PopupMenuButton(
               icon: Icon(Icons.more_vert),
-              onPressed: () {
-                setState(() {
-                  isRemove = !isRemove;
-                });
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem<String>(
+                    value: 'Remove',
+                    child: Text('Remove'),
+                  )
+                ];
+              },
+              onSelected: (result) {
+                if (result == 'Remove') {
+                  Navigator.pop(context);
+                }
               },
             ),
           ),
         ],
       ),
     );
-    final recentlySeenDoctorList = Container(
-      padding: EdgeInsets.only(left: 20, top: 20, right: 20),
-      child: Column(
-        children: [
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 10,
-          ),
-          doctorCard,
-          SizedBox(
-            height: 30,
-          ),
-        ],
+    final recentlySeenDoctorList = Expanded(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 15, top: 20, right: 15, bottom: 20),
+        child: ListBody(
+          children: [
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+            SizedBox(
+              height: 10,
+            ),
+            doctorCard,
+          ],
+        ),
       ),
     );
 
@@ -207,8 +213,7 @@ class RecentPatientState extends State<RecentPatient> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             recentLogo,
             recentTitle,
