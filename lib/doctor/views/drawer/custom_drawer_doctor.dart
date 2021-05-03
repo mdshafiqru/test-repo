@@ -4,7 +4,7 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/dashboard_doctor.dart';
-import 'package:pro_health/doctor/views/drawer/item/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/item/privacy_policy.dart';
 import 'package:pro_health/doctor/views/drawer/item/reviews.dart';
 import 'package:pro_health/doctor/views/drawer/item/settings.dart';
 import 'package:pro_health/doctor/views/drawer/item/terms_conditions.dart';
@@ -12,7 +12,6 @@ import 'package:pro_health/doctor/views/drawer/item/terms_conditions.dart';
 import 'item/about_us.dart';
 import 'item/activity_status.dart';
 import 'item/contact_us.dart';
-import 'item/help.dart';
 
 const String _AccountName = 'Prof. Mohammed Hanif';
 const String _AccountEmail = 'doctor101@prohealth.com';
@@ -203,7 +202,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: Text(
-                    "Privacy and Policy",
+                    "Privacy Policy",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',
@@ -221,7 +220,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed(PrivacyAndPolicy.tag);
+                    Navigator.of(context).pushNamed(PrivacyPolicy.tag);
                   },
                 ),
                 Divider(
@@ -284,37 +283,6 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                   ),
                   onTap: () {
                     Navigator.of(context).pushNamed(ContactUs.tag);
-                  },
-                ),
-                Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: Text(
-                    "Help",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/helpd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(Help.tag);
                   },
                 ),
                 Divider(

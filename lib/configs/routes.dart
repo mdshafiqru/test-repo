@@ -17,8 +17,7 @@ import 'package:pro_health/doctor/views/dashboard/case_exchange/saved_case.dart'
 import 'package:pro_health/doctor/views/drawer/item/about_us.dart';
 import 'package:pro_health/doctor/views/drawer/item/activity_status.dart';
 import 'package:pro_health/doctor/views/drawer/item/contact_us.dart';
-import 'package:pro_health/doctor/views/drawer/item/help.dart';
-import 'package:pro_health/doctor/views/drawer/item/privacy_and_policy.dart';
+import 'package:pro_health/doctor/views/drawer/item/privacy_policy.dart';
 import 'package:pro_health/doctor/views/drawer/item/reviews.dart';
 import 'package:pro_health/doctor/views/drawer/item/settings.dart';
 import 'package:pro_health/doctor/views/drawer/item/terms_conditions.dart';
@@ -90,10 +89,9 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   ConsultationHistory.tag: (context) => ConsultationHistory(),
   ActivityStatus.tag: (context) => ActivityStatus(),
   TermsConditions.tag: (context) => TermsConditions(),
-  PrivacyAndPolicy.tag: (context) => PrivacyAndPolicy(),
+  PrivacyPolicy.tag: (context) => PrivacyPolicy(),
   AboutUs.tag: (context) => AboutUs(),
   ContactUs.tag: (context) => ContactUs(),
-  Help.tag: (context) => Help(),
   Settings.tag: (context) => Settings(),
   Reviews.tag: (context) => Reviews(),
   CreateCase.tag: (context) => CreateCase(),

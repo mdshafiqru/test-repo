@@ -5,6 +5,7 @@ import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/dashboard/case_exchange/create_case.dart';
 import 'package:pro_health/doctor/views/dashboard/case_exchange/saved_case.dart';
 import 'package:pro_health/doctor/views/dashboard/case_exchange/case_details.dart';
+import 'package:share/share.dart';
 
 class CaseExchange extends StatefulWidget {
   static String tag = 'CaseExchange';
@@ -170,7 +171,8 @@ class CaseExchangeState extends State<CaseExchange> {
                               child: CircleAvatar(
                                 backgroundColor: Colors.white,
                                 radius: 15.0,
-                                child: Image.asset('assets/icons/doctor/doctorimg.png'),
+                                child: Image.asset(
+                                    'assets/icons/doctor/doctorimg.png'),
                               ),
                             ),
                           ),
@@ -439,7 +441,10 @@ class CaseExchangeState extends State<CaseExchange> {
                       height: 25,
                       child: FloatingActionButton(
                         onPressed: () {
-                          
+                          final RenderBox box = context.findRenderObject();
+                          Share.share('Share with',
+                              sharePositionOrigin:
+                                  box.localToGlobal(Offset.zero) & box.size);
                         },
                         backgroundColor: Colors.white,
                         elevation: 0,
