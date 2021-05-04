@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:page_indicator/page_indicator.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
@@ -12,23 +12,13 @@ import 'package:pro_health/base/utils/constants.dart';
 
 class Home extends StatefulWidget {
   static String tag = 'Home';
-  static final controller = PageController(
-    initialPage: 1,
-  );
 
   @override
   HomeState createState() => HomeState();
 }
 
 class HomeState extends State<Home> {
-  PageController controller;
   var rating = 5.0;
-  GlobalKey<PageContainerState> key = GlobalKey();
-  @override
-  void initState() {
-    super.initState();
-    controller = PageController();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,70 +115,23 @@ class HomeState extends State<Home> {
     );
     final swiperSlide = Container(
       height: 265.0,
-      child: PageIndicatorContainer(
-        key: key,
-        child: PageView(
-          children: <Widget>[
-            Container(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/doctor/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
+      child: Swiper(
+        outer: false,
+        itemBuilder: (BuildContext context, int index) {
+          return new Container(
+            child: new Image.asset(
+              "assets/icons/doctor/homebg1.png",
+              fit: BoxFit.cover,
             ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/doctor/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/doctor/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/doctor/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/doctor/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-          ],
-          controller: controller,
-          reverse: false,
+          );
+        },
+        pagination: new SwiperPagination(
+          margin: new EdgeInsets.all(5.0),
+          builder: SwiperPagination.dots,
         ),
-        align: IndicatorAlign.bottom,
-        length: 5,
-        indicatorSpace: 10.0,
-        padding: const EdgeInsets.all(10),
-        indicatorColor: Colors.white,
-        indicatorSelectorColor: kButtonColor,
-        shape: IndicatorShape.circle(size: 12),
+        itemCount: 5,
+        autoplay: true,
+        autoplayDelay: 1500,
       ),
     );
     final cardWithDividerRow1 = Row(
