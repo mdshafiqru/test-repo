@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:page_indicator/page_indicator.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
@@ -11,12 +12,24 @@ import 'package:pro_health/base/utils/constants.dart';
 
 class Home extends StatefulWidget {
   static String tag = 'Home';
+  static final controller = PageController(
+    initialPage: 1,
+  );
 
   @override
   HomeState createState() => HomeState();
 }
 
 class HomeState extends State<Home> {
+  PageController controller;
+  var rating = 5.0;
+  GlobalKey<PageContainerState> key = GlobalKey();
+  @override
+  void initState() {
+    super.initState();
+    controller = PageController();
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget appBar = AppBar(
@@ -110,19 +123,74 @@ class HomeState extends State<Home> {
         ),
       ],
     );
-
-    final homeBg = Container(
-      height: 260,
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 4.0, 0.0),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/icons/doctor/homebg1.png'),
-              fit: BoxFit.cover),
+    final swiperSlide = Container(
+      height: 265.0,
+      child: PageIndicatorContainer(
+        key: key,
+        child: PageView(
+          children: <Widget>[
+            Container(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/icons/doctor/homebg1.png'),
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+            Container(
+              height: 260,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/icons/doctor/homebg1.png'),
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+            Container(
+              height: 260,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/icons/doctor/homebg1.png'),
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+            Container(
+              height: 260,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/icons/doctor/homebg1.png'),
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+            Container(
+              height: 260,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/icons/doctor/homebg1.png'),
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+          ],
+          controller: controller,
+          reverse: false,
         ),
+        align: IndicatorAlign.bottom,
+        length: 5,
+        indicatorSpace: 10.0,
+        padding: const EdgeInsets.all(10),
+        indicatorColor: Colors.white,
+        indicatorSelectorColor: kButtonColor,
+        shape: IndicatorShape.circle(size: 12),
       ),
     );
-
     final cardWithDividerRow1 = Row(
       children: [
         Expanded(
@@ -310,7 +378,7 @@ class HomeState extends State<Home> {
       body: Center(
         child: ListView(
           children: <Widget>[
-            homeBg,
+            swiperSlide,
             SizedBox(
               height: 18,
             ),
