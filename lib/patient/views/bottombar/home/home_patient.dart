@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:marquee/marquee.dart';
-import 'package:page_indicator/page_indicator.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/patient/views/drawer/custom_drawer_patient.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -11,10 +11,6 @@ import 'package:pro_health/patient/views/bottombar/home/view_doctors.dart';
 class HomePatient extends StatefulWidget {
   static String tag = 'HomePatient';
 
-  static final controller = PageController(
-    initialPage: 1,
-  );
-
   @override
   HomePatientState createState() => HomePatientState();
 }
@@ -22,20 +18,6 @@ class HomePatient extends StatefulWidget {
 class HomePatientState extends State<HomePatient> {
   PageController controller;
   var rating = 5.0;
-  GlobalKey<PageContainerState> key = GlobalKey();
-  @override
-  void initState() {
-    super.initState();
-    controller = PageController();
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -106,70 +88,23 @@ class HomePatientState extends State<HomePatient> {
 
     final swiperSlide = Container(
       height: 265.0,
-      child: PageIndicatorContainer(
-        key: key,
-        child: PageView(
-          children: <Widget>[
-            Container(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/patient/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
+      child: Swiper(
+        outer: false,
+        itemBuilder: (BuildContext context, int index) {
+          return new Container(
+            child: new Image.asset(
+              "assets/icons/doctor/homebg1.png",
+              fit: BoxFit.cover,
             ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/patient/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/patient/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/patient/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            Container(
-              height: 260,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/icons/patient/homebg1.png'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-          ],
-          controller: controller,
-          reverse: false,
+          );
+        },
+        pagination: new SwiperPagination(
+          margin: new EdgeInsets.all(5.0),
+          builder: SwiperPagination.dots,
         ),
-        align: IndicatorAlign.bottom,
-        length: 5,
-        indicatorSpace: 10.0,
-        padding: const EdgeInsets.all(10),
-        indicatorColor: Colors.white,
-        indicatorSelectorColor: kButtonColor,
-        shape: IndicatorShape.circle(size: 12),
+        itemCount: 5,
+        autoplay: true,
+        autoplayDelay: 1500,
       ),
     );
 
