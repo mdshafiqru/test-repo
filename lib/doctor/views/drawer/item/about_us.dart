@@ -12,7 +12,7 @@ class AboutUs extends StatefulWidget {
 class AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
-    final newAccountPasswordLogo = Container(
+    final aboutUsLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
         tag: 'hero',
@@ -24,7 +24,7 @@ class AboutUsState extends State<AboutUs> {
       ),
     );
 
-    final forgotPasswordTitle = Container(
+    final aboutUsTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
@@ -49,16 +49,24 @@ class AboutUsState extends State<AboutUs> {
       ),
     );
 
-    final comingSoon = Center(
+    final descTitle = Expanded(
       child: Column(
         children: [
           Container(
-            width: 180,
-            height: 250,
-            padding: EdgeInsets.only(top: 70),
-            child: Image.asset(
-              'assets/icons/doctor/comingsoon.png',
-              fit: BoxFit.fill,
+            padding: EdgeInsets.only(top: 10, left: 10, bottom: 10, right: 10),
+            child: Text(
+              'According to WHO, there are an estimated 3.05 physicians per 10,000'
+              'population in Bangladesh; which is very insignificant to serve such a huge '
+              'population. On the other hand, there are millions of patients in Bangladesh who '
+              'could not reach to the right doctor for their right treatment purposes. '
+              'Therefore, we need to adopt with such a technology which will connect the doctors '
+              'with the patient.',
+              style: TextStyle(
+                fontFamily: 'Segoe',
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+              ),
+              textAlign: TextAlign.justify,
             ),
           ),
           Container(
@@ -97,10 +105,10 @@ class AboutUsState extends State<AboutUs> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            newAccountPasswordLogo,
-            forgotPasswordTitle,
+            aboutUsLogo,
+            aboutUsTitle,
             verticalDivider,
-            comingSoon,
+            descTitle,
           ],
         ),
       ),
