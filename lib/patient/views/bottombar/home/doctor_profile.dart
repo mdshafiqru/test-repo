@@ -14,7 +14,7 @@ class DoctorProfileState extends State<DoctorProfile> {
   double radius = 32;
   double iconSize = 20;
   double distance = 2;
-  bool hasBeenPressed = false;
+  bool hasBeenPressed = true;
 
   @override
   Widget build(BuildContext context) {
