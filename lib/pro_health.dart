@@ -10,7 +10,7 @@ class ProHealth extends StatelessWidget {
       title: 'Pro Health',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.li,
+        primarySwatch: Colors.blue,
         primaryColor: kBaseColor,
         fontFamily: 'Nunito',
       ),

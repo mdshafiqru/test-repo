@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 
-class Help extends StatefulWidget {
-  Help({Key key, this.title}) : super(key: key);
+class PrivacyPolicy extends StatefulWidget {
+  PrivacyPolicy({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'Help';
+  static String tag = 'PrivacyAndPolicy';
   @override
-  HelpState createState() => new HelpState();
+  PrivacyPolicyState createState() => new PrivacyPolicyState();
 }
 
-class HelpState extends State<Help> {
+class PrivacyPolicyState extends State<PrivacyPolicy> {
   @override
   Widget build(BuildContext context) {
     final newAccountPasswordLogo = Container(
@@ -19,7 +19,7 @@ class HelpState extends State<Help> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 40.0,
-          child: Image.asset('assets/icons/doctor/helppage.png'),
+          child: Image.asset('assets/icons/doctor/privacypage.png'),
         ),
       ),
     );
@@ -28,7 +28,7 @@ class HelpState extends State<Help> {
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
-        'Help',
+        'Privacy and Policy',
         style: TextStyle(
             fontFamily: 'Segoe',
             color: kTextLightColor,
@@ -89,7 +89,7 @@ class HelpState extends State<Help> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Help',
+        title: Text('Privacy and Policy',
             style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,

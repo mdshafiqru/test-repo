@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:pro_health/doctor/views/bottombar/profile/profile_doctor.dart';
 import 'package:pro_health/doctor/views/dashboard/earnings/earnings.dart';
 import 'package:pro_health/doctor/views/dashboard/consultation_history/consultation_history.dart';
@@ -17,6 +18,8 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  var rating = 5.0;
+
   @override
   Widget build(BuildContext context) {
     Widget appBar = AppBar(
@@ -110,19 +113,27 @@ class HomeState extends State<Home> {
         ),
       ],
     );
-
-    final homeBg = Container(
-      height: 260,
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 4.0, 0.0),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/icons/doctor/homebg1.png'),
-              fit: BoxFit.cover),
+    final swiperSlide = Container(
+      height: 265.0,
+      child: Swiper(
+        outer: false,
+        itemBuilder: (BuildContext context, int index) {
+          return new Container(
+            child: new Image.asset(
+              "assets/icons/doctor/homebg1.png",
+              fit: BoxFit.cover,
+            ),
+          );
+        },
+        pagination: new SwiperPagination(
+          margin: new EdgeInsets.all(5.0),
+          builder: SwiperPagination.dots,
         ),
+        itemCount: 5,
+        autoplay: true,
+        autoplayDelay: 1500,
       ),
     );
-
     final cardWithDividerRow1 = Row(
       children: [
         Expanded(
@@ -310,7 +321,7 @@ class HomeState extends State<Home> {
       body: Center(
         child: ListView(
           children: <Widget>[
-            homeBg,
+            swiperSlide,
             SizedBox(
               height: 18,
             ),

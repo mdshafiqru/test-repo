@@ -30,9 +30,9 @@ class AppointmentPatientState extends State<AppointmentPatient> {
         decoration: InputDecoration(
           filled: true,
           fillColor: kDashBoxColor,
-          hintText: 'Search by Doctors name/ Hospital/ Disease',
+          hintText: 'Search by Doctors name/ Hospital/ Disease name',
           hintStyle: TextStyle(
-              fontFamily: 'Segoe', fontSize: 16, fontWeight: FontWeight.w500),
+              fontFamily: 'Segoe', fontSize: 14, fontWeight: FontWeight.w500),
           contentPadding:
               EdgeInsets.only(left: 10.0, top: 3.0, right: 10.0, bottom: 3.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(40.0)),

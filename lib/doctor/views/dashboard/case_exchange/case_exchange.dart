@@ -170,7 +170,8 @@ class CaseExchangeState extends State<CaseExchange> {
                               child: CircleAvatar(
                                 backgroundColor: Colors.white,
                                 radius: 15.0,
-                                child: Image.asset('assets/icons/doctor/doctorimg.png'),
+                                child: Image.asset(
+                                    'assets/icons/doctor/doctorimg.png'),
                               ),
                             ),
                           ),
@@ -438,9 +439,7 @@ class CaseExchangeState extends State<CaseExchange> {
                       width: 25,
                       height: 25,
                       child: FloatingActionButton(
-                        onPressed: () {
-                          
-                        },
+                        onPressed: () {},
                         backgroundColor: Colors.white,
                         elevation: 0,
                         child: Icon(Icons.share_rounded),

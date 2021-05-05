@@ -48,7 +48,6 @@ dependencies:
   pdf: ^3.2.0
   flutter_html_to_pdf: ^0.6.0
   flutter_switch: ^0.3.1
-  page_indicator: ^0.4.1
   marquee: ^2.1.0
   percent_indicator: ^3.0.1
   oktoast: ^3.0.0
@@ -56,6 +55,8 @@ dependencies:
   multi_image_picker: ^4.7.15
   image_picker: ^0.6.4
   group_radio_button: ^1.0.1
+  share: ^2.0.1
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:

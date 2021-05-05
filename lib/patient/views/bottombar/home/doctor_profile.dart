@@ -14,6 +14,7 @@ class DoctorProfileState extends State<DoctorProfile> {
   double radius = 32;
   double iconSize = 20;
   double distance = 2;
+  bool hasBeenPressed = true;
 
   @override
   Widget build(BuildContext context) {
@@ -128,17 +129,41 @@ class DoctorProfileState extends State<DoctorProfile> {
         endIndent: 0.0,
       ),
     );
-    final doctorName = Padding(
-      padding: EdgeInsets.only(left: 0.0, top: 1.0, right: 0.0, bottom: 0.0),
-      child: Text(
-        'Prof. Mohammed Hanif',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'Segoe',
-            fontSize: 20.0,
-            letterSpacing: 0.5,
-            color: kBaseColor,
-            fontWeight: FontWeight.w600),
+    final doctorName = Container(
+      padding: EdgeInsets.only(left: 95, right: 35),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 2),
+            child: Text(
+              'Prof. Mohammed Hanif',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Segoe',
+                  fontSize: 20.0,
+                  letterSpacing: 0.5,
+                  color: kBaseColor,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+          Container(
+            width: 40,
+            height: 25,
+            child: FloatingActionButton(
+              backgroundColor: kBackgroundColor,
+              elevation: 0,
+              child: Icon(
+                hasBeenPressed ? Icons.favorite_border_rounded : Icons.favorite,
+                color: hasBeenPressed ? null : Colors.pink,
+              ),
+              onPressed: () {
+                setState(() {
+                  hasBeenPressed = !hasBeenPressed;
+                });
+              },
+            ),
+          ),
+        ],
       ),
     );
 
