@@ -50,39 +50,48 @@ class AboutUsState extends State<AboutUs> {
     );
 
     final descTitle = Expanded(
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.only(top: 10, left: 10, bottom: 10, right: 10),
-            child: Text(
-              'According to WHO, there are an estimated 3.05 physicians per 10,000'
-              'population in Bangladesh; which is very insignificant to serve such a huge '
-              'population. On the other hand, there are millions of patients in Bangladesh who '
-              'could not reach to the right doctor for their right treatment purposes. '
-              'Therefore, we need to adopt with such a technology which will connect the doctors '
-              'with the patient.',
-              style: TextStyle(
-                fontFamily: 'Segoe',
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-          Container(
-            height: 50,
-            padding: EdgeInsets.only(top: 15.0),
-            child: Text(
-              'Coming Soon..',
-              style: TextStyle(
+      child: SingleChildScrollView(
+        child: ListBody(
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 20, left: 30, bottom: 5, right: 30),
+              child: Text(
+                'According to WHO, there are an estimated 3.05 physicians per 10,000 '
+                'population in Bangladesh; which is very insignificant to serve such a huge '
+                'population. On the other hand, there are millions of patients in Bangladesh who '
+                'could not reach to the right doctor for their right treatment purposes. '
+                'Therefore, we need to adopt with such a technology which will connect the doctors '
+                'with the patient.',
+                style: TextStyle(
                   fontFamily: 'Segoe',
                   letterSpacing: 0.5,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700),
-              textAlign: TextAlign.center,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                ),
+                textAlign: TextAlign.justify,
+              ),
             ),
-          ),
-        ],
+            Container(
+              padding: EdgeInsets.only(top: 5, left: 30, bottom: 10, right: 30),
+              child: Text(
+                'ProHealth is one of the service wings of “The Pharma 360” who started '
+                'it’s journey since 2016. ProHealth is a healthcare solution provider '
+                'through 24/7 instant video calling system and other means with a slogan'
+                ' ’Complete Healthcare Solution in Your Pocket’. We have developed ‘ProHealth’ app'
+                ' with latest technology and language which is suitable for mobile phone, windows '
+                'and iOS. The motto of ProHealth is to ensure complete healthcare solutions in '
+                'everyone’s pocket.',
+                style: TextStyle(
+                  fontFamily: 'Segoe',
+                  letterSpacing: 0.5,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                ),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+          ],
+        ),
       ),
     );
 
@@ -102,8 +111,7 @@ class AboutUsState extends State<AboutUs> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: ListView(
-          shrinkWrap: false,
+        child: Column(
           children: <Widget>[
             aboutUsLogo,
             aboutUsTitle,
