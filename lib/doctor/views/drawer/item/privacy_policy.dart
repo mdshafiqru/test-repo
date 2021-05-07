@@ -4,7 +4,7 @@ import 'package:pro_health/base/utils/constants.dart';
 class PrivacyPolicy extends StatefulWidget {
   PrivacyPolicy({Key key, this.title}) : super(key: key);
   final String title;
-  static String tag = 'PrivacyAndPolicy';
+  static String tag = 'PrivacyPolicy';
   @override
   PrivacyPolicyState createState() => new PrivacyPolicyState();
 }
@@ -12,7 +12,7 @@ class PrivacyPolicy extends StatefulWidget {
 class PrivacyPolicyState extends State<PrivacyPolicy> {
   @override
   Widget build(BuildContext context) {
-    final newAccountPasswordLogo = Container(
+    final privacyPolicyLogo = Container(
       padding: EdgeInsets.only(top: 20),
       child: Hero(
         tag: 'hero',
@@ -24,14 +24,14 @@ class PrivacyPolicyState extends State<PrivacyPolicy> {
       ),
     );
 
-    final forgotPasswordTitle = Container(
+    final privacyPolicyTitle = Container(
       //height: 35,
       padding: EdgeInsets.only(bottom: 5),
       child: Text(
-        'Privacy and Policy',
+        'Privacy Policy',
         style: TextStyle(
             fontFamily: 'Segoe',
-            color: kTextLightColor,
+            color: kBaseColor,
             letterSpacing: 0.5,
             fontSize: 20,
             fontWeight: FontWeight.w600),
@@ -49,7 +49,7 @@ class PrivacyPolicyState extends State<PrivacyPolicy> {
       ),
     );
 
-    final comingSoon = Center(
+    final privacyPolicyDesc = Expanded(
       child: Column(
         children: [
           Container(
@@ -89,7 +89,7 @@ class PrivacyPolicyState extends State<PrivacyPolicy> {
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back),
         ),
-        title: Text('Privacy and Policy',
+        title: Text('Privacy Policy',
             style: TextStyle(fontFamily: 'Segoe', color: kTitleColor)),
       ),
       backgroundColor: kBackgroundColor,
@@ -97,10 +97,10 @@ class PrivacyPolicyState extends State<PrivacyPolicy> {
         child: ListView(
           shrinkWrap: false,
           children: <Widget>[
-            newAccountPasswordLogo,
-            forgotPasswordTitle,
+            privacyPolicyLogo,
+            privacyPolicyTitle,
             verticalDivider,
-            comingSoon,
+            privacyPolicyDesc,
           ],
         ),
       ),
