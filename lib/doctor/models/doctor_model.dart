@@ -1,5 +1,6 @@
 class DoctorModel {
-  static var doctorAPI = "http://103.134.27.40/ProHealthAPI/api/Doctor/";
+  // ignore: non_constant_identifier_names
+  static var APILink = "http://103.134.27.40/ProHealthAPI/api/";
 }
 
 class Doctor {
@@ -25,6 +26,7 @@ class Doctor {
   int followupDiscount;
   String discountStartDate;
   String discountEndDate;
+  String password;
 
   Doctor(
       {this.doctorID,
@@ -48,7 +50,8 @@ class Doctor {
       this.consultDiscount,
       this.followupDiscount,
       this.discountStartDate,
-      this.discountEndDate});
+      this.discountEndDate,
+      this.password});
 
   Doctor.fromJson(Map<String, dynamic> json) {
     doctorID = json['doctorID'];
@@ -77,6 +80,7 @@ class Doctor {
     followupDiscount = json['followupDiscount'];
     discountStartDate = json['discountStartDate'];
     discountEndDate = json['discountEndDate'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
@@ -107,6 +111,7 @@ class Doctor {
     data['followupDiscount'] = this.followupDiscount;
     data['discountStartDate'] = this.discountStartDate;
     data['discountEndDate'] = this.discountEndDate;
+    data['password'] = this.password;
     return data;
   }
 }
