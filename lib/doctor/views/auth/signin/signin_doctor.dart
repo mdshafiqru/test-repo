@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import '../../dashboard/dashboard_doctor.dart';
 import 'package:pro_health/doctor/views/auth/signup/create_account_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
@@ -18,8 +19,8 @@ class SignInDoctorState extends State<SignInDoctor> {
   bool _passwordVisible;
   @override
   void initState() {
-    _passwordVisible = false;
     super.initState();
+    _passwordVisible = false;
   }
 
   @override
@@ -59,7 +60,7 @@ class SignInDoctorState extends State<SignInDoctor> {
           LengthLimitingTextInputFormatter(11)
         ],
         keyboardType: TextInputType.number,
-        validator: numberValidator,
+        validator: RequiredValidator(errorText: 'ID is required!'),
         autofocus: false,
         initialValue: '',
         style:
@@ -281,6 +282,8 @@ class SignInDoctorState extends State<SignInDoctor> {
     );
   }
 }
+
+class Doctors {}
 
 String numberValidator(String value) {
   if (value == null) {
