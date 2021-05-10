@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../dashboard/dashboard_doctor.dart';
 import 'package:pro_health/doctor/views/auth/signup/create_account_doctor.dart';
@@ -66,23 +65,6 @@ class SignInDoctorState extends State<SignInDoctor> {
     //return isValid;
   }
 
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final GlobalKey<FormState> _formKey =
-      GlobalKey<FormState>(); //Added for validation -----
-
-  final phoneRequiredValidator =
-      RequiredValidator(errorText: 'phone number field is required');
-
-  final bmdcRequiredValidator =
-      RequiredValidator(errorText: 'BMDC No. is required');
-
-  final passwordValidator = MultiValidator([
-    RequiredValidator(errorText: 'password is required'),
-    MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
-    PatternValidator(r'(?=.*?[#?!@$%^&*-])',
-        errorText: 'passwords must have at least one special character')
-  ]);
-
   String password;
   bool showvalue = false;
   bool _passwordVisible;
@@ -129,7 +111,6 @@ class SignInDoctorState extends State<SignInDoctor> {
           LengthLimitingTextInputFormatter(11)
         ],
         keyboardType: TextInputType.number,
-        validator: phoneRequiredValidator,
         autofocus: false,
         obscureText: true,
         initialValue: '',
@@ -163,7 +144,6 @@ class SignInDoctorState extends State<SignInDoctor> {
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(11)],
         keyboardType: TextInputType.streetAddress,
-        validator: bmdcRequiredValidator,
         autofocus: false,
         initialValue: '',
         style:
@@ -194,7 +174,6 @@ class SignInDoctorState extends State<SignInDoctor> {
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(40)],
         keyboardType: TextInputType.visiblePassword,
-        validator: passwordValidator,
         onChanged: (val) => password = val,
         obscureText: !_passwordVisible,
         //obscuringCharacter: "*",
@@ -333,10 +312,8 @@ class SignInDoctorState extends State<SignInDoctor> {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      key: _scaffoldKey,
       body: Center(
         child: ListView(
-          key: _formKey,
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
@@ -353,17 +330,4 @@ class SignInDoctorState extends State<SignInDoctor> {
       ),
     );
   }
-}
-
-class Doctors {}
-
-String numberValidator(String value) {
-  if (value == null) {
-    return null;
-  }
-  final n = num.tryParse(value);
-  if (n == null) {
-    return '"$value" is not a valid number!';
-  }
-  return null;
 }
