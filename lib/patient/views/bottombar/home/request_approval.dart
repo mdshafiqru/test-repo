@@ -145,7 +145,7 @@ class RequestApprovalState extends State<RequestApproval> {
           Container(
             height: 300,
             child: SplashScreen(
-              seconds: 3,
+              seconds: 5,
               navigateAfterSeconds: new Approval(),
               backgroundColor: kBackgroundColor,
               image: Image.asset(
