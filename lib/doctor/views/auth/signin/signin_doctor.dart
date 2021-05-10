@@ -66,18 +66,24 @@ class SignInDoctorState extends State<SignInDoctor> {
     //return isValid;
   }
 
-  // ignore: unused_field
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey =
       GlobalKey<FormState>(); //Added for validation -----
 
-  final bmdcRequiredValidator = MultiValidator([
-    EmailValidator(errorText: 'Enter a valid BMDC registration'),
-    RequiredValidator(errorText: 'BMDC No. is required'),
-    //MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
-    //PatternValidator(r'(?=.*?[#?!@$%^&*-])', errorText: 'passwords must have at least one special character')
+  final phoneRequiredValidator =
+      RequiredValidator(errorText: 'phone number field is required');
+
+  final bmdcRequiredValidator =
+      RequiredValidator(errorText: 'BMDC No. is required');
+
+  final passwordValidator = MultiValidator([
+    RequiredValidator(errorText: 'password is required'),
+    MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
+    PatternValidator(r'(?=.*?[#?!@$%^&*-])',
+        errorText: 'passwords must have at least one special character')
   ]);
 
+  String password;
   bool showvalue = false;
   bool _passwordVisible;
   @override
@@ -123,8 +129,9 @@ class SignInDoctorState extends State<SignInDoctor> {
           LengthLimitingTextInputFormatter(11)
         ],
         keyboardType: TextInputType.number,
-        validator: RequiredValidator(errorText: 'ID is required!'),
+        validator: phoneRequiredValidator,
         autofocus: false,
+        obscureText: true,
         initialValue: '',
         style:
             TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
@@ -181,14 +188,14 @@ class SignInDoctorState extends State<SignInDoctor> {
         ),
       ),
     );
-
-    final password = Container(
+    final passwordField = Container(
       height: 70,
       padding: EdgeInsets.only(bottom: 20),
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(40)],
         keyboardType: TextInputType.visiblePassword,
-        validator: numberValidator,
+        validator: passwordValidator,
+        onChanged: (val) => password = val,
         obscureText: !_passwordVisible,
         //obscuringCharacter: "*",
         initialValue: '',
@@ -326,8 +333,10 @@ class SignInDoctorState extends State<SignInDoctor> {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
+      key: _scaffoldKey,
       body: Center(
         child: ListView(
+          key: _formKey,
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
@@ -335,7 +344,7 @@ class SignInDoctorState extends State<SignInDoctor> {
             signInInstructions,
             phoneNo,
             bmdcNo,
-            password,
+            passwordField,
             signInButton,
             rememberForgotLabel,
             createAccountButton,
