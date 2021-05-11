@@ -131,7 +131,7 @@ class HomeState extends State<Home> {
         ),
         itemCount: 5,
         autoplay: true,
-        autoplayDelay: 1500,
+        autoplayDelay: 3000,
       ),
     );
     final cardWithDividerRow1 = Row(
