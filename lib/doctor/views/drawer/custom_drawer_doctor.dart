@@ -326,7 +326,7 @@ class CustomDrawerDoctorState extends State<CustomDrawerDoctor> {
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: Text(
-                    "Version 2.5.37+6",
+                    "Version 0.8.57+6",
                     style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Segoe',

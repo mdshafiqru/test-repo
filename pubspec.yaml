@@ -1,7 +1,7 @@
 name: pro_health
 description: A cross-platform complete healthcare solutions.
 
-version: 2.5.37+6
+version: 0.8.57+6
 
 environment:
   sdk: ">=2.2.2 <11.0.0"
