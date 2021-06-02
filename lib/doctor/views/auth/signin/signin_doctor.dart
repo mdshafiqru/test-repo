@@ -176,7 +176,6 @@ class SignInDoctorState extends State<SignInDoctor> {
         keyboardType: TextInputType.visiblePassword,
         onChanged: (val) => password = val,
         obscureText: !_passwordVisible,
-        //obscuringCharacter: "*",
         initialValue: '',
         style:
             TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
