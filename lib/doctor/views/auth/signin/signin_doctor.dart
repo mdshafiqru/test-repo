@@ -112,7 +112,7 @@ class SignInDoctorState extends State<SignInDoctor> {
         ],
         keyboardType: TextInputType.number,
         autofocus: false,
-        obscureText: true,
+        obscureText: false,
         initialValue: '',
         style:
             TextStyle(fontFamily: "Segoe", fontSize: 18, color: Colors.black),
