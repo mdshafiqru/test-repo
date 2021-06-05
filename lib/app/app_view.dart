@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/signin/signin_doctor.dart';
 import 'package:pro_health/patient/views/auth/signin/signin_patient.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AppView extends StatefulWidget {
   AppView({Key key, this.title}) : super(key: key);
@@ -12,6 +13,23 @@ class AppView extends StatefulWidget {
 }
 
 class AppViewState extends State<AppView> {
+  SharedPreferences sharedPreferences;
+
+  @override
+  void initState() {
+    super.initState();
+    checkLoginStatus();
+  }
+
+  checkLoginStatus() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    if (sharedPreferences.getString("token") == null) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => SignInDoctor()),
+          (Route<dynamic> route) => false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final homeScreenLogo = Container(
@@ -71,7 +89,13 @@ class AppViewState extends State<AppView> {
             ],
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed(SignInDoctor.tag);
+            sharedPreferences.clear();
+            // ignore: deprecated_member_use
+            sharedPreferences.commit();
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => SignInDoctor()),
+                (Route<dynamic> route) => false);
           },
         ),
       ),
@@ -123,7 +147,13 @@ class AppViewState extends State<AppView> {
             ],
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed(SignInPatient.tag);
+            sharedPreferences.clear();
+            // ignore: deprecated_member_use
+            sharedPreferences.commit();
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => SignInPatient()),
+                (Route<dynamic> route) => false);
           },
         ),
       ),

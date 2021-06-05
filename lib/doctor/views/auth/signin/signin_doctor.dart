@@ -1,14 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../dashboard/dashboard_doctor.dart';
 import 'package:pro_health/doctor/views/auth/signup/create_account_doctor.dart';
 import 'package:pro_health/base/utils/constants.dart';
 import 'package:pro_health/doctor/views/auth/forgot_pass/ForgotPassword.dart';
-import 'package:pro_health/doctor/models/doctor_model.dart';
-import 'package:http/http.dart' as http;
 
 class SignInDoctor extends StatefulWidget {
   SignInDoctor({Key key, this.title}) : super(key: key);
@@ -19,51 +14,9 @@ class SignInDoctor extends StatefulWidget {
 }
 
 class SignInDoctorState extends State<SignInDoctor> {
-  List<Doctor> _notes = [];
-
-  Future<List<Doctor>> fetchDoctor(String bmdcNmuber) async {
-    Uri myUri = Uri.parse("http://103.134.27.40/ProHealthAPI/api/doctor/A-60");
-    var response = await http.get(myUri);
-
-    List<Doctor> notes = [];
-
-    if (response.statusCode == 200) {
-      var notesJson = json.decode(response.body);
-      print(notesJson);
-      for (var noteJson in notesJson) {
-        notes.add(Doctor.fromJson(noteJson));
-      }
-    }
-    print(notes);
-    return notes;
-  }
-
-  Future<void> chkPswd(String bmdcNmuber, String pswd) async {
-    //bool isValid = false;
-    fetchDoctor(bmdcNmuber).then((value) {
-      setState(() {
-        _notes.addAll(value);
-      });
-    });
-
-    String dbPswd = _notes[0].password;
-    String sId = _notes[0].bmdcNmuber;
-
-    print(dbPswd);
-    if (dbPswd == pswd) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs?.setBool("isLoggedIn", true);
-      prefs.setString("username", bmdcNmuber);
-      prefs.setString("userID", sId);
-      //isValid = true;
-    } else {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs?.setBool("isLoggedIn", false);
-      prefs.setString("username", '');
-      prefs.setInt("userID", 0);
-    }
-    //return isValid;
-  }
+  final TextEditingController mobileController = new TextEditingController();
+  final TextEditingController bmdcController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
 
   String password;
   bool showvalue = false;
